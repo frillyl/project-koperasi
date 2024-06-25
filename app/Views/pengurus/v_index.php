@@ -87,7 +87,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <button type="submit" class="btn btn-custom btn-block">Masuk</button>
+                    <button type="submit" class="btn btn-custom btn-block"><i class="fa-solid fa-right-to-bracket"></i> Masuk</button>
                 </div>
                 <?php echo form_close() ?>
             </div>
