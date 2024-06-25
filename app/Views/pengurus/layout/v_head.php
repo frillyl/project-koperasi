@@ -9,7 +9,7 @@
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/e080ed5add.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b820f0911a.js" crossorigin="anonymous"></script>
     <!-- DataTables -->
     <link rel="stylesheet" href="<?= base_url() ?>/public/template/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>/public/template/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">

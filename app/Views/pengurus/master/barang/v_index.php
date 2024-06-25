@@ -155,11 +155,11 @@
                                                 </tr>
                                                 <tr>
                                                     <th>Keterangan</th>
-                                                    <td><?= $value['ket'] ?></td>
+                                                    <td><?= $value['ket_barang'] ?></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Ditambahkan Pada</th>
-                                                    <td><?= date('j F Y H:i:s', strtotime($value['created_at'])) ?></td>
+                                                    <td><?= date('j F Y H:i:s', strtotime($value['barang_created_at'])) ?></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Ditambahkan Oleh</th>
@@ -167,16 +167,16 @@
                                                 </tr>
                                                 <tr>
                                                     <th>Diubah Pada</th>
-                                                    <td><?php if ($value['edited_at'] == '') : ?>
-                                                            Data anggota belum pernah diubah.
+                                                    <td><?php if ($value['barang_edited_at'] == '') : ?>
+                                                            Data barang belum pernah diubah.
                                                         <?php else : ?>
-                                                            <?= date('j F Y H:i:s', strtotime($value['edited_at'])) ?>
+                                                            <?= date('j F Y H:i:s', strtotime($value['barang_edited_at'])) ?>
                                                         <?php endif; ?></td>
                                                 </tr>
                                                 <tr>
                                                     <th>Diubah Oleh</th>
-                                                    <td><?php if ($value['edited_by'] == 0) : ?>
-                                                            Data anggota belum pernah diubah.
+                                                    <td><?php if ($value['barang_edited_by'] == 0) : ?>
+                                                            Data barang belum pernah diubah.
                                                         <?php else : ?>
                                                             <?= $value['nm_pengurus'] ?>
                                                         <?php endif; ?></td>
@@ -254,7 +254,7 @@
                                         <div class="col-6">
                                             <div class="form-group">
                                                 <label for="stok">Stok</label>
-                                                <input type="number" min="0" name="stok" class="form-control" id="stok" placeholder="0">
+                                                <input type="number" name="stok" class="form-control" id="stok" placeholder="0">
                                             </div>
                                         </div>
                                         <div class="col-6">
@@ -306,16 +306,29 @@
                                     </div>
                                     <div class="modal-body">
                                         <?php
-                                        echo form_open('pengurus/master/barang/edit/' . $value['id_barang']);
+                                        echo form_open_multipart('pengurus/master/barang/edit/' . $value['id_barang']);
                                         ?>
 
+                                        <div class="form-group">
+                                            <label for="id_agen">Agen</label>
+                                            <select name="id_agen" class="form-control select2bs4 select2-hidden-accessible" id="id_agen" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                                <option <?php if ($value['id_agen'] == '') {
+                                                            echo 'selected';
+                                                        } ?> value="">----- Pilih Agen -----</option>
+                                                <?php foreach ($agen as $key => $value2) { ?>
+                                                    <option <?php if ($value['id_agen'] == $value2['id_agen']) {
+                                                                echo 'selected';
+                                                            } ?> value="<?= $value2['id_agen'] ?>"><?= $value2['nm_agen'] ?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
                                         <div class="form-group">
                                             <label for="kd_barang">Kode Barang</label>
                                             <input type="text" name="kd_barang" class="form-control" value="<?= $value['kd_barang'] ?>" id="kd_barang" placeholder="Kode Barang" readonly>
                                         </div>
                                         <div class="form-group">
                                             <label for="nm_barang">Nama Barang</label>
-                                            <input type="text" name="nm_barang" class="form-control" id="nm_barang" placeholder="Nama Barang" value="<?= $value['nm_barang'] ?>">
+                                            <input type="text" name="nm_barang" class="form-control" id="nm_barang" placeholder="Nama Barang" value="<?= $value['nm_barang'] ?>" readonly>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleSelectBorderWidth2">Jenis Barang</label>
@@ -359,7 +372,7 @@
                                             <div class="col-6">
                                                 <div class="form-group">
                                                     <label for="satuan">Satuan Barang</label>
-                                                    <select name="id_satuan" class="form-control select2 select2-hidden-accessible" id="id_pangkat" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                                    <select name="id_satuan" class="form-control select2 select2-hidden-accessible" id="id_satuan" style="width: 100%;" data-select2-id="2" tabindex="-1" aria-hidden="true">
                                                         <option <?php if ($value['id_satuan'] == '') {
                                                                     echo 'selected';
                                                                 } ?> value="">----- Pilih Satuan Barang -----</option>
@@ -374,7 +387,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="ket">Keterangan</label>
-                                            <textarea name="ket" class="form-control" id="ket" placeholder="Keterangan"><?= $value['ket'] ?></textarea>
+                                            <textarea name="ket" class="form-control" id="ket" placeholder="Keterangan"><?= $value['ket_barang'] ?></textarea>
                                         </div>
                                         <div class="form-group">
                                             <img src="<?= base_url('public/assets/images/' . $value['image']) ?>" id="gambar_load" class="img-fluid pad" width="113px" height="151px">

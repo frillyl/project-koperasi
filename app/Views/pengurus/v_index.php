@@ -16,7 +16,17 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url() ?>/public/template/dist/css/adminlte.min.css">
     <!-- Custom CSS -->
-    <style></style>
+    <style>
+        .btn-custom {
+            background-color: #3d9970;
+            color: white;
+        }
+
+        .btn-custom:hover {
+            background-color: whitesmoke;
+            color: #3d9970;
+        }
+    </style>
 </head>
 
 <body class="hold-transition login-page">
@@ -77,7 +87,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <button type="submit" class="btn btn-primary btn-block">Masuk</button>
+                    <button type="submit" class="btn btn-custom btn-block">Masuk</button>
                 </div>
                 <?php echo form_close() ?>
             </div>

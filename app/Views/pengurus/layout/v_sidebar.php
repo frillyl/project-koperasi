@@ -72,53 +72,84 @@
                             </p>
                         </a>
                     </li>
-                <?php endif; ?>
-                <?php if (session()->get('role') == '3') : ?>
-                    <li class="nav-header">DATA INDUK</li>
                     <li class="nav-item">
-                        <a href="<?= base_url('pengurus/master/agen') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-truck-ramp-box"></i>
+                        <a href="<?= base_url('pengurus/master/hutang') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-credit-card"></i>
                             <p>
                                 Data Hutang
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?= base_url('pengurus/master/agen') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-truck-ramp-box"></i>
+                        <a href="<?= base_url('pengurus/master/piutang') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-credit-card"></i>
                             <p>
                                 Data Piutang
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?= base_url('pengurus/master/agen') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-truck-ramp-box"></i>
+                        <a href="<?= base_url('pengurus/master/aset') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-shop"></i>
                             <p>
                                 Data Aset
                             </p>
                         </a>
                     </li>
+                    <li class="nav-header">TRANSAKSI</li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/transaksi/penjualan') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-cash-register"></i>
+                            <p>
+                                Penjualan
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/transaksi/pembelian') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-basket-shopping"></i>
+                            <p>
+                                Pembelian
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-header">RETUR</li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/retur/penjualan') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-boxes-stacked"></i>
+                            <p>
+                                Penjualan
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/retur/pembelian') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-boxes-packing"></i>
+                            <p>
+                                Pembelian
+                            </p>
+                        </a>
+                    </li>
                     <li class="nav-header">AKUNTANSI</li>
                     <li class="nav-item">
-                        <a href="<?= base_url('pengurus/master/agen') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-truck-ramp-box"></i>
+                        <a href="<?= base_url('pengurus/keuangan/akun') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-rectangle-list"></i>
                             <p>
                                 Data Akun
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?= base_url('pengurus/master/agen') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-truck-ramp-box"></i>
+                        <a href="<?= base_url('pengurus/keuangan/jurnalumum') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-swatchbook"></i>
                             <p>
                                 Jurnal Umum
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?= base_url('pengurus/master/agen') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-truck-ramp-box"></i>
+                        <a href="<?= base_url('pengurus/keuangan/bukubesar') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-book"></i>
                             <p>
                                 Buku Besar
                             </p>
@@ -126,7 +157,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <i class="nav-icon fa-solid fa-scale-balanced"></i>
                             <p>
                                 Neraca
                                 <i class="right fas fa-angle-left"></i>
@@ -134,13 +165,130 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../index.html" class="nav-link">
+                                <a href="<?= base_url('pengurus/keuangan/neraca/saldoawal') ?>" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Saldo Awal</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="../index2.html" class="nav-link">
+                                <a href="<?= base_url('pengurus/keuangan/neraca/saldoakhir') ?>" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Saldo Akhir</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-header">SIMPAN PINJAM</li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/simpanpinjam/simpanan') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-wallet"></i>
+                            <p>
+                                Simpanan
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/simpanpinjam/pinjaman') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-hand-holding-dollar"></i>
+                            <p>
+                                Pinjaman
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/simpanpinjam/angsuran') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-money-check-dollar"></i>
+                            <p>
+                                Angsuran
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-header">LAPORAN</li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/laporan/posisikeuangan') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-file-invoice-dollar"></i>
+                            <p>
+                                Posisi Keuangan
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/laporan/labarugi') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-file-invoice-dollar"></i>
+                            <p>
+                                Laba Rugi
+                            </p>
+                        </a>
+                    </li>
+                <?php endif; ?>
+                <?php if (session()->get('role') == '3') : ?>
+                    <li class="nav-header">DATA INDUK</li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/master/hutang') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-credit-card"></i>
+                            <p>
+                                Data Hutang
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/master/piutang') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-credit-card"></i>
+                            <p>
+                                Data Piutang
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/master/aset') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-shop"></i>
+                            <p>
+                                Data Aset
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-header">AKUNTANSI</li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/keuangan/akun') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-rectangle-list"></i>
+                            <p>
+                                Data Akun
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/keuangan/jurnalumum') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-swatchbook"></i>
+                            <p>
+                                Jurnal Umum
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/keuangan/bukubesar') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-book"></i>
+                            <p>
+                                Buku Besar
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa-solid fa-scale-balanced"></i>
+                            <p>
+                                Neraca
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?= base_url('pengurus/keuangan/neraca/saldoawal') ?>" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Saldo Awal</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= base_url('pengurus/keuangan/neraca/saldoakhir') ?>" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Saldo Akhir</p>
                                 </a>
@@ -149,16 +297,16 @@
                     </li>
                     <li class="nav-header">LAPORAN</li>
                     <li class="nav-item">
-                        <a href="<?= base_url('pengurus/master/agen') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-truck-ramp-box"></i>
+                        <a href="<?= base_url('pengurus/laporan/posisikeuangan') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-file-invoice-dollar"></i>
                             <p>
                                 Posisi Keuangan
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?= base_url('pengurus/master/agen') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-truck-ramp-box"></i>
+                        <a href="<?= base_url('pengurus/laporan/labarugi') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-file-invoice-dollar"></i>
                             <p>
                                 Laba Rugi
                             </p>

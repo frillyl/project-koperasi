@@ -634,6 +634,13 @@ class Master extends BaseController
     public function add_barang()
     {
         if ($this->validate([
+            'id_agen' => [
+                'label' => 'Nama Agen',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
             'kd_barang' => [
                 'label' => 'Kode Barang',
                 'rules' => 'required|is_unique[tb_barang.kd_barang]|min_length[8]',
@@ -643,28 +650,55 @@ class Master extends BaseController
                     'min_length' => '{field} minimal terdiri dari 8 digit!'
                 ]
             ],
-            'nm' => [
-                'label' => 'Nama Agen',
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} wajib diisi!'
-                ]
-            ],
-            'alamat' => [
-                'label' => 'Alamat',
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} wajib diisi!'
-                ]
-            ],
-            'no_hp' => [
-                'label' => 'No HP',
-                'rules' => 'required|is_unique[tb_agen.no_hp]|min_length[10]|max_length[13]',
+            'nm_barang' => [
+                'label' => 'Nama Barang',
+                'rules' => 'required|is_unique[tb_barang.nm_barang]',
                 'errors' => [
                     'required' => '{field} wajib diisi!',
-                    'is_unique' => '{field} telah terdaftar!',
-                    'min_length' => '{field} minimal terdiri dari 10 digit!',
-                    'max_length' => '{field} maksimal terdiri dari 13 digit!'
+                    'is_unique' => '{field} telah terdaftar!'
+                ]
+            ],
+            'jenis_barang' => [
+                'label' => 'Jenis Barang',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'harga_pokok' => [
+                'label' => 'Harga Pokok',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'harga_jual' => [
+                'label' => 'Harga Jual',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'stok' => [
+                'label' => 'Stok Barang',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'id_satuan' => [
+                'label' => 'Satuan Barang',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ], 'foto' => [
+                'label' => 'Foto',
+                'rules' => 'max_size[foto,1024]|is_image[foto]|mime_in[foto,image/jpg,image/jpeg,image/png]',
+                'errors' => [
+                    'max_size' => '{field} tidak boleh lebih dari 1MB!',
+                    'is_image' => '{field} harus berupa gambar!',
+                    'mime_in' => '{field} harus berupa gambar!'
                 ]
             ],
             'created_by' => [
@@ -675,21 +709,182 @@ class Master extends BaseController
                 ]
             ]
         ])) {
-            $data = array(
-                'kd_agen' => $this->request->getPost('kd_agen'),
-                'nm_agen' => $this->request->getPost('nm_agen'),
-                'ket' => $this->request->getPost('ket'),
-                'alamat' => $this->request->getPost('alamat'),
-                'no_hp' => $this->request->getPost('no_hp'),
-                'email' => $this->request->getPost('email'),
-                'created_by' => $this->request->getPost('created_by')
-            );
-            $this->ModelAgen->add($data);
-            session()->setFlashdata('success', 'Data agen berhasil ditambahkan!');
-            return redirect()->to('pengurus/master/agen');
+            $foto = $this->request->getFile('foto');
+            if ($foto->getError() == 4) {
+                $data = array(
+                    'id_agen' => $this->request->getPost('id_agen'),
+                    'kd_barang' => $this->request->getPost('kd_barang'),
+                    'nm_barang' => $this->request->getPost('nm_barang'),
+                    'jenis_barang' => $this->request->getPost('jenis_barang'),
+                    'harga_pokok' => $this->request->getPost('harga_pokok'),
+                    'harga_jual' => $this->request->getPost('harga_jual'),
+                    'stok' => $this->request->getPost('stok'),
+                    'id_satuan' => $this->request->getPost('id_satuan'),
+                    'ket_barang' => $this->request->getPost('ket'),
+                    'created_by' => $this->request->getPost('created_by'),
+                );
+                $this->ModelBarang->add($data);
+            } else {
+                $nm_file = $foto->getRandomName();
+                $data = array(
+                    'id_agen' => $this->request->getPost('id_agen'),
+                    'kd_barang' => $this->request->getPost('kd_barang'),
+                    'nm_barang' => $this->request->getPost('nm_barang'),
+                    'jenis_barang' => $this->request->getPost('jenis_barang'),
+                    'harga_pokok' => $this->request->getPost('harga_pokok'),
+                    'harga_jual' => $this->request->getPost('harga_jual'),
+                    'stok' => $this->request->getPost('stok'),
+                    'id_satuan' => $this->request->getPost('id_satuan'),
+                    'ket_barang' => $this->request->getPost('ket'),
+                    'created_by' => $this->request->getPost('created_by'),
+                    'image' => $nm_file
+                );
+                $foto->move('public/assets/images', $nm_file);
+                $this->ModelBarang->add($data);
+            }
+            session()->setFlashdata('success', 'Data barang berhasil ditambahkan!');
+            return redirect()->to(base_url('pengurus/master/barang'));
         } else {
             session()->setFlashdata('errors', \Config\Services::validation()->getErrors());
-            return redirect()->to(base_url('pengurus/master/agen'));
+            return redirect()->to(base_url('pengurus/master/barang'));
         }
+    }
+
+    public function edit_barang($id_barang)
+    {
+        if ($this->validate([
+            'id_agen' => [
+                'label' => 'Nama Agen',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'kd_barang' => [
+                'label' => 'Kode Barang',
+                'rules' => 'required|min_length[8]',
+                'errors' => [
+                    'required' => '{field} wajib diisi!',
+                    'min_length' => '{field} minimal terdiri dari 8 digit!'
+                ]
+            ],
+            'nm_barang' => [
+                'label' => 'Nama Barang',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'jenis_barang' => [
+                'label' => 'Jenis Barang',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'harga_pokok' => [
+                'label' => 'Harga Pokok',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'harga_jual' => [
+                'label' => 'Harga Jual',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'stok' => [
+                'label' => 'Stok Barang',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'id_satuan' => [
+                'label' => 'Satuan Barang',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ], 'foto' => [
+                'label' => 'Foto',
+                'rules' => 'max_size[foto,1024]|is_image[foto]|mime_in[foto,image/jpg,image/jpeg,image/png]',
+                'errors' => [
+                    'max_size' => '{field} tidak boleh lebih dari 1MB!',
+                    'is_image' => '{field} harus berupa gambar!',
+                    'mime_in' => '{field} harus berupa gambar!'
+                ]
+            ],
+            'edited_by' => [
+                'label' => 'Diubah Oleh',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ]
+        ])) {
+            $foto = $this->request->getFile('foto');
+            if ($foto->getError() == 4) {
+                $data = array(
+                    'id_barang' => $id_barang,
+                    'id_agen' => $this->request->getPost('id_agen'),
+                    'kd_barang' => $this->request->getPost('kd_barang'),
+                    'nm_barang' => $this->request->getPost('nm_barang'),
+                    'jenis_barang' => $this->request->getPost('jenis_barang'),
+                    'harga_pokok' => $this->request->getPost('harga_pokok'),
+                    'harga_jual' => $this->request->getPost('harga_jual'),
+                    'stok' => $this->request->getPost('stok'),
+                    'id_satuan' => $this->request->getPost('id_satuan'),
+                    'ket_barang' => $this->request->getPost('ket'),
+                    'edited_by' => $this->request->getPost('edited_by'),
+                );
+                $this->ModelBarang->edit($data);
+            } else {
+                $barang = $this->ModelBarang->detailData($id_barang);
+                if ($barang['image'] != "" && $barang['image'] != "no_image.png") {
+                    unlink('public/assets/images/' . $barang['image']);
+                }
+                $nm_file = $foto->getRandomName();
+                $data = array(
+                    'id_barang' => $id_barang,
+                    'id_agen' => $this->request->getPost('id_agen'),
+                    'kd_barang' => $this->request->getPost('kd_barang'),
+                    'nm_barang' => $this->request->getPost('nm_barang'),
+                    'jenis_barang' => $this->request->getPost('jenis_barang'),
+                    'harga_pokok' => $this->request->getPost('harga_pokok'),
+                    'harga_jual' => $this->request->getPost('harga_jual'),
+                    'stok' => $this->request->getPost('stok'),
+                    'id_satuan' => $this->request->getPost('id_satuan'),
+                    'ket_barang' => $this->request->getPost('ket'),
+                    'edited_by' => $this->request->getPost('edited_by'),
+                    'image' => $nm_file
+                );
+                $foto->move('public/assets/images', $nm_file);
+                $this->ModelBarang->edit($data);
+            }
+            session()->setFlashdata('success', 'Data barang berhasil diubah!');
+            return redirect()->to(base_url('pengurus/master/barang'));
+        } else {
+            session()->setFlashdata('errors', \Config\Services::validation()->getErrors());
+            return redirect()->to(base_url('pengurus/master/barang'));
+        }
+    }
+
+    public function delete_barang($id_barang)
+    {
+        $barang = $this->ModelBarang->detailData($id_barang);
+        if ($barang['image'] != "" && $barang['image'] != "no_image.png") {
+            unlink('public/assets/images/' . $barang['image']);
+        }
+
+        $data = [
+            'id_barang' => $id_barang
+        ];
+        $this->ModelBarang->delete_data($data);
+        session()->setFlashdata('success', 'Data barang berhasil dihapus!');
+        return redirect()->to(base_url('pengurus/master/barang'));
     }
 }
