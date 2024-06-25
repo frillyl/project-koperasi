@@ -72,7 +72,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <div class="col-2">
                                         <div class="form-group">
                                             <label>Kode Penjualan</label>
-                                            <label class="form-control text-danger">202406250001</label>
+                                            <label class="form-control text-danger"><?= $kd_penjualan ?></label>
                                         </div>
                                     </div>
                                     <div class="col-2">
@@ -123,9 +123,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-12">
+                                        <?php echo form_open() ?>
                                         <div class="row">
                                             <div class="col-2 input-group">
-                                                <input name="kd_barang" class="form-control" placeholder="Kode Barang">
+                                                <input name="kd_barang" class="form-control" id="kd_barang" placeholder="Kode Barang" autocomplete="off">
                                                 <span class="input-group-append">
                                                     <button class="btn btn-primary">
                                                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -136,26 +137,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 </span>
                                             </div>
                                             <div class="col-3">
-                                                <input name="nm_barang" class="form-control" placeholder="Nama Barang">
+                                                <input name="nm_barang" class="form-control" placeholder="Nama Barang" readonly>
                                             </div>
                                             <div class="col-1">
-                                                <input name="jenis_barang" class="form-control" placeholder="Jenis Barang">
+                                                <input name="jenis_barang" class="form-control" placeholder="Jenis Barang" readonly>
                                             </div>
                                             <div class="col-1">
-                                                <input name="satuan" class="form-control" placeholder="Satuan">
+                                                <input name="satuan" class="form-control" placeholder="Satuan" readonly>
                                             </div>
                                             <div class="col-1">
-                                                <input name="harga_jual" class="form-control" placeholder="Harga">
+                                                <input name="harga_jual" class="form-control" placeholder="Harga" readonly>
                                             </div>
                                             <div class="col-1">
-                                                <input type="number" min="1" name="qty" class="form-control" placeholder="QTY">
+                                                <input type="number" min="1" value="1" name="qty" class="form-control" id="qty" placeholder="QTY">
                                             </div>
                                             <div class="col-3">
-                                                <button class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i> Tambah</button>
-                                                <button class="btn btn-warning"><i class="fa-solid fa-rotate"></i> Kosongkan</button>
+                                                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i> Tambah</button>
+                                                <button type="reset" class="btn btn-warning"><i class="fa-solid fa-rotate"></i> Kosongkan</button>
                                                 <button class="btn btn-success"><i class="fa-solid fa-cash-register"></i> Pembayaran</button>
                                             </div>
                                         </div>
+                                        <?php echo form_close() ?>
                                     </div>
                                 </div>
 
@@ -230,6 +232,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="<?= base_url() ?>/public/template/plugins/select2/js/select2.full.min.js"></script>
     <!-- AdminLTE App -->
     <script src="<?= base_url() ?>/public/template/dist/js/adminlte.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Custom JavaScript -->
     <script>
         window.setTimeout(function() {
@@ -264,6 +268,50 @@ scratch. This page gets rid of all links and provides the needed markup only.
         $('#preview_gambar').change(function() {
             bacaGambar(this);
         })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#kd_barang').focus();
+            $('#kd_barang').keydown(function(e) {
+                let kd_barang = $('#kd_barang').val();
+                if (e.keyCode == 13) {
+                    e.preventDefault();
+                    if (kd_barang.length == '') {
+                        Swal.fire({
+                            text: "Kode Barang Belum Dimasukkan!",
+                            icon: "warning"
+                        });
+                    } else {
+                        CekBarang();
+                    }
+                }
+            });
+        });
+
+        function CekBarang() {
+            $.ajax({
+                type: "POST",
+                url: "<?= base_url('pengurus/transaksi/penjualan/cek_barang') ?>",
+                data: {
+                    kd_barang: $('#kd_barang').val()
+                },
+                dataType: "JSON",
+                success: function(response) {
+                    if (response.nm_barang == '') {
+                        Swal.fire({
+                            text: "Kode Barang Tidak Terdaftar!",
+                            icon: "warning"
+                        });
+                    } else {
+                        $('[name="nm_barang"]').val(response.nm_barang);
+                        $('[name="jenis_barang"]').val(response.jenis_barang);
+                        $('[name="satuan"]').val(response.satuan);
+                        $('[name="harga_jual"]').val(response.harga_jual);
+                        $('#qty').focus();
+                    }
+                }
+            });
+        }
     </script>
     <!-- Page specific script -->
     <script>

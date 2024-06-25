@@ -1659,3 +1659,88 @@ INFO - 2024-06-25 13:57:59 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-06-25 13:58:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-06-25 13:58:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-06-25 13:58:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-25 14:24:24 --> mysqli_sql_exception: Unknown column 'tb_penjualan' in 'where clause' in C:\xampp\htdocs\koperasi\system\Database\MySQLi\Connection.php:310
+Stack trace:
+#0 C:\xampp\htdocs\koperasi\system\Database\MySQLi\Connection.php(310): mysqli->query('SELECT MAX(RIGH...', 0)
+#1 C:\xampp\htdocs\koperasi\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(RIGH...')
+#2 C:\xampp\htdocs\koperasi\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(RIGH...')
+#3 C:\xampp\htdocs\koperasi\app\Models\ModelPenjualan.php(12): CodeIgniter\Database\BaseConnection->query('SELECT MAX(RIGH...')
+#4 C:\xampp\htdocs\koperasi\app\Controllers\Penjualan.php(27): App\Models\ModelPenjualan->KodePenjualan()
+#5 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(933): App\Controllers\Penjualan->index()
+#6 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#7 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\koperasi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\koperasi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\koperasi\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2024-06-25 14:24:24 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tb_penjualan' in 'where clause'
+[Method: GET, Route: pengurus/transaksi/penjualan]
+in SYSTEMPATH\Database\BaseConnection.php on line 686.
+ 1 APPPATH\Models\ModelPenjualan.php(12): CodeIgniter\Database\BaseConnection->query('SELECT MAX(RIGHT(kd_penjualan, 4)) as no_urut from tb_penjualan WHERE DATE(tb_penjualan) = \'20240625\'')
+ 2 APPPATH\Controllers\Penjualan.php(27): App\Models\ModelPenjualan->KodePenjualan()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Penjualan->index()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-25 14:24:24 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tb_penjualan' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 315.
+ 1 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(RIGHT(kd_penjualan, 4)) as no_urut from tb_penjualan WHERE DATE(tb_penjualan) = \'20240625\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(RIGHT(kd_penjualan, 4)) as no_urut from tb_penjualan WHERE DATE(tb_penjualan) = \'20240625\'')
+ 3 APPPATH\Models\ModelPenjualan.php(12): CodeIgniter\Database\BaseConnection->query('SELECT MAX(RIGHT(kd_penjualan, 4)) as no_urut from tb_penjualan WHERE DATE(tb_penjualan) = \'20240625\'')
+ 4 APPPATH\Controllers\Penjualan.php(27): App\Models\ModelPenjualan->KodePenjualan()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Penjualan->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-25 14:24:24 --> [Caused by] mysqli_sql_exception: Unknown column 'tb_penjualan' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(310): mysqli->query('SELECT MAX(RIGHT(kd_penjualan, 4)) as no_urut from tb_penjualan WHERE DATE(tb_penjualan) = \'20240625\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT MAX(RIGHT(kd_penjualan, 4)) as no_urut from tb_penjualan WHERE DATE(tb_penjualan) = \'20240625\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT MAX(RIGHT(kd_penjualan, 4)) as no_urut from tb_penjualan WHERE DATE(tb_penjualan) = \'20240625\'')
+ 4 APPPATH\Models\ModelPenjualan.php(12): CodeIgniter\Database\BaseConnection->query('SELECT MAX(RIGHT(kd_penjualan, 4)) as no_urut from tb_penjualan WHERE DATE(tb_penjualan) = \'20240625\'')
+ 5 APPPATH\Controllers\Penjualan.php(27): App\Models\ModelPenjualan->KodePenjualan()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Penjualan->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-25 14:25:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 14:25:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 14:29:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-25 15:00:25 --> ParseError: syntax error, unexpected token "}"
+[Method: GET, Route: pengurus/transaksi/penjualan]
+in APPPATH\Controllers\Penjualan.php on line 35.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\koperasi\\app\\Controllers\\Penjualan.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Penjualan')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Penjualan')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\Penjualan', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-25 15:00:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 15:01:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 15:02:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 15:20:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 15:30:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 15:30:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 15:34:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 15:35:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 15:38:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 15:38:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 15:38:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 15:40:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 15:41:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 15:42:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 15:45:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 15:45:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 15:48:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 15:48:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 16:26:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 16:27:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
