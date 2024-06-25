@@ -73,6 +73,152 @@
                         </a>
                     </li>
                 <?php endif; ?>
+                <?php if (session()->get('role') == '3') : ?>
+                    <li class="nav-header">DATA INDUK</li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/master/agen') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-truck-ramp-box"></i>
+                            <p>
+                                Data Hutang
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/master/agen') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-truck-ramp-box"></i>
+                            <p>
+                                Data Piutang
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/master/agen') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-truck-ramp-box"></i>
+                            <p>
+                                Data Aset
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-header">AKUNTANSI</li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/master/agen') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-truck-ramp-box"></i>
+                            <p>
+                                Data Akun
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/master/agen') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-truck-ramp-box"></i>
+                            <p>
+                                Jurnal Umum
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/master/agen') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-truck-ramp-box"></i>
+                            <p>
+                                Buku Besar
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>
+                                Neraca
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="../index.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Saldo Awal</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../index2.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Saldo Akhir</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-header">LAPORAN</li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/master/agen') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-truck-ramp-box"></i>
+                            <p>
+                                Posisi Keuangan
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/master/agen') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-truck-ramp-box"></i>
+                            <p>
+                                Laba Rugi
+                            </p>
+                        </a>
+                    </li>
+                <?php endif; ?>
+                <?php if (session()->get('role') == '4') : ?>
+                    <li class="nav-header">DATA INDUK</li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/master/anggota') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-users"></i>
+                            <p>
+                                Data Anggota
+                            </p>
+                        </a>
+                    </li>
+                <?php endif; ?>
+                <?php if (session()->get('role') == '5') : ?>
+                    <li class="nav-header">DATA INDUK</li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/master/anggota') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-users"></i>
+                            <p>
+                                Data Anggota
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/master/pengurus') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-user-tie"></i>
+                            <p>
+                                Data Pengurus
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/master/agen') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-truck-ramp-box"></i>
+                            <p>
+                                Data Agen/Pemasok
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/master/satuan') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-ruler"></i>
+                            <p>
+                                Data Satuan Barang
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/master/barang') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-boxes-stacked"></i>
+                            <p>
+                                Data Barang
+                            </p>
+                        </a>
+                    </li>
+                <?php endif; ?>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

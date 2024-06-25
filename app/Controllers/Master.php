@@ -6,6 +6,8 @@ use App\Models\ModelAnggota;
 use App\Models\ModelPangkat;
 use App\Models\ModelPengurus;
 use App\Models\ModelAgen;
+use App\Models\ModelSatuan;
+use App\Models\ModelBarang;
 
 class Master extends BaseController
 {
@@ -13,6 +15,8 @@ class Master extends BaseController
     protected $ModelPangkat;
     protected $ModelPengurus;
     protected $ModelAgen;
+    protected $ModelSatuan;
+    protected $ModelBarang;
 
     public function __construct()
     {
@@ -22,6 +26,8 @@ class Master extends BaseController
         $this->ModelPangkat = new ModelPangkat();
         $this->ModelPengurus = new ModelPengurus();
         $this->ModelAgen = new ModelAgen();
+        $this->ModelSatuan = new ModelSatuan();
+        $this->ModelBarang = new ModelBarang();
     }
 
     // MASTER DATA ANGGOTA
@@ -462,6 +468,7 @@ class Master extends BaseController
         }
     }
 
+    // Edit Agen
     public function edit_agen($id_agen)
     {
         if ($this->validate([
@@ -523,6 +530,7 @@ class Master extends BaseController
         }
     }
 
+    // Hapus Agen
     public function delete_agen($id_agen)
     {
         $data = [
@@ -531,5 +539,157 @@ class Master extends BaseController
         $this->ModelAgen->delete_data($data);
         session()->setFlashdata('success', 'Data agen berhasil dihapus!');
         return redirect()->to(base_url('pengurus/master/agen'));
+    }
+
+    // MASTER DATA SATUAN BARANG
+    // Index Satuan Barang
+    public function index_satuan()
+    {
+        $data = [
+            'title' => 'Primer Koperasi Darma Putra Kujang I',
+            'sub'   => 'Master Data Satuan Barang',
+            'isi'   => 'pengurus/master/satuan/v_index',
+            'satuan' => $this->ModelSatuan->allData()
+        ];
+        return view('pengurus/layout/v_wrapper', $data);
+    }
+
+    // Tambah Satuan Barang
+    public function add_satuan()
+    {
+        if ($this->validate([
+            'satuan' => [
+                'label' => 'Satuan Barang',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ]
+        ])) {
+            $data = array(
+                'satuan' => $this->request->getPost('satuan'),
+                'ket' => $this->request->getPost('ket')
+            );
+            $this->ModelSatuan->add($data);
+            session()->setFlashdata('success', 'Data satuan berhasil ditambahkan!');
+            return redirect()->to('pengurus/master/satuan');
+        } else {
+            session()->setFlashdata('errors', \Config\Services::validation()->getErrors());
+            return redirect()->to(base_url('pengurus/master/satuan'));
+        }
+    }
+
+    // Edit Satuan Barang
+    public function edit_satuan($id_satuan)
+    {
+        if ($this->validate([
+            'satuan' => [
+                'label' => 'Satuan Barang',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ]
+        ])) {
+            $data = array(
+                'id_satuan' => $id_satuan,
+                'ket' => $this->request->getPost('ket')
+            );
+            $this->ModelSatuan->edit($data);
+            session()->setFlashdata('success', 'Data satuan berhasil diubah!');
+            return redirect()->to(base_url('pengurus/master/satuan'));
+        } else {
+            session()->setFlashdata('errors', \Config\Services::validation()->getErrors());
+            return redirect()->to(base_url('pengurus/master/satuan'));
+        }
+    }
+
+    // Hapus Satuan Barang
+    public function delete_satuan($id_satuan)
+    {
+        $data = [
+            'id_satuan' => $id_satuan
+        ];
+        $this->ModelSatuan->delete_data($data);
+        session()->setFlashdata('success', 'Data satuan berhasil dihapus!');
+        return redirect()->to(base_url('pengurus/master/satuan'));
+    }
+
+    // MASTER DATA BARANG
+    // Index Barang
+    public function index_barang()
+    {
+        $data = [
+            'title' => 'Primer Koperasi Darma Putra Kujang I',
+            'sub'   => 'Master Data Barang',
+            'isi'   => 'pengurus/master/barang/v_index',
+            'barang' => $this->ModelBarang->allData(),
+            'agen'  => $this->ModelAgen->allData(),
+            'satuan' => $this->ModelSatuan->allData(),
+            'kd_barang' => 'BRG' . str_pad($this->ModelBarang->getMaxId() + 1, 5, '0', STR_PAD_LEFT)
+        ];
+        return view('pengurus/layout/v_wrapper', $data);
+    }
+
+    public function add_barang()
+    {
+        if ($this->validate([
+            'kd_barang' => [
+                'label' => 'Kode Barang',
+                'rules' => 'required|is_unique[tb_barang.kd_barang]|min_length[8]',
+                'errors' => [
+                    'required' => '{field} wajib diisi!',
+                    'is_unique' => '{field} telah terdaftar!',
+                    'min_length' => '{field} minimal terdiri dari 8 digit!'
+                ]
+            ],
+            'nm' => [
+                'label' => 'Nama Agen',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'alamat' => [
+                'label' => 'Alamat',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'no_hp' => [
+                'label' => 'No HP',
+                'rules' => 'required|is_unique[tb_agen.no_hp]|min_length[10]|max_length[13]',
+                'errors' => [
+                    'required' => '{field} wajib diisi!',
+                    'is_unique' => '{field} telah terdaftar!',
+                    'min_length' => '{field} minimal terdiri dari 10 digit!',
+                    'max_length' => '{field} maksimal terdiri dari 13 digit!'
+                ]
+            ],
+            'created_by' => [
+                'label' => 'Ditambahkan Oleh',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ]
+        ])) {
+            $data = array(
+                'kd_agen' => $this->request->getPost('kd_agen'),
+                'nm_agen' => $this->request->getPost('nm_agen'),
+                'ket' => $this->request->getPost('ket'),
+                'alamat' => $this->request->getPost('alamat'),
+                'no_hp' => $this->request->getPost('no_hp'),
+                'email' => $this->request->getPost('email'),
+                'created_by' => $this->request->getPost('created_by')
+            );
+            $this->ModelAgen->add($data);
+            session()->setFlashdata('success', 'Data agen berhasil ditambahkan!');
+            return redirect()->to('pengurus/master/agen');
+        } else {
+            session()->setFlashdata('errors', \Config\Services::validation()->getErrors());
+            return redirect()->to(base_url('pengurus/master/agen'));
+        }
     }
 }
