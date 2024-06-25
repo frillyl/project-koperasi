@@ -1,0 +1,574 @@
+INFO - 2024-06-25 00:25:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 00:26:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 00:26:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 00:49:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 00:51:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 00:51:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 00:52:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 00:52:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 00:52:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 00:52:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 00:52:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 00:52:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 00:52:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 00:52:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 00:52:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 00:54:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 00:55:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 00:55:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-25 00:57:24 --> Error: Class "App\Models\ModelAnggota" not found
+[Method: GET, Route: pengurus/master/anggota]
+in APPPATH\Controllers\Master.php on line 21.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Master->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-25 01:02:40 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "pengurus/master/anggota/v_index.php"
+[Method: GET, Route: pengurus/master/anggota]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pengurus/master/anggota/v_index.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/master/anggota/v_index', [], true)
+ 3 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/master/anggota/v_index')
+ 4 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 5 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 7 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+ 8 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+ 9 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+11 APPPATH\Controllers\Master.php(37): view('pengurus/layout/v_wrapper', [...])
+12 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->index_anggota()
+13 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+14 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+17 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-25 01:02:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:02:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:06:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:06:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-25 01:06:07 --> ErrorException: Undefined array key "id"
+[Method: GET, Route: pengurus/master/anggota]
+in APPPATH\Views\pengurus\master\anggota\v_index.php on line 180.
+ 1 APPPATH\Views\pengurus\master\anggota\v_index.php(180): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\master\\anggota\\v_index.php', 180)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\master\\anggota\\v_index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/master/anggota/v_index', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/master/anggota/v_index')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\Master.php(37): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->index_anggota()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-25 01:06:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:11:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:11:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:16:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:20:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:21:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:23:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:23:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:24:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:25:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:25:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:29:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:30:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:37:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:38:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-25 01:38:12 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "pengurus/master/pengurus/v_index.php"
+[Method: GET, Route: pengurus/master/pengurus]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pengurus/master/pengurus/v_index.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/master/pengurus/v_index', [], true)
+ 3 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/master/pengurus/v_index')
+ 4 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 5 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 7 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+ 8 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+ 9 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+11 APPPATH\Controllers\Master.php(212): view('pengurus/layout/v_wrapper', [...])
+12 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->index_pengurus()
+13 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+14 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+17 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-25 01:41:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:42:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:42:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:42:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:44:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:45:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:45:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:51:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:51:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-25 01:52:01 --> mysqli_sql_exception: Unknown column 'edited' in 'field list' in C:\xampp\htdocs\koperasi\system\Database\MySQLi\Connection.php:310
+Stack trace:
+#0 C:\xampp\htdocs\koperasi\system\Database\MySQLi\Connection.php(310): mysqli->query('UPDATE `tb_angg...', 0)
+#1 C:\xampp\htdocs\koperasi\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tb_angg...')
+#2 C:\xampp\htdocs\koperasi\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tb_angg...')
+#3 C:\xampp\htdocs\koperasi\system\Database\BaseBuilder.php(2509): CodeIgniter\Database\BaseConnection->query('UPDATE `tb_angg...', Array, false)
+#4 C:\xampp\htdocs\koperasi\app\Models\ModelAnggota.php(39): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 C:\xampp\htdocs\koperasi\app\Controllers\Master.php(192): App\Models\ModelAnggota->edit(Array)
+#6 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(933): App\Controllers\Master->edit_anggota('2')
+#7 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+#8 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\koperasi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\koperasi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\koperasi\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-06-25 01:52:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'edited' in 'field list'
+[Method: POST, Route: pengurus/master/anggota/edit/2]
+in SYSTEMPATH\Database\BaseConnection.php on line 686.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2509): CodeIgniter\Database\BaseConnection->query('UPDATE `tb_anggota` SET `id_anggota` = :id_anggota.1:, `nrp` = :nrp:, `id_pangkat` = :id_pangkat:, `nm_anggota` = :nm_anggota:, `email` = :email:, `no_hp` = :no_hp:, `status` = :status:, `edited` = :edited:
+WHERE `id_anggota` = :id_anggota:', [...], false)
+ 2 APPPATH\Models\ModelAnggota.php(39): CodeIgniter\Database\BaseBuilder->update([...])
+ 3 APPPATH\Controllers\Master.php(192): App\Models\ModelAnggota->edit([...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->edit_anggota('2')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-25 01:52:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'edited' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 315.
+ 1 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tb_anggota` SET `id_anggota` = \'2\', `nrp` = \'1390972077151\', `id_pangkat` = \'13\', `nm_anggota` = \'Rangga Rajata\', `email` = \'ranggarajata@gmail.com\', `no_hp` = \'083003591539\', `status` = \'7\', `edited` = \'1\'
+WHERE `id_anggota` = \'2\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tb_anggota` SET `id_anggota` = \'2\', `nrp` = \'1390972077151\', `id_pangkat` = \'13\', `nm_anggota` = \'Rangga Rajata\', `email` = \'ranggarajata@gmail.com\', `no_hp` = \'083003591539\', `status` = \'7\', `edited` = \'1\'
+WHERE `id_anggota` = \'2\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2509): CodeIgniter\Database\BaseConnection->query('UPDATE `tb_anggota` SET `id_anggota` = :id_anggota.1:, `nrp` = :nrp:, `id_pangkat` = :id_pangkat:, `nm_anggota` = :nm_anggota:, `email` = :email:, `no_hp` = :no_hp:, `status` = :status:, `edited` = :edited:
+WHERE `id_anggota` = :id_anggota:', [...], false)
+ 4 APPPATH\Models\ModelAnggota.php(39): CodeIgniter\Database\BaseBuilder->update([...])
+ 5 APPPATH\Controllers\Master.php(192): App\Models\ModelAnggota->edit([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->edit_anggota('2')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-25 01:52:01 --> [Caused by] mysqli_sql_exception: Unknown column 'edited' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(310): mysqli->query('UPDATE `tb_anggota` SET `id_anggota` = \'2\', `nrp` = \'1390972077151\', `id_pangkat` = \'13\', `nm_anggota` = \'Rangga Rajata\', `email` = \'ranggarajata@gmail.com\', `no_hp` = \'083003591539\', `status` = \'7\', `edited` = \'1\'
+WHERE `id_anggota` = \'2\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tb_anggota` SET `id_anggota` = \'2\', `nrp` = \'1390972077151\', `id_pangkat` = \'13\', `nm_anggota` = \'Rangga Rajata\', `email` = \'ranggarajata@gmail.com\', `no_hp` = \'083003591539\', `status` = \'7\', `edited` = \'1\'
+WHERE `id_anggota` = \'2\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tb_anggota` SET `id_anggota` = \'2\', `nrp` = \'1390972077151\', `id_pangkat` = \'13\', `nm_anggota` = \'Rangga Rajata\', `email` = \'ranggarajata@gmail.com\', `no_hp` = \'083003591539\', `status` = \'7\', `edited` = \'1\'
+WHERE `id_anggota` = \'2\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2509): CodeIgniter\Database\BaseConnection->query('UPDATE `tb_anggota` SET `id_anggota` = :id_anggota.1:, `nrp` = :nrp:, `id_pangkat` = :id_pangkat:, `nm_anggota` = :nm_anggota:, `email` = :email:, `no_hp` = :no_hp:, `status` = :status:, `edited` = :edited:
+WHERE `id_anggota` = :id_anggota:', [...], false)
+ 5 APPPATH\Models\ModelAnggota.php(39): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 APPPATH\Controllers\Master.php(192): App\Models\ModelAnggota->edit([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->edit_anggota('2')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-25 01:52:23 --> mysqli_sql_exception: Unknown column 'edited' in 'field list' in C:\xampp\htdocs\koperasi\system\Database\MySQLi\Connection.php:310
+Stack trace:
+#0 C:\xampp\htdocs\koperasi\system\Database\MySQLi\Connection.php(310): mysqli->query('UPDATE `tb_angg...', 0)
+#1 C:\xampp\htdocs\koperasi\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tb_angg...')
+#2 C:\xampp\htdocs\koperasi\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tb_angg...')
+#3 C:\xampp\htdocs\koperasi\system\Database\BaseBuilder.php(2509): CodeIgniter\Database\BaseConnection->query('UPDATE `tb_angg...', Array, false)
+#4 C:\xampp\htdocs\koperasi\app\Models\ModelAnggota.php(39): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 C:\xampp\htdocs\koperasi\app\Controllers\Master.php(192): App\Models\ModelAnggota->edit(Array)
+#6 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(933): App\Controllers\Master->edit_anggota('2')
+#7 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+#8 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\koperasi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\koperasi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\koperasi\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-06-25 01:52:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'edited' in 'field list'
+[Method: POST, Route: pengurus/master/anggota/edit/2]
+in SYSTEMPATH\Database\BaseConnection.php on line 686.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2509): CodeIgniter\Database\BaseConnection->query('UPDATE `tb_anggota` SET `id_anggota` = :id_anggota.1:, `nrp` = :nrp:, `id_pangkat` = :id_pangkat:, `nm_anggota` = :nm_anggota:, `email` = :email:, `no_hp` = :no_hp:, `status` = :status:, `edited` = :edited:
+WHERE `id_anggota` = :id_anggota:', [...], false)
+ 2 APPPATH\Models\ModelAnggota.php(39): CodeIgniter\Database\BaseBuilder->update([...])
+ 3 APPPATH\Controllers\Master.php(192): App\Models\ModelAnggota->edit([...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->edit_anggota('2')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-25 01:52:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'edited' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 315.
+ 1 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tb_anggota` SET `id_anggota` = \'2\', `nrp` = \'1390972077151\', `id_pangkat` = \'13\', `nm_anggota` = \'Rangga Rajata\', `email` = \'ranggarajata@gmail.com\', `no_hp` = \'083003591539\', `status` = \'7\', `edited` = \'1\'
+WHERE `id_anggota` = \'2\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tb_anggota` SET `id_anggota` = \'2\', `nrp` = \'1390972077151\', `id_pangkat` = \'13\', `nm_anggota` = \'Rangga Rajata\', `email` = \'ranggarajata@gmail.com\', `no_hp` = \'083003591539\', `status` = \'7\', `edited` = \'1\'
+WHERE `id_anggota` = \'2\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2509): CodeIgniter\Database\BaseConnection->query('UPDATE `tb_anggota` SET `id_anggota` = :id_anggota.1:, `nrp` = :nrp:, `id_pangkat` = :id_pangkat:, `nm_anggota` = :nm_anggota:, `email` = :email:, `no_hp` = :no_hp:, `status` = :status:, `edited` = :edited:
+WHERE `id_anggota` = :id_anggota:', [...], false)
+ 4 APPPATH\Models\ModelAnggota.php(39): CodeIgniter\Database\BaseBuilder->update([...])
+ 5 APPPATH\Controllers\Master.php(192): App\Models\ModelAnggota->edit([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->edit_anggota('2')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-25 01:52:23 --> [Caused by] mysqli_sql_exception: Unknown column 'edited' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(310): mysqli->query('UPDATE `tb_anggota` SET `id_anggota` = \'2\', `nrp` = \'1390972077151\', `id_pangkat` = \'13\', `nm_anggota` = \'Rangga Rajata\', `email` = \'ranggarajata@gmail.com\', `no_hp` = \'083003591539\', `status` = \'7\', `edited` = \'1\'
+WHERE `id_anggota` = \'2\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tb_anggota` SET `id_anggota` = \'2\', `nrp` = \'1390972077151\', `id_pangkat` = \'13\', `nm_anggota` = \'Rangga Rajata\', `email` = \'ranggarajata@gmail.com\', `no_hp` = \'083003591539\', `status` = \'7\', `edited` = \'1\'
+WHERE `id_anggota` = \'2\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tb_anggota` SET `id_anggota` = \'2\', `nrp` = \'1390972077151\', `id_pangkat` = \'13\', `nm_anggota` = \'Rangga Rajata\', `email` = \'ranggarajata@gmail.com\', `no_hp` = \'083003591539\', `status` = \'7\', `edited` = \'1\'
+WHERE `id_anggota` = \'2\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2509): CodeIgniter\Database\BaseConnection->query('UPDATE `tb_anggota` SET `id_anggota` = :id_anggota.1:, `nrp` = :nrp:, `id_pangkat` = :id_pangkat:, `nm_anggota` = :nm_anggota:, `email` = :email:, `no_hp` = :no_hp:, `status` = :status:, `edited` = :edited:
+WHERE `id_anggota` = :id_anggota:', [...], false)
+ 5 APPPATH\Models\ModelAnggota.php(39): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 APPPATH\Controllers\Master.php(192): App\Models\ModelAnggota->edit([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->edit_anggota('2')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-25 01:52:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:52:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-25 01:52:31 --> mysqli_sql_exception: Unknown column 'edited' in 'field list' in C:\xampp\htdocs\koperasi\system\Database\MySQLi\Connection.php:310
+Stack trace:
+#0 C:\xampp\htdocs\koperasi\system\Database\MySQLi\Connection.php(310): mysqli->query('UPDATE `tb_angg...', 0)
+#1 C:\xampp\htdocs\koperasi\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tb_angg...')
+#2 C:\xampp\htdocs\koperasi\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tb_angg...')
+#3 C:\xampp\htdocs\koperasi\system\Database\BaseBuilder.php(2509): CodeIgniter\Database\BaseConnection->query('UPDATE `tb_angg...', Array, false)
+#4 C:\xampp\htdocs\koperasi\app\Models\ModelAnggota.php(39): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 C:\xampp\htdocs\koperasi\app\Controllers\Master.php(192): App\Models\ModelAnggota->edit(Array)
+#6 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(933): App\Controllers\Master->edit_anggota('2')
+#7 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+#8 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\koperasi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\koperasi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\koperasi\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-06-25 01:52:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'edited' in 'field list'
+[Method: POST, Route: pengurus/master/anggota/edit/2]
+in SYSTEMPATH\Database\BaseConnection.php on line 686.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2509): CodeIgniter\Database\BaseConnection->query('UPDATE `tb_anggota` SET `id_anggota` = :id_anggota.1:, `nrp` = :nrp:, `id_pangkat` = :id_pangkat:, `nm_anggota` = :nm_anggota:, `email` = :email:, `no_hp` = :no_hp:, `status` = :status:, `edited` = :edited:
+WHERE `id_anggota` = :id_anggota:', [...], false)
+ 2 APPPATH\Models\ModelAnggota.php(39): CodeIgniter\Database\BaseBuilder->update([...])
+ 3 APPPATH\Controllers\Master.php(192): App\Models\ModelAnggota->edit([...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->edit_anggota('2')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-25 01:52:31 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'edited' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 315.
+ 1 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tb_anggota` SET `id_anggota` = \'2\', `nrp` = \'1390972077151\', `id_pangkat` = \'13\', `nm_anggota` = \'Rangga Rajata\', `email` = \'ranggarajata@gmail.com\', `no_hp` = \'083003591539\', `status` = \'7\', `edited` = \'1\'
+WHERE `id_anggota` = \'2\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tb_anggota` SET `id_anggota` = \'2\', `nrp` = \'1390972077151\', `id_pangkat` = \'13\', `nm_anggota` = \'Rangga Rajata\', `email` = \'ranggarajata@gmail.com\', `no_hp` = \'083003591539\', `status` = \'7\', `edited` = \'1\'
+WHERE `id_anggota` = \'2\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2509): CodeIgniter\Database\BaseConnection->query('UPDATE `tb_anggota` SET `id_anggota` = :id_anggota.1:, `nrp` = :nrp:, `id_pangkat` = :id_pangkat:, `nm_anggota` = :nm_anggota:, `email` = :email:, `no_hp` = :no_hp:, `status` = :status:, `edited` = :edited:
+WHERE `id_anggota` = :id_anggota:', [...], false)
+ 4 APPPATH\Models\ModelAnggota.php(39): CodeIgniter\Database\BaseBuilder->update([...])
+ 5 APPPATH\Controllers\Master.php(192): App\Models\ModelAnggota->edit([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->edit_anggota('2')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-25 01:52:31 --> [Caused by] mysqli_sql_exception: Unknown column 'edited' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(310): mysqli->query('UPDATE `tb_anggota` SET `id_anggota` = \'2\', `nrp` = \'1390972077151\', `id_pangkat` = \'13\', `nm_anggota` = \'Rangga Rajata\', `email` = \'ranggarajata@gmail.com\', `no_hp` = \'083003591539\', `status` = \'7\', `edited` = \'1\'
+WHERE `id_anggota` = \'2\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `tb_anggota` SET `id_anggota` = \'2\', `nrp` = \'1390972077151\', `id_pangkat` = \'13\', `nm_anggota` = \'Rangga Rajata\', `email` = \'ranggarajata@gmail.com\', `no_hp` = \'083003591539\', `status` = \'7\', `edited` = \'1\'
+WHERE `id_anggota` = \'2\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `tb_anggota` SET `id_anggota` = \'2\', `nrp` = \'1390972077151\', `id_pangkat` = \'13\', `nm_anggota` = \'Rangga Rajata\', `email` = \'ranggarajata@gmail.com\', `no_hp` = \'083003591539\', `status` = \'7\', `edited` = \'1\'
+WHERE `id_anggota` = \'2\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2509): CodeIgniter\Database\BaseConnection->query('UPDATE `tb_anggota` SET `id_anggota` = :id_anggota.1:, `nrp` = :nrp:, `id_pangkat` = :id_pangkat:, `nm_anggota` = :nm_anggota:, `email` = :email:, `no_hp` = :no_hp:, `status` = :status:, `edited` = :edited:
+WHERE `id_anggota` = :id_anggota:', [...], false)
+ 5 APPPATH\Models\ModelAnggota.php(39): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 APPPATH\Controllers\Master.php(192): App\Models\ModelAnggota->edit([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->edit_anggota('2')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-25 01:52:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:52:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:53:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:53:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:53:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:55:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:55:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 01:55:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-25 01:55:21 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "pengurus/master/pengurus/v_index.php"
+[Method: GET, Route: pengurus/master/pengurus]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pengurus/master/pengurus/v_index.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/master/pengurus/v_index', [], true)
+ 3 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/master/pengurus/v_index')
+ 4 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 5 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 7 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+ 8 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+ 9 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+10 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+11 APPPATH\Controllers\Master.php(246): view('pengurus/layout/v_wrapper', [...])
+12 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->index_pengurus()
+13 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+14 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+17 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-25 01:56:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-25 01:56:34 --> ErrorException: Undefined variable $anggota
+[Method: GET, Route: pengurus/master/pengurus]
+in APPPATH\Views\pengurus\master\pengurus\v_index.php on line 64.
+ 1 APPPATH\Views\pengurus\master\pengurus\v_index.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $anggota', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\master\\pengurus\\v_index.php', 64)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\master\\pengurus\\v_index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/master/pengurus/v_index', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/master/pengurus/v_index')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\Master.php(246): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->index_pengurus()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-25 02:05:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-25 02:05:17 --> ErrorException: Undefined variable $pangkat
+[Method: GET, Route: pengurus/master/pengurus]
+in APPPATH\Views\pengurus\master\pengurus\v_index.php on line 165.
+ 1 APPPATH\Views\pengurus\master\pengurus\v_index.php(165): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pangkat', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\master\\pengurus\\v_index.php', 165)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\master\\pengurus\\v_index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/master/pengurus/v_index', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/master/pengurus/v_index')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\Master.php(248): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->index_pengurus()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-25 02:06:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-25 02:06:21 --> ErrorException: Undefined array key "id_pangkat"
+[Method: GET, Route: pengurus/master/pengurus]
+in APPPATH\Views\pengurus\master\pengurus\v_index.php on line 165.
+ 1 APPPATH\Views\pengurus\master\pengurus\v_index.php(165): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_pangkat"', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\master\\pengurus\\v_index.php', 165)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\master\\pengurus\\v_index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/master/pengurus/v_index', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/master/pengurus/v_index')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\Master.php(248): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->index_pengurus()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-25 02:09:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:11:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-25 02:11:21 --> ErrorException: Undefined array key "nm_anggota"
+[Method: GET, Route: pengurus/master/pengurus]
+in APPPATH\Views\pengurus\master\pengurus\v_index.php on line 164.
+ 1 APPPATH\Views\pengurus\master\pengurus\v_index.php(164): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nm_anggota"', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\master\\pengurus\\v_index.php', 164)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\master\\pengurus\\v_index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/master/pengurus/v_index', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/master/pengurus/v_index')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\Master.php(248): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->index_pengurus()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-25 02:11:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:18:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:18:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:18:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:18:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:19:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:19:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:19:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:19:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:19:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:20:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:20:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:20:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:21:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:21:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:21:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:21:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:21:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-25 02:21:33 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: pengurus/master/pengurus/delete/bendahara]
+in APPPATH\Controllers\Master.php on line 376.
+ 1 APPPATH\Controllers\Master.php(376): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\koperasi\\app\\Controllers\\Master.php', 376)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->delete_pengurus('bendahara')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-25 02:24:00 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: pengurus/master/pengurus/delete/bendahara]
+in APPPATH\Controllers\Master.php on line 376.
+ 1 APPPATH\Controllers\Master.php(376): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\koperasi\\app\\Controllers\\Master.php', 376)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->delete_pengurus('bendahara')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-25 02:24:33 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: pengurus/master/pengurus/delete/bendahara]
+in APPPATH\Controllers\Master.php on line 376.
+ 1 APPPATH\Controllers\Master.php(376): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\koperasi\\app\\Controllers\\Master.php', 376)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->delete_pengurus('bendahara')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-25 02:24:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:24:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:24:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:24:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:26:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-06-25 02:26:17 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Models\ModelAgen.php on line 52.
+ 1 APPPATH\Models\ModelAgen.php(52): str_replace('AGEN', '', null)
+ 2 APPPATH\Controllers\Master.php(396): App\Models\ModelAgen->getMaxId()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->index_agen()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-25 02:26:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-06-25 02:26:41 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Models\ModelAgen.php on line 52.
+ 1 APPPATH\Models\ModelAgen.php(52): str_replace('AGEN', '', null)
+ 2 APPPATH\Controllers\Master.php(396): App\Models\ModelAgen->getMaxId()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->index_agen()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-25 02:26:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:27:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-06-25 02:27:02 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Models\ModelAgen.php on line 52.
+ 1 APPPATH\Models\ModelAgen.php(52): str_replace('AGEN', '', null)
+ 2 APPPATH\Controllers\Master.php(396): App\Models\ModelAgen->getMaxId()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->index_agen()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-25 02:27:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-06-25 02:30:09 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Models\ModelAgen.php on line 52.
+ 1 APPPATH\Models\ModelAgen.php(52): str_replace('AGEN', '', null)
+ 2 APPPATH\Controllers\Master.php(396): App\Models\ModelAgen->getMaxId()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->index_agen()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-25 02:30:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-06-25 02:31:29 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Models\ModelAgen.php on line 52.
+ 1 APPPATH\Models\ModelAgen.php(52): str_replace('AGEN', '', null)
+ 2 APPPATH\Controllers\Master.php(396): App\Models\ModelAgen->getMaxId()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->index_agen()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-25 02:31:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-06-25 02:34:18 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Models\ModelAgen.php on line 52.
+ 1 APPPATH\Models\ModelAgen.php(52): str_replace('AGEN', '', null)
+ 2 APPPATH\Controllers\Master.php(396): App\Models\ModelAgen->getMaxId()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->index_agen()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-25 02:34:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-06-25 02:34:56 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Models\ModelAgen.php on line 52.
+ 1 APPPATH\Models\ModelAgen.php(52): str_replace('AGEN', '', null)
+ 2 APPPATH\Controllers\Master.php(396): App\Models\ModelAgen->getMaxId()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->index_agen()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-25 02:34:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-06-25 02:41:18 --> [DEPRECATED] str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated in APPPATH\Models\ModelAgen.php on line 52.
+ 1 APPPATH\Models\ModelAgen.php(52): str_replace('AGEN', '', null)
+ 2 APPPATH\Controllers\Master.php(397): App\Models\ModelAgen->getMaxId()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Master->index_agen()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Master))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-25 02:41:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:41:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:41:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:42:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:42:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:43:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:43:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:43:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:43:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:44:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:44:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:44:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:45:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:45:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-25 02:45:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
