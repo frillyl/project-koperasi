@@ -112,7 +112,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="col-lg-5">
                         <div class="card mt-2">
                             <div class="card-body bg-black color-palette text-right">
-                                <label class="display-4 text-green">Rp 1,500,000,-</label>
+                                <label class="display-4 text-green" id="grandTotal">Rp 0,-</label>
                             </div>
                         </div>
                     </div>
@@ -304,6 +304,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         }
     </script>
     <script>
+        let totalKeseluruhan = 0
+
         $('#addItemForm').on('submit', function(e) {
             e.preventDefault();
 
@@ -328,12 +330,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <td>${jenisBarangText}</td>
                             <td>${response.harga_jual}</td>
                             <td>${response.qty}</td>
-                            <td>${response.total_harga}</td>
+                            <td class="item-total-harga">${response.total_harga}</td>
                             <td>
                                 <a class="btn btn-sm btn-danger delete-item"><i class="fa-solid fa-xmark"></i></a>
                             </td>
                         </tr>`;
                     $('table tbody').append(newRow);
+
+                    totalKeseluruhan += response.total_harga;
+                    $('#grandTotal').text('Rp ' + totalKeseluruhan.toLocaleString('id-ID') + ',-');
 
                     $('#addItemForm')[0].reset();
                     $('#kd_barang').focus();
@@ -349,6 +354,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         });
 
         $(document).on('click', '.delete-item', function() {
+            let itemTotalHarga = parseFloat($(this).closest('tr').find('.item-total-harga').text());
+            totalKeseluruhan -= itemTotalHarga;
+            $('#grandTotal').text('Rp ' + totalKeseluruhan.toLocaleString('id-ID') + ',-');
+
             $(this).closest('tr').remove();
         });
     </script>
