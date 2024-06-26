@@ -38,4 +38,5 @@ $routes->post('pengurus/master/barang/edit/(:segment)', 'Master::edit_barang/$1'
 $routes->get('pengurus/master/barang/delete/(:segment)', 'Master::delete_barang/$1');
 
 $routes->get('/pengurus/transaksi/penjualan', 'Penjualan::index');
-$routes->post('/pengurus/transaksi/penjualan/cek_barang', 'Penjualan::cek_barang');
+$routes->post('pengurus/transaksi/penjualan/cek_barang', 'Penjualan::cek_barang');
+$routes->post('pengurus/transaksi/penjualan/tambah_barang', 'Penjualan::tambah_barang');

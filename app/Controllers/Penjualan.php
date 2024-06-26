@@ -50,4 +50,27 @@ class Penjualan extends BaseController
         }
         echo json_encode($data);
     }
+
+    public function tambah_barang()
+    {
+        $kd_barang = $this->request->getPost('kd_barang');
+        $nm_barang = $this->request->getPost('nm_barang');
+        $jenis_barang = $this->request->getPost('jenis_barang');
+        $satuan = $this->request->getPost('satuan');
+        $harga_jual = $this->request->getPost('harga_jual');
+        $qty = $this->request->getPost('qty');
+        $total_harga = $harga_jual * $qty;
+
+        $data = [
+            'kd_barang' => $kd_barang,
+            'nm_barang' => $nm_barang,
+            'jenis_barang' => $jenis_barang,
+            'satuan' => $satuan,
+            'harga_jual' => $harga_jual,
+            'qty' => $qty,
+            'total_harga' => $total_harga
+        ];
+
+        return $this->response->setJSON($data);
+    }
 }

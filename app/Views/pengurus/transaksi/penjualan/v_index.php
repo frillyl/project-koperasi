@@ -123,7 +123,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-12">
-                                        <?php echo form_open() ?>
+                                        <?php echo form_open('pengurus/transaksi/penjualan/tambah_barang', ['id' => 'addItemForm', 'method' => 'post']) ?>
                                         <div class="row">
                                             <div class="col-2 input-group">
                                                 <input name="kd_barang" class="form-control" id="kd_barang" placeholder="Kode Barang" autocomplete="off">
@@ -176,17 +176,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td>
-                                                        <a class="btn btn-sm btn-danger"><i class="fa-solid fa-xmark"></i></a>
-                                                    </td>
-                                                </tr>
+
                                             </tbody>
                                         </table>
                                     </div>
@@ -312,6 +302,55 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 }
             });
         }
+    </script>
+    <script>
+        $('#addItemForm').on('submit', function(e) {
+            e.preventDefault();
+
+            let formData = $(this).serialize();
+
+            $.ajax({
+                type: "POST",
+                url: "<?= base_url('pengurus/transaksi/penjualan/tambah_barang') ?>",
+                data: formData,
+                dataType: "JSON",
+                success: function(response) {
+                    let jenisBarangText = '';
+                    if (response.jenis_barang == 1) {
+                        jenisBarangText = 'Barang Koperasi';
+                    } else if (response.jenis_barang == 2) {
+                        jenisBarangText = 'Barang Konsinyasi';
+                    }
+
+                    let newRow = `<tr>
+                            <td>${response.kd_barang}</td>
+                            <td>${response.nm_barang}</td>
+                            <td>${jenisBarangText}</td>
+                            <td>${response.harga_jual}</td>
+                            <td>${response.qty}</td>
+                            <td>${response.total_harga}</td>
+                            <td>
+                                <a class="btn btn-sm btn-danger delete-item"><i class="fa-solid fa-xmark"></i></a>
+                            </td>
+                        </tr>`;
+                    $('table tbody').append(newRow);
+
+                    $('#addItemForm')[0].reset();
+                    $('#kd_barang').focus();
+                },
+                error: function(xhr, status, error) {
+                    console.error("AJAX Error: " + status + " - " + error);
+                    Swal.fire({
+                        text: "Terjadi kesalahan saat menambahkan barang!",
+                        icon: "error"
+                    });
+                }
+            });
+        });
+
+        $(document).on('click', '.delete-item', function() {
+            $(this).closest('tr').remove();
+        });
     </script>
     <!-- Page specific script -->
     <script>
