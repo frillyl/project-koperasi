@@ -34,4 +34,16 @@ class ModelPenjualan extends Model
             ->where('kd_barang', $kd_barang)
             ->get()->getRowArray();
     }
+
+    public function cekStok($kd_barang, $qty)
+    {
+        $barang = $this->db->table('tb_barang')
+            ->select('stok')
+            ->where('kd_barang', $kd_barang)
+            ->get()->getRowArray();
+        if ($barang) {
+            return $barang['stok'] >= $qty;
+        }
+        return false;
+    }
 }

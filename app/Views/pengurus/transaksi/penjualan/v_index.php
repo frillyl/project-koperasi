@@ -84,7 +84,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <div class="col-2">
                                         <div class="form-group">
                                             <label>Jam</label>
-                                            <label class="form-control"><?= date('H:i:s') ?></label>
+                                            <label class="form-control"><span id="realTimeClock"></span></label>
                                         </div>
                                     </div>
                                     <div class="col-3">
@@ -128,7 +128,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <div class="col-2 input-group">
                                                 <input name="kd_barang" class="form-control" id="kd_barang" placeholder="Kode Barang" autocomplete="off">
                                                 <span class="input-group-append">
-                                                    <button class="btn btn-primary">
+                                                    <button type="button" class="btn btn-primary">
                                                         <i class="fa-solid fa-magnifying-glass"></i>
                                                     </button>
                                                     <button class="btn btn-danger">
@@ -154,7 +154,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <div class="col-3">
                                                 <button type="submit" class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i> Tambah</button>
                                                 <button type="reset" class="btn btn-warning"><i class="fa-solid fa-rotate"></i> Kosongkan</button>
-                                                <button class="btn btn-success"><i class="fa-solid fa-cash-register"></i> Pembayaran</button>
+                                                <button class="btn btn-success" id="btnPembayaran" data-toggle="modal" data-target="#bayar"><i class="fa-solid fa-cash-register"></i> Pembayaran</button>
                                             </div>
                                         </div>
                                         <?php echo form_close() ?>
@@ -188,6 +188,43 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- /.row -->
             </div>
             <!-- /.content -->
+
+            <!-- Modal Bayar -->
+            <div class="modal fade" id="bayar">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Pembayaran</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <?php
+                            echo form_open('pengurus/transaksi/penjualan/payment');
+                            ?>
+
+                            <div class="form-group">
+                                <label for="grand_total">Grand Total</label>
+                                <input type="text" name="grand_total" class="form-control" id="grand_total" placeholder="Grand Total" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="dibayar">Dibayar</label>
+                                <input type="text" name="dibayar" class="form-control" id="dibayar" placeholder="Dibayar">
+                            </div>
+                            <div class="form-group">
+                                <label for="kembalian">Kembalian</label>
+                                <input type="text" name="kembalian" class="form-control" id="kembalian" placeholder="Kembalian" readonly>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                            <button type="submit" class="btn btn-success">Bayar</button>
+                        </div>
+                        <?php echo form_close() ?>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- /.content-wrapper -->
 
@@ -276,6 +313,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     }
                 }
             });
+            TambahItem();
         });
 
         function CekBarang() {
@@ -302,64 +340,90 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 }
             });
         }
+
+        function TambahItem() {
+            let totalKeseluruhan = 0
+
+            $('#addItemForm').on('submit', function(e) {
+                e.preventDefault();
+
+                let formData = $(this).serialize();
+
+                $.ajax({
+                    type: "POST",
+                    url: "<?= base_url('pengurus/transaksi/penjualan/tambah_barang') ?>",
+                    data: formData,
+                    dataType: "JSON",
+                    success: function(response) {
+                        if (response.status === 'error') {
+                            Swal.fire({
+                                text: response.message,
+                                icon: "error"
+                            });
+                        } else {
+                            let data = response.data;
+                            let jenisBarangText = '';
+                            if (data.jenis_barang == 1) {
+                                jenisBarangText = 'Barang Koperasi';
+                            } else if (data.jenis_barang == 2) {
+                                jenisBarangText = 'Barang Konsinyasi';
+                            }
+
+                            let newRow = `<tr>
+                                            <td>${data.kd_barang}</td>
+                                            <td>${data.nm_barang}</td>
+                                            <td>${jenisBarangText}</td>
+                                            <td>${data.harga_jual}</td>
+                                            <td>${data.qty}</td>
+                                            <td class="item-total-harga">${data.total_harga}</td>
+                                            <td>
+                                                <a class="btn btn-sm btn-danger delete-item"><i class="fa-solid fa-xmark"></i></a>
+                                            </td>
+                                        </tr>`;
+                            $('table tbody').append(newRow);
+
+                            totalKeseluruhan += parseInt(data.total_harga);
+                            $('#grandTotal').text('Rp ' + totalKeseluruhan.toLocaleString('id-ID') + ',-');
+
+                            $('#addItemForm')[0].reset();
+                            $('#kd_barang').focus();
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("AJAX Error: " + status + " - " + error);
+                        Swal.fire({
+                            text: "Terjadi kesalahan saat menambahkan barang!",
+                            icon: "error"
+                        });
+                    }
+                });
+            });
+
+            $(document).on('click', '.delete-item', function() {
+                let itemTotalHarga = parseFloat($(this).closest('tr').find('.item-total-harga').text());
+                totalKeseluruhan -= itemTotalHarga;
+                $('#grandTotal').text('Rp ' + totalKeseluruhan.toLocaleString('id-ID') + ',-');
+
+                $(this).closest('tr').remove();
+            });
+        }
     </script>
     <script>
-        let totalKeseluruhan = 0
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const currentTime = `${hours}:${minutes}:${seconds}`;
 
-        $('#addItemForm').on('submit', function(e) {
-            e.preventDefault();
+            document.getElementById('realTimeClock').textContent = currentTime;
+        }
 
-            let formData = $(this).serialize();
+        // Update the time every second
+        setInterval(updateTime, 1000);
 
-            $.ajax({
-                type: "POST",
-                url: "<?= base_url('pengurus/transaksi/penjualan/tambah_barang') ?>",
-                data: formData,
-                dataType: "JSON",
-                success: function(response) {
-                    let jenisBarangText = '';
-                    if (response.jenis_barang == 1) {
-                        jenisBarangText = 'Barang Koperasi';
-                    } else if (response.jenis_barang == 2) {
-                        jenisBarangText = 'Barang Konsinyasi';
-                    }
-
-                    let newRow = `<tr>
-                            <td>${response.kd_barang}</td>
-                            <td>${response.nm_barang}</td>
-                            <td>${jenisBarangText}</td>
-                            <td>${response.harga_jual}</td>
-                            <td>${response.qty}</td>
-                            <td class="item-total-harga">${response.total_harga}</td>
-                            <td>
-                                <a class="btn btn-sm btn-danger delete-item"><i class="fa-solid fa-xmark"></i></a>
-                            </td>
-                        </tr>`;
-                    $('table tbody').append(newRow);
-
-                    totalKeseluruhan += response.total_harga;
-                    $('#grandTotal').text('Rp ' + totalKeseluruhan.toLocaleString('id-ID') + ',-');
-
-                    $('#addItemForm')[0].reset();
-                    $('#kd_barang').focus();
-                },
-                error: function(xhr, status, error) {
-                    console.error("AJAX Error: " + status + " - " + error);
-                    Swal.fire({
-                        text: "Terjadi kesalahan saat menambahkan barang!",
-                        icon: "error"
-                    });
-                }
-            });
-        });
-
-        $(document).on('click', '.delete-item', function() {
-            let itemTotalHarga = parseFloat($(this).closest('tr').find('.item-total-harga').text());
-            totalKeseluruhan -= itemTotalHarga;
-            $('#grandTotal').text('Rp ' + totalKeseluruhan.toLocaleString('id-ID') + ',-');
-
-            $(this).closest('tr').remove();
-        });
+        // Initial call to display the time immediately on page load
+        updateTime();
     </script>
     <!-- Page specific script -->
     <script>

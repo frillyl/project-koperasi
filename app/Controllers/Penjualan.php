@@ -61,6 +61,10 @@ class Penjualan extends BaseController
         $qty = $this->request->getPost('qty');
         $total_harga = $harga_jual * $qty;
 
+        if (!$this->ModelPenjualan->cekStok($kd_barang, $qty)) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Stok barang tidak mencukupi!']);
+        }
+
         $data = [
             'kd_barang' => $kd_barang,
             'nm_barang' => $nm_barang,
@@ -71,6 +75,6 @@ class Penjualan extends BaseController
             'total_harga' => $total_harga
         ];
 
-        return $this->response->setJSON($data);
+        return $this->response->setJSON(['status' => 'success', 'data' => $data]);
     }
 }
