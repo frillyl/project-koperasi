@@ -90,7 +90,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <div class="col-3">
                                         <div class="form-group">
                                             <label>Pembeli</label>
-                                            <select name="id_anggota" class="form-control select2bs4 select2-hidden-accessible" id="id_anggota" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                            <select name="id_anggota" id="id_anggota" class="form-control select2bs4 select2-hidden-accessible" id="id_anggota" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
                                                 <option value="">-- Pilih Pembeli --</option>
                                                 <?php foreach ($anggota as $key => $value) { ?>
                                                     <option value="<?= $value['id_anggota'] ?>"><strong><?= $value['nm_anggota'] ?></strong></option>
@@ -154,7 +154,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <div class="col-3">
                                                 <button type="submit" class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i> Tambah</button>
                                                 <button type="reset" class="btn btn-warning"><i class="fa-solid fa-rotate"></i> Kosongkan</button>
-                                                <button class="btn btn-success" id="btnPembayaran" data-toggle="modal" data-target="#bayar"><i class="fa-solid fa-cash-register"></i> Pembayaran</button>
+                                                <button type="button" class="btn btn-success" id="btnPembayaran" data-toggle="modal" data-target="#bayar"><i class="fa-solid fa-cash-register"></i> Pembayaran</button>
                                             </div>
                                         </div>
                                         <?php echo form_close() ?>
@@ -200,29 +200,34 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </button>
                         </div>
                         <div class="modal-body">
-                            <?php
-                            echo form_open('pengurus/transaksi/penjualan/payment');
-                            ?>
-
-                            <input type="hidden" id="kd_penjualan" name="kd_penjualan" value="<?= $kd_penjualan ?>">
-                            <div class="form-group">
+                            <form method="post" id="paymentForm">
+                                <input name="kd_penjualan" id="kd_penjualan" value="<?= $kd_penjualan ?>" hidden>
+                                <input name="tgl_penjualan" id="tgl_penjualan" value="<?= date('Y-m-d') ?>" hidden>
+                                <input name="jam" id="jam" hidden>
+                                <input name="id_pengurus" id="id_pengurus" value="<?= session('id') ?>" hidden>
                                 <label for="grand_total">Grand Total</label>
-                                <input type="text" name="grand_total" class="form-control" id="grand_total" placeholder="Grand Total" readonly>
-                            </div>
-                            <div class="form-group">
-                                <label for="dibayar">Dibayar</label>
-                                <input type="text" name="dibayar" class="form-control" id="dibayar" placeholder="Dibayar">
-                            </div>
-                            <div class="form-group">
-                                <label for="kembalian">Kembalian</label>
-                                <input type="text" name="kembalian" class="form-control" id="kembalian" placeholder="Kembalian" readonly>
-                            </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Rp</span>
+                                        </div>
+                                        <input type="text" name="grand_total" class="form-control" id="grand_total" placeholder="0,-" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="dibayar">Dibayar</label>
+                                    <input type="text" name="dibayar" class="form-control" id="dibayar" placeholder="Dibayar">
+                                </div>
+                                <div class="form-group">
+                                    <label for="kembalian">Kembalian</label>
+                                    <input type="text" name="kembalian" class="form-control" id="kembalian" placeholder="Kembalian" readonly>
+                                </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
                             <button type="submit" class="btn btn-success">Bayar</button>
                         </div>
-                        <?php echo form_close() ?>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -315,6 +320,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 }
             });
             TambahItem();
+            Pembayaran();
         });
 
         function CekBarang() {
@@ -385,7 +391,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                             totalKeseluruhan += parseInt(data.total_harga);
                             $('#grandTotal').text('Rp ' + totalKeseluruhan.toLocaleString('id-ID') + ',-');
-                            $('#grand_total').val(totalKeseluruhan);
+                            $('#grand_total').val(totalKeseluruhan.toLocaleString('id-ID'));
 
                             $('#addItemForm')[0].reset();
                             $('#kd_barang').focus();
@@ -408,21 +414,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                 $(this).closest('tr').remove();
             });
+        }
 
+        function Pembayaran() {
             document.addEventListener('keydown', function(event) {
                 if (event.key === 'F8') {
                     $('#bayar').modal('show');
+                    $('#dibayar').focus();
                 }
             });
 
             $('.btn-success[data-target="#bayar"]').on('click', function() {
-                $('#grand_total').val(totalKeseluruhan.toLocaleString('id-ID'));
                 $('#bayar').modal('show');
+                $('#dibayar').focus();
             });
 
             $('#dibayar').on('input', function() {
-                let grandTotal = parseInt($('#grand_total').val()).toLocaleString('id-ID');
-                let dibayar = parseInt($(this).val()).toLocaleString('id-ID');
+                let inputVal = $(this).val();
+                let numericVal = inputVal.replace(/\D/g, '');
+                let formattedVal = parseInt(numericVal).toLocaleString('id-ID');
+                $(this).val(formattedVal);
+                let grandTotal = parseInt($('#grand_total').val().replace(/\D/g, ''));
+                let dibayar = parseInt($(this).val().replace(/\D/g, ''));
                 let kembalian = dibayar - grandTotal;
 
                 $('#kembalian').val(kembalian.toLocaleString('id-ID'));
@@ -433,6 +446,76 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     $('#kembalian').removeClass('is-invalid');
                 }
             });
+
+            $('#paymentForm').on('submit', function(e) {
+                e.preventDefault();
+
+                var now = new Date();
+                var jam = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+                $('#jam').val(jam);
+
+                var formData = $(this).serializeArray();
+
+                var id_anggota = $('#id_anggota').val();
+                formData.push({
+                    name: 'id_anggota',
+                    value: id_anggota
+                });
+
+                var tableData = {};
+                $('table tbody tr').each(function() {
+                    var kd_barang = $(this).find('td:eq(0)').text().trim();
+                    var harga_jual = $(this).find('td:eq(3)').text().trim();
+                    var qty = $(this).find('td:eq(4)').text().trim();
+                    var total_harga = $(this).find('td:eq(5)').text().trim();
+
+                    if (kd_barang !== "" && harga_jual !== "" && qty !== "" && total_harga !== "") {
+                        // Memastikan kd_barang hanya dimasukkan satu kali
+                        if (!tableData[kd_barang]) {
+                            tableData[kd_barang] = {
+                                kd_barang: kd_barang,
+                                harga_jual: harga_jual,
+                                qty: qty,
+                                total_harga: total_harga
+                            };
+                        }
+                    }
+                });
+                var dataArray = Object.values(tableData);
+                let validItems = dataArray.filter(isValidItem);
+
+                // Log data for debugging
+                console.log('Form Data:', formData);
+                console.log('Table Data:', tableData);
+                console.log('Valid Items:', validItems);
+
+                $.ajax({
+                    type: 'POST',
+                    url: '<?= base_url('pengurus/transaksi/penjualan/simpan') ?>',
+                    dataType: 'JSON',
+                    data: {
+                        form: formData,
+                        items: validItems
+                    },
+                    success: function(response) {
+                        alert('Data berhasil disimpan!');
+                        // Optionally, you can redirect or clear the form here
+                    },
+                    error: function(error) {
+                        alert('Terjadi kesalahan saat menyimpan data!');
+                        console.log('Error:', error);
+                    }
+                });
+            });
+        }
+
+        function isValidItem(item) {
+            return (
+                item.kd_barang.trim().startsWith("BRG") &&
+                item.harga_jual.trim() !== "" &&
+                item.qty.trim() !== "" &&
+                item.total_harga.trim() !== ""
+            );
         }
     </script>
     <script>

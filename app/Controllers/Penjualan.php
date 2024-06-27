@@ -4,11 +4,15 @@ namespace App\Controllers;
 
 use App\Models\ModelAnggota;
 use App\Models\ModelPenjualan;
+use App\Models\ModelDetPenjualan;
+use App\Models\ModelBarang;
 
 class Penjualan extends BaseController
 {
     protected $ModelAnggota;
     protected $ModelPenjualan;
+    protected $ModelDetPenjualan;
+    protected $ModelBarang;
 
     public function __construct()
     {
@@ -16,6 +20,8 @@ class Penjualan extends BaseController
         helper('text');
         $this->ModelAnggota = new ModelAnggota();
         $this->ModelPenjualan = new ModelPenjualan();
+        $this->ModelDetPenjualan = new ModelDetPenjualan();
+        $this->ModelBarang = new ModelBarang();
     }
 
     public function index()
@@ -76,5 +82,39 @@ class Penjualan extends BaseController
         ];
 
         return $this->response->setJSON(['status' => 'success', 'data' => $data]);
+    }
+
+    public function simpan()
+    {
+        $request = service('request');
+
+        $formData = $request->getPost('form');
+        $items = $request->getPost('items');
+
+        $penjualanData = [];
+        foreach ($formData as $field) {
+            $penjualanData[$field['name']] = $field['value'];
+        }
+
+        $this->ModelPenjualan->insert($penjualanData);
+
+        foreach ($items as $item) {
+            $detPenjualanData = [
+                'kd_penjualan' => $penjualanData['kd_penjualan'],
+                'kd_barang' => $item['kd_barang'],
+                'harga_jual' => $item['harga_jual'],
+                'qty' => $item['qty'],
+                'total_harga' => $item['total_harga']
+            ];
+
+            $this->ModelDetPenjualan->insert($detPenjualanData);
+
+            // Update stok barang
+            $this->ModelBarang->set('stok', 'stok - ' . $item['qty'], false)
+                ->where('kd_barang', $item['kd_barang'])
+                ->update();
+        }
+
+        return $this->response->setJSON(['status' => 'success']);
     }
 }

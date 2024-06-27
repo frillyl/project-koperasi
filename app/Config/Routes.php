@@ -40,4 +40,4 @@ $routes->get('pengurus/master/barang/delete/(:segment)', 'Master::delete_barang/
 $routes->get('/pengurus/transaksi/penjualan', 'Penjualan::index');
 $routes->post('pengurus/transaksi/penjualan/cek_barang', 'Penjualan::cek_barang');
 $routes->post('pengurus/transaksi/penjualan/tambah_barang', 'Penjualan::tambah_barang');
-$routes->post('pengurus/transaksi/penjualan/payment', 'Penjualan::payment');
+$routes->post('pengurus/transaksi/penjualan/simpan', 'Penjualan::simpan');

@@ -6,6 +6,11 @@ use CodeIgniter\Model;
 
 class ModelPenjualan extends Model
 {
+    protected $table = "tb_penjualan";
+    protected $primaryKey = "id_penjualan";
+    protected $returnType = "object";
+    protected $allowedFields = ['id_pengurus', 'id_anggota', 'kd_penjualan', 'tgl_penjualan', 'jam', 'grand_total', 'dibayar', 'kembalian'];
+
     public function kodePenjualan()
     {
         $tgl = date('Ymd');

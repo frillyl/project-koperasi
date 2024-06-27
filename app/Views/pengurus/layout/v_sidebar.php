@@ -98,7 +98,7 @@
                     </li>
                     <li class="nav-header">TRANSAKSI</li>
                     <li class="nav-item">
-                        <a href="<?= base_url('pengurus/transaksi/penjualan') ?>" class="nav-link">
+                        <a href="<?= base_url('pengurus/transaksi/penjualan') ?>" class="nav-link" target="_blank">
                             <i class="nav-icon fa-solid fa-cash-register"></i>
                             <p>
                                 Penjualan
