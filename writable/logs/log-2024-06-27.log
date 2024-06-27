@@ -1,0 +1,311 @@
+INFO - 2024-06-27 00:10:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 00:10:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 00:10:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 00:11:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 00:23:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-27 00:23:41 --> TypeError: Unsupported operand types: string * string
+[Method: POST, Route: pengurus/transaksi/penjualan/tambah_barang]
+in APPPATH\Controllers\Penjualan.php on line 62.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Penjualan->tambah_barang()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-27 00:25:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 00:26:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 00:30:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 00:31:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-27 00:41:53 --> Error: Class "App\Models\ModelDetPenjualan" not found
+[Method: GET, Route: pengurus/transaksi/penjualan]
+in APPPATH\Controllers\Penjualan.php on line 21.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Penjualan->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(500): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-27 00:42:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 00:43:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 00:43:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 00:44:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 00:44:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 00:44:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 00:48:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 00:48:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 00:48:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 00:50:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-27 00:51:15 --> ErrorException: Undefined array key "kd_penjualan"
+[Method: POST, Route: pengurus/transaksi/penjualan/payment]
+in APPPATH\Controllers\Penjualan.php on line 84.
+ 1 APPPATH\Controllers\Penjualan.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "kd_penjualan"', 'C:\\xampp\\htdocs\\koperasi\\app\\Controllers\\Penjualan.php', 84)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Penjualan->payment()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-27 00:53:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 00:53:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 00:54:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 00:54:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 00:58:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-27 00:58:44 --> TypeError: Unsupported operand types: string * string
+[Method: POST, Route: pengurus/transaksi/penjualan/tambah_barang]
+in APPPATH\Controllers\Penjualan.php on line 62.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Penjualan->tambah_barang()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-27 01:06:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 01:09:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 01:09:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-27 01:10:30 --> mysqli_sql_exception: Unknown column 'tanggal' in 'field list' in C:\xampp\htdocs\koperasi\system\Database\MySQLi\Connection.php:310
+Stack trace:
+#0 C:\xampp\htdocs\koperasi\system\Database\MySQLi\Connection.php(310): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\xampp\htdocs\koperasi\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\xampp\htdocs\koperasi\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\xampp\htdocs\koperasi\system\Database\BaseBuilder.php(2333): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\xampp\htdocs\koperasi\app\Models\ModelPenjualan.php(53): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\koperasi\app\Controllers\Penjualan.php(92): App\Models\ModelPenjualan->simpanPenjualan(Array, NULL)
+#6 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(933): App\Controllers\Penjualan->payment()
+#7 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#8 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\koperasi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\koperasi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\koperasi\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-06-27 01:10:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tanggal' in 'field list'
+[Method: POST, Route: pengurus/transaksi/penjualan/payment]
+in SYSTEMPATH\Database\BaseConnection.php on line 686.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2333): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tanggal`, `total_harga`, `dibayar`, `kembalian`) VALUES (:kd_penjualan:, :tanggal:, :total_harga:, :dibayar:, :kembalian:)', [...], false)
+ 2 APPPATH\Models\ModelPenjualan.php(53): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Penjualan.php(92): App\Models\ModelPenjualan->simpanPenjualan([...], null)
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Penjualan->payment()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-27 01:10:30 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tanggal' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 315.
+ 1 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tanggal`, `total_harga`, `dibayar`, `kembalian`) VALUES (NULL, \'2024-06-27\', \'4500\', \'4500\', \'0\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tanggal`, `total_harga`, `dibayar`, `kembalian`) VALUES (NULL, \'2024-06-27\', \'4500\', \'4500\', \'0\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2333): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tanggal`, `total_harga`, `dibayar`, `kembalian`) VALUES (:kd_penjualan:, :tanggal:, :total_harga:, :dibayar:, :kembalian:)', [...], false)
+ 4 APPPATH\Models\ModelPenjualan.php(53): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Penjualan.php(92): App\Models\ModelPenjualan->simpanPenjualan([...], null)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Penjualan->payment()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-27 01:10:30 --> [Caused by] mysqli_sql_exception: Unknown column 'tanggal' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(310): mysqli->query('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tanggal`, `total_harga`, `dibayar`, `kembalian`) VALUES (NULL, \'2024-06-27\', \'4500\', \'4500\', \'0\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tanggal`, `total_harga`, `dibayar`, `kembalian`) VALUES (NULL, \'2024-06-27\', \'4500\', \'4500\', \'0\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tanggal`, `total_harga`, `dibayar`, `kembalian`) VALUES (NULL, \'2024-06-27\', \'4500\', \'4500\', \'0\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2333): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tanggal`, `total_harga`, `dibayar`, `kembalian`) VALUES (:kd_penjualan:, :tanggal:, :total_harga:, :dibayar:, :kembalian:)', [...], false)
+ 5 APPPATH\Models\ModelPenjualan.php(53): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Penjualan.php(92): App\Models\ModelPenjualan->simpanPenjualan([...], null)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Penjualan->payment()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-27 01:10:53 --> mysqli_sql_exception: Unknown column 'total_harga' in 'field list' in C:\xampp\htdocs\koperasi\system\Database\MySQLi\Connection.php:310
+Stack trace:
+#0 C:\xampp\htdocs\koperasi\system\Database\MySQLi\Connection.php(310): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\xampp\htdocs\koperasi\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\xampp\htdocs\koperasi\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\xampp\htdocs\koperasi\system\Database\BaseBuilder.php(2333): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\xampp\htdocs\koperasi\app\Models\ModelPenjualan.php(53): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\koperasi\app\Controllers\Penjualan.php(92): App\Models\ModelPenjualan->simpanPenjualan(Array, NULL)
+#6 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(933): App\Controllers\Penjualan->payment()
+#7 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#8 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\koperasi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\koperasi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\koperasi\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-06-27 01:10:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'total_harga' in 'field list'
+[Method: POST, Route: pengurus/transaksi/penjualan/payment]
+in SYSTEMPATH\Database\BaseConnection.php on line 686.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2333): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tgl_penjualan`, `total_harga`, `dibayar`, `kembalian`) VALUES (:kd_penjualan:, :tgl_penjualan:, :total_harga:, :dibayar:, :kembalian:)', [...], false)
+ 2 APPPATH\Models\ModelPenjualan.php(53): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Penjualan.php(92): App\Models\ModelPenjualan->simpanPenjualan([...], null)
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Penjualan->payment()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-27 01:10:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'total_harga' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 315.
+ 1 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tgl_penjualan`, `total_harga`, `dibayar`, `kembalian`) VALUES (NULL, \'2024-06-27\', \'4500\', \'4500\', \'0\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tgl_penjualan`, `total_harga`, `dibayar`, `kembalian`) VALUES (NULL, \'2024-06-27\', \'4500\', \'4500\', \'0\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2333): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tgl_penjualan`, `total_harga`, `dibayar`, `kembalian`) VALUES (:kd_penjualan:, :tgl_penjualan:, :total_harga:, :dibayar:, :kembalian:)', [...], false)
+ 4 APPPATH\Models\ModelPenjualan.php(53): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Penjualan.php(92): App\Models\ModelPenjualan->simpanPenjualan([...], null)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Penjualan->payment()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-27 01:10:53 --> [Caused by] mysqli_sql_exception: Unknown column 'total_harga' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(310): mysqli->query('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tgl_penjualan`, `total_harga`, `dibayar`, `kembalian`) VALUES (NULL, \'2024-06-27\', \'4500\', \'4500\', \'0\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tgl_penjualan`, `total_harga`, `dibayar`, `kembalian`) VALUES (NULL, \'2024-06-27\', \'4500\', \'4500\', \'0\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tgl_penjualan`, `total_harga`, `dibayar`, `kembalian`) VALUES (NULL, \'2024-06-27\', \'4500\', \'4500\', \'0\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2333): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tgl_penjualan`, `total_harga`, `dibayar`, `kembalian`) VALUES (:kd_penjualan:, :tgl_penjualan:, :total_harga:, :dibayar:, :kembalian:)', [...], false)
+ 5 APPPATH\Models\ModelPenjualan.php(53): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Penjualan.php(92): App\Models\ModelPenjualan->simpanPenjualan([...], null)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Penjualan->payment()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-27 01:10:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 01:10:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-27 01:11:10 --> mysqli_sql_exception: Unknown column 'total_harga' in 'field list' in C:\xampp\htdocs\koperasi\system\Database\MySQLi\Connection.php:310
+Stack trace:
+#0 C:\xampp\htdocs\koperasi\system\Database\MySQLi\Connection.php(310): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\xampp\htdocs\koperasi\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\xampp\htdocs\koperasi\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\xampp\htdocs\koperasi\system\Database\BaseBuilder.php(2333): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\xampp\htdocs\koperasi\app\Models\ModelPenjualan.php(53): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\koperasi\app\Controllers\Penjualan.php(92): App\Models\ModelPenjualan->simpanPenjualan(Array, NULL)
+#6 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(933): App\Controllers\Penjualan->payment()
+#7 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#8 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\koperasi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\koperasi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\koperasi\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-06-27 01:11:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'total_harga' in 'field list'
+[Method: POST, Route: pengurus/transaksi/penjualan/payment]
+in SYSTEMPATH\Database\BaseConnection.php on line 686.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2333): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tgl_penjualan`, `total_harga`, `dibayar`, `kembalian`) VALUES (:kd_penjualan:, :tgl_penjualan:, :total_harga:, :dibayar:, :kembalian:)', [...], false)
+ 2 APPPATH\Models\ModelPenjualan.php(53): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Penjualan.php(92): App\Models\ModelPenjualan->simpanPenjualan([...], null)
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Penjualan->payment()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-27 01:11:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'total_harga' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 315.
+ 1 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tgl_penjualan`, `total_harga`, `dibayar`, `kembalian`) VALUES (NULL, \'2024-06-27\', \'4500\', \'4500\', \'0\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tgl_penjualan`, `total_harga`, `dibayar`, `kembalian`) VALUES (NULL, \'2024-06-27\', \'4500\', \'4500\', \'0\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2333): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tgl_penjualan`, `total_harga`, `dibayar`, `kembalian`) VALUES (:kd_penjualan:, :tgl_penjualan:, :total_harga:, :dibayar:, :kembalian:)', [...], false)
+ 4 APPPATH\Models\ModelPenjualan.php(53): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Penjualan.php(92): App\Models\ModelPenjualan->simpanPenjualan([...], null)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Penjualan->payment()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-27 01:11:10 --> [Caused by] mysqli_sql_exception: Unknown column 'total_harga' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(310): mysqli->query('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tgl_penjualan`, `total_harga`, `dibayar`, `kembalian`) VALUES (NULL, \'2024-06-27\', \'4500\', \'4500\', \'0\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tgl_penjualan`, `total_harga`, `dibayar`, `kembalian`) VALUES (NULL, \'2024-06-27\', \'4500\', \'4500\', \'0\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tgl_penjualan`, `total_harga`, `dibayar`, `kembalian`) VALUES (NULL, \'2024-06-27\', \'4500\', \'4500\', \'0\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2333): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tgl_penjualan`, `total_harga`, `dibayar`, `kembalian`) VALUES (:kd_penjualan:, :tgl_penjualan:, :total_harga:, :dibayar:, :kembalian:)', [...], false)
+ 5 APPPATH\Models\ModelPenjualan.php(53): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Penjualan.php(92): App\Models\ModelPenjualan->simpanPenjualan([...], null)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Penjualan->payment()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-27 01:11:30 --> mysqli_sql_exception: Column 'kd_penjualan' cannot be null in C:\xampp\htdocs\koperasi\system\Database\MySQLi\Connection.php:310
+Stack trace:
+#0 C:\xampp\htdocs\koperasi\system\Database\MySQLi\Connection.php(310): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\xampp\htdocs\koperasi\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\xampp\htdocs\koperasi\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\xampp\htdocs\koperasi\system\Database\BaseBuilder.php(2333): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\xampp\htdocs\koperasi\app\Models\ModelPenjualan.php(53): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\koperasi\app\Controllers\Penjualan.php(92): App\Models\ModelPenjualan->simpanPenjualan(Array, NULL)
+#6 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(933): App\Controllers\Penjualan->payment()
+#7 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+#8 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\koperasi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\koperasi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\koperasi\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-06-27 01:11:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'kd_penjualan' cannot be null
+[Method: POST, Route: pengurus/transaksi/penjualan/payment]
+in SYSTEMPATH\Database\BaseConnection.php on line 686.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2333): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tgl_penjualan`, `grand_total`, `dibayar`, `kembalian`) VALUES (:kd_penjualan:, :tgl_penjualan:, :grand_total:, :dibayar:, :kembalian:)', [...], false)
+ 2 APPPATH\Models\ModelPenjualan.php(53): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Penjualan.php(92): App\Models\ModelPenjualan->simpanPenjualan([...], null)
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Penjualan->payment()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-27 01:11:30 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'kd_penjualan' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 315.
+ 1 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tgl_penjualan`, `grand_total`, `dibayar`, `kembalian`) VALUES (NULL, \'2024-06-27\', \'4500\', \'4500\', \'0\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tgl_penjualan`, `grand_total`, `dibayar`, `kembalian`) VALUES (NULL, \'2024-06-27\', \'4500\', \'4500\', \'0\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2333): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tgl_penjualan`, `grand_total`, `dibayar`, `kembalian`) VALUES (:kd_penjualan:, :tgl_penjualan:, :grand_total:, :dibayar:, :kembalian:)', [...], false)
+ 4 APPPATH\Models\ModelPenjualan.php(53): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Penjualan.php(92): App\Models\ModelPenjualan->simpanPenjualan([...], null)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Penjualan->payment()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-27 01:11:30 --> [Caused by] mysqli_sql_exception: Column 'kd_penjualan' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(310): mysqli->query('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tgl_penjualan`, `grand_total`, `dibayar`, `kembalian`) VALUES (NULL, \'2024-06-27\', \'4500\', \'4500\', \'0\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tgl_penjualan`, `grand_total`, `dibayar`, `kembalian`) VALUES (NULL, \'2024-06-27\', \'4500\', \'4500\', \'0\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tgl_penjualan`, `grand_total`, `dibayar`, `kembalian`) VALUES (NULL, \'2024-06-27\', \'4500\', \'4500\', \'0\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2333): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb_penjualan` (`kd_penjualan`, `tgl_penjualan`, `grand_total`, `dibayar`, `kembalian`) VALUES (:kd_penjualan:, :tgl_penjualan:, :grand_total:, :dibayar:, :kembalian:)', [...], false)
+ 5 APPPATH\Models\ModelPenjualan.php(53): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Penjualan.php(92): App\Models\ModelPenjualan->simpanPenjualan([...], null)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Penjualan->payment()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-27 01:26:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 01:29:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 01:29:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 01:29:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 01:30:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 01:30:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 01:30:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 01:30:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 01:32:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 01:32:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 01:42:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 01:42:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 01:43:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 01:45:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 01:45:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 01:46:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 01:52:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 01:55:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-27 01:55:39 --> TypeError: Unsupported operand types: string * string
+[Method: POST, Route: pengurus/transaksi/penjualan/tambah_barang]
+in APPPATH\Controllers\Penjualan.php on line 62.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Penjualan->tambah_barang()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Penjualan))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-27 01:58:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-27 02:00:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

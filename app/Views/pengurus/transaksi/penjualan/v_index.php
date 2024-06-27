@@ -204,6 +204,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             echo form_open('pengurus/transaksi/penjualan/payment');
                             ?>
 
+                            <input type="hidden" id="kd_penjualan" name="kd_penjualan" value="<?= $kd_penjualan ?>">
                             <div class="form-group">
                                 <label for="grand_total">Grand Total</label>
                                 <input type="text" name="grand_total" class="form-control" id="grand_total" placeholder="Grand Total" readonly>
@@ -384,6 +385,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                             totalKeseluruhan += parseInt(data.total_harga);
                             $('#grandTotal').text('Rp ' + totalKeseluruhan.toLocaleString('id-ID') + ',-');
+                            $('#grand_total').val(totalKeseluruhan);
 
                             $('#addItemForm')[0].reset();
                             $('#kd_barang').focus();
@@ -405,6 +407,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 $('#grandTotal').text('Rp ' + totalKeseluruhan.toLocaleString('id-ID') + ',-');
 
                 $(this).closest('tr').remove();
+            });
+
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'F8') {
+                    $('#bayar').modal('show');
+                }
+            });
+
+            $('.btn-success[data-target="#bayar"]').on('click', function() {
+                $('#grand_total').val(totalKeseluruhan.toLocaleString('id-ID'));
+                $('#bayar').modal('show');
+            });
+
+            $('#dibayar').on('input', function() {
+                let grandTotal = parseInt($('#grand_total').val()).toLocaleString('id-ID');
+                let dibayar = parseInt($(this).val()).toLocaleString('id-ID');
+                let kembalian = dibayar - grandTotal;
+
+                $('#kembalian').val(kembalian.toLocaleString('id-ID'));
+
+                if (kembalian < 0) {
+                    $('#kembalian').addClass('is-invalid');
+                } else {
+                    $('#kembalian').removeClass('is-invalid');
+                }
             });
         }
     </script>
