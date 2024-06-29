@@ -501,11 +501,34 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         items: validItems
                     },
                     success: function(response) {
-                        alert('Data berhasil disimpan!');
-                        // Optionally, you can redirect or clear the form here
+                        Swal.fire({
+                            text: "Transaksi Berhasil!",
+                            icon: "success"
+                        });
+                        // Kosongkan form
+                        $('#paymentForm')[0].reset();
+
+                        // Kosongkan tabel
+                        $('table tbody').empty();
+
+                        // Reset nilai total keseluruhan
+                        $('#grandTotal').text('Rp 0,-');
+                        $('#grand_total').val(0);
+                        $('#dibayar').val('');
+                        $('#kembalian').val('');
+
+                        $('select').val(null).trigger('change');
+
+                        $('#bayar').modal('hide');
+
+                        // Fokus kembali ke input kode barang
+                        $('#kd_barang').focus();
                     },
                     error: function(error) {
-                        alert('Terjadi kesalahan saat menyimpan data!');
+                        Swal.fire({
+                            text: "Transaksi Gagal!",
+                            icon: "danger"
+                        });
                         console.log('Error:', error);
                     }
                 });
