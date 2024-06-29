@@ -287,7 +287,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         }
     </script>
 
-    <script>
+    <script type="text/javascript">
         function bacaGambar(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
@@ -302,7 +302,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             bacaGambar(this);
         })
     </script>
-    <script>
+    <script type="text/javascript">
         $(document).ready(function() {
             $('#kd_barang').focus();
             $('#kd_barang').keydown(function(e) {
@@ -380,9 +380,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <td>${data.kd_barang}</td>
                                             <td>${data.nm_barang}</td>
                                             <td>${jenisBarangText}</td>
-                                            <td>${data.harga_jual}</td>
+                                            <td>${formatNumber(data.harga_jual)}</td>
                                             <td>${data.qty}</td>
-                                            <td class="item-total-harga">${data.total_harga}</td>
+                                            <td class="item-total-harga">${formatNumber(data.total_harga)}</td>
                                             <td>
                                                 <a class="btn btn-sm btn-danger delete-item"><i class="fa-solid fa-xmark"></i></a>
                                             </td>
@@ -390,8 +390,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             $('table tbody').append(newRow);
 
                             totalKeseluruhan += parseInt(data.total_harga);
-                            $('#grandTotal').text('Rp ' + totalKeseluruhan.toLocaleString('id-ID') + ',-');
-                            $('#grand_total').val(totalKeseluruhan.toLocaleString('id-ID'));
+                            $('#grandTotal').text('Rp ' + formatNumber(totalKeseluruhan) + ',-');
+                            $('#grand_total').val(totalKeseluruhan);
 
                             $('#addItemForm')[0].reset();
                             $('#kd_barang').focus();
@@ -408,9 +408,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
             });
 
             $(document).on('click', '.delete-item', function() {
-                let itemTotalHarga = parseFloat($(this).closest('tr').find('.item-total-harga').text());
+                let itemTotalHarga = parseFloat($(this).closest('tr').find('.item-total-harga').text().replace(/\D/g, ''));
                 totalKeseluruhan -= itemTotalHarga;
-                $('#grandTotal').text('Rp ' + totalKeseluruhan.toLocaleString('id-ID') + ',-');
+                $('#grandTotal').text('Rp ' + formatNumber(totalKeseluruhan) + ',-');
 
                 $(this).closest('tr').remove();
             });
@@ -432,19 +432,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
             $('#dibayar').on('input', function() {
                 let inputVal = $(this).val();
                 let numericVal = inputVal.replace(/\D/g, '');
-                let formattedVal = parseInt(numericVal).toLocaleString('id-ID');
+                let formattedVal = formatNumber(numericVal);
                 $(this).val(formattedVal);
-                let grandTotal = parseInt($('#grand_total').val().replace(/\D/g, ''));
-                let dibayar = parseInt($(this).val().replace(/\D/g, ''));
-                let kembalian = dibayar - grandTotal;
-
-                $('#kembalian').val(kembalian.toLocaleString('id-ID'));
-
-                if (kembalian < 0) {
-                    $('#kembalian').addClass('is-invalid');
-                } else {
-                    $('#kembalian').removeClass('is-invalid');
-                }
+                updateKembalian();
             });
 
             $('#paymentForm').on('submit', function(e) {
@@ -462,12 +452,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     value: id_anggota
                 });
 
+                formData.push({
+                    name: 'grand_total',
+                    value: parseFloat($('#grand_total').val().replace(/\D/g, ''))
+                });
+                formData.push({
+                    name: 'dibayar',
+                    value: parseFloat($('#dibayar').val().replace(/\D/g, ''))
+                });
+                formData.push({
+                    name: 'kembalian',
+                    value: parseFloat($('#kembalian').val().replace(/\D/g, ''))
+                });
+
                 var tableData = {};
                 $('table tbody tr').each(function() {
                     var kd_barang = $(this).find('td:eq(0)').text().trim();
-                    var harga_jual = $(this).find('td:eq(3)').text().trim();
+                    var harga_jual = $(this).find('td:eq(3)').text().trim().replace(/\D/g, '');
                     var qty = $(this).find('td:eq(4)').text().trim();
-                    var total_harga = $(this).find('td:eq(5)').text().trim();
+                    var total_harga = $(this).find('td:eq(5)').text().trim().replace(/\D/g, '');
 
                     if (kd_barang !== "" && harga_jual !== "" && qty !== "" && total_harga !== "") {
                         // Memastikan kd_barang hanya dimasukkan satu kali
@@ -516,6 +519,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 item.qty.trim() !== "" &&
                 item.total_harga.trim() !== ""
             );
+        }
+
+        function formatNumber(num) {
+            return parseInt(num).toLocaleString('id-ID');
+        }
+
+        function updateKembalian() {
+            let grandTotal = parseInt($('#grand_total').val().replace(/\D/g, ''));
+            let dibayar = parseInt($('#dibayar').val().replace(/\D/g, ''));
+            let kembalian = dibayar - grandTotal;
+
+            $('#kembalian').val(formatNumber(kembalian));
+
+            if (kembalian < 0) {
+                $('#kembalian').addClass('is-invalid');
+            } else {
+                $('#kembalian').removeClass('is-invalid');
+            }
         }
     </script>
     <script>
