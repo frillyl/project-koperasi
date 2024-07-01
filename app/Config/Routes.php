@@ -7,8 +7,8 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 // ROUTES PENGURUS
-$routes->get('/pengurus', 'Pengurus::index');
-$routes->post('/pengurus/auth', 'Pengurus::auth');
+$routes->get('/pengurus/login', 'Pengurus::index');
+$routes->post('/pengurus/login/auth', 'Pengurus::auth');
 $routes->get('/pengurus/logout', 'Pengurus::logout');
 $routes->get('/pengurus/dashboard', 'Dashboard::index');
 // Role: Administrator

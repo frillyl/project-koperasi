@@ -221,6 +221,25 @@
                         </a>
                     </li>
                 <?php endif; ?>
+                <?php if (session()->get('role') == '2') : ?>
+                    <li class="nav-header">LAPORAN</li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/laporan/posisikeuangan') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-file-invoice-dollar"></i>
+                            <p>
+                                Posisi Keuangan
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/laporan/labarugi') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-file-invoice-dollar"></i>
+                            <p>
+                                Laba Rugi
+                            </p>
+                        </a>
+                    </li>
+                <?php endif; ?>
                 <?php if (session()->get('role') == '3') : ?>
                     <li class="nav-header">DATA INDUK</li>
                     <li class="nav-item">
@@ -323,25 +342,34 @@
                             </p>
                         </a>
                     </li>
+                    <li class="nav-header">SIMPAN PINJAM</li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/simpanpinjam/simpanan') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-wallet"></i>
+                            <p>
+                                Simpanan
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/simpanpinjam/pinjaman') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-hand-holding-dollar"></i>
+                            <p>
+                                Pinjaman
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/simpanpinjam/angsuran') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-money-check-dollar"></i>
+                            <p>
+                                Angsuran
+                            </p>
+                        </a>
+                    </li>
                 <?php endif; ?>
                 <?php if (session()->get('role') == '5') : ?>
                     <li class="nav-header">DATA INDUK</li>
-                    <li class="nav-item">
-                        <a href="<?= base_url('pengurus/master/anggota') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-users"></i>
-                            <p>
-                                Data Anggota
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="<?= base_url('pengurus/master/pengurus') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-user-tie"></i>
-                            <p>
-                                Data Pengurus
-                            </p>
-                        </a>
-                    </li>
                     <li class="nav-item">
                         <a href="<?= base_url('pengurus/master/agen') ?>" class="nav-link">
                             <i class="nav-icon fa-solid fa-truck-ramp-box"></i>
@@ -363,6 +391,40 @@
                             <i class="nav-icon fa-solid fa-boxes-stacked"></i>
                             <p>
                                 Data Barang
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-header">TRANSAKSI</li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/transaksi/penjualan') ?>" class="nav-link" target="_blank">
+                            <i class="nav-icon fa-solid fa-cash-register"></i>
+                            <p>
+                                Penjualan
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/transaksi/pembelian') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-basket-shopping"></i>
+                            <p>
+                                Pembelian
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-header">RETUR</li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/retur/penjualan') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-boxes-stacked"></i>
+                            <p>
+                                Penjualan
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/retur/pembelian') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-boxes-packing"></i>
+                            <p>
+                                Pembelian
                             </p>
                         </a>
                     </li>

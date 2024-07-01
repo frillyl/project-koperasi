@@ -34,6 +34,10 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
+        'admin'         => \App\Filters\AdminFilter::class,
+        'manajemen'     => \App\Filters\ManajemenFilter::class,
+        'bendahara'     => \App\Filters\BendaharaFilter::class,
+        'sekretaris'    => \App\Filters\SekretarisFilter::class
     ];
 
     /**
@@ -72,8 +76,72 @@ class Filters extends BaseFilters
             // 'honeypot',
             // 'csrf',
             // 'invalidchars',
+            'admin' => [
+                'except' => [
+                    'pengurus/login/*',
+                    'pengurus/login',
+                    '/'
+                ]
+            ],
+            'manajemen' => [
+                'except' => [
+                    'pengurus/login/*',
+                    'pengurus/login',
+                    '/'
+                ]
+            ],
+            'bendahara' => [
+                'except' => [
+                    'pengurus/login/*',
+                    'pengurus/login',
+                    '/'
+                ]
+            ],
+            'sekretaris' => [
+                'except' => [
+                    'pengurus/login/*',
+                    'pengurus/login',
+                    '/'
+                ]
+            ]
         ],
         'after' => [
+            'admin' => [
+                'except' => [
+                    'pengurus/dashboard',
+                    'pengurus/master/*',
+                    'pengurus/transaksi/*',
+                    'pengurus/retur/*',
+                    'pengurus/akuntansi/*',
+                    'pengurus/usipa/*',
+                    'pengurus/laporan/*'
+                ]
+            ],
+            'manajemen' => [
+                'except' => [
+                    'pengurus/dashboard',
+                    'pengurus/laporan/*'
+                ]
+            ],
+            'bendahara' => [
+                'except' => [
+                    'pengurus/dashboard',
+                    'pengurus/master/hutang/*',
+                    'pengurus/master/piutang/*',
+                    'pengurus/master/aset/*',
+                    'pengurus/akuntansi/*',
+                    'pengurus/laporan/posisi_keuangan',
+                    'pengurus/laporan/laba_rugi',
+                ]
+            ],
+            'sekretaris' => [
+                'except' => [
+                    'pengurus/dashboard',
+                    'pengurus/master/anggota',
+                    'pengurus/master/anggota/*',
+                    'pengurus/usipa/*',
+                ]
+            ]
             // 'honeypot',
             // 'secureheaders',
         ],

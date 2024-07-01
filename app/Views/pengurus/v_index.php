@@ -69,7 +69,7 @@
                 }
                 ?>
 
-                <?php echo form_open('pengurus/auth') ?>
+                <?php echo form_open('pengurus/login/auth') ?>
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" name="username" placeholder="Username">
                     <div class="input-group-append">

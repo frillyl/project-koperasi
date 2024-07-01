@@ -56,15 +56,15 @@ class Pengurus extends BaseController
                     return redirect()->to(base_url('pengurus/dashboard'));
                 } else {
                     session()->setFlashdata('pesan', 'Login Gagal. Username atau Password Salah.');
-                    return redirect()->to(base_url('pengurus'));
+                    return redirect()->to(base_url('pengurus/login'));
                 }
             } else {
                 session()->setFlashdata('pesan', 'Login Gagal. Akun Anda Tidak Ditemukan.');
-                return redirect()->to(base_url('pengurus'));
+                return redirect()->to(base_url('pengurus/login'));
             }
         } else {
             session()->setFlashdata('errors', \Config\Services::validation()->getErrors());
-            return redirect()->to(base_url('pengurus'));
+            return redirect()->to(base_url('pengurus/login'));
         }
     }
 
@@ -78,6 +78,6 @@ class Pengurus extends BaseController
         session()->remove('role');
         session()->remove('isLoggedIn');
 
-        return redirect()->to(base_url('pengurus'));
+        return redirect()->to(base_url('pengurus/login'));
     }
 }
