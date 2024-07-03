@@ -46,10 +46,17 @@
 <script type="text/javascript">
     const currentLocation = location.href;
     const menuItem = document.querySelectorAll('li a');
-    const menuLength = menuItem.length
+    const menuLength = menuItem.length;
+
     for (let i = 0; i < menuLength; i++) {
         if (menuItem[i].href === currentLocation) {
-            menuItem[i].className = "nav-link active"
+            menuItem[i].classList.add("active");
+
+            // Add active class to parent <li> if it's a sub menu item
+            let parentLi = menuItem[i].closest('ul').previousElementSibling;
+            if (parentLi && parentLi.tagName === 'A') {
+                parentLi.classList.add("active");
+            }
         }
     }
 </script>

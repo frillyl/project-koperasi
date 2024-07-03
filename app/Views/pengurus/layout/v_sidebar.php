@@ -72,30 +72,6 @@
                             </p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="<?= base_url('pengurus/master/hutang') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-credit-card"></i>
-                            <p>
-                                Data Hutang
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="<?= base_url('pengurus/master/piutang') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-credit-card"></i>
-                            <p>
-                                Data Piutang
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="<?= base_url('pengurus/master/aset') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-shop"></i>
-                            <p>
-                                Data Aset
-                            </p>
-                        </a>
-                    </li>
                     <li class="nav-header">TRANSAKSI</li>
                     <li class="nav-item">
                         <a href="<?= base_url('pengurus/transaksi/penjualan') ?>" class="nav-link" target="_blank">
@@ -132,51 +108,103 @@
                     </li>
                     <li class="nav-header">AKUNTANSI</li>
                     <li class="nav-item">
-                        <a href="<?= base_url('pengurus/keuangan/akun') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-rectangle-list"></i>
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fa-solid fa-list-ol"></i>
                             <p>
-                                Data Akun
+                                Kode Akun
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?= base_url('pengurus/akuntansi/akun') ?>" class="nav-link">
+                                    <i class="nav-icon fa-regular fa-circle"></i>
+                                    <p>
+                                        Daftar Kode Akun
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= base_url('pengurus/akuntansi/akun/tambah') ?>" class="nav-link">
+                                    <i class="nav-icon fa-regular fa-circle"></i>
+                                    <p>
+                                        Tambah Kode Akun
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= base_url('pengurus/akuntansi/akun/kelola') ?>" class="nav-link">
+                                    <i class="nav-icon fa-regular fa-circle"></i>
+                                    <p>
+                                        Kelola Kode Akun
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/akuntansi/akun_bantu') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-list-ol"></i>
+                            <p>
+                                Kode Bantu
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?= base_url('pengurus/keuangan/jurnalumum') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-swatchbook"></i>
+                        <a href="<?= base_url('pengurus/akuntansi/jurnal_umum') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-book"></i>
                             <p>
                                 Jurnal Umum
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?= base_url('pengurus/keuangan/bukubesar') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-book"></i>
+                        <a href="<?= base_url('pengurus/akuntansi/buku_besar') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-swatchbook"></i>
                             <p>
                                 Buku Besar
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="<?= base_url('pengurus/akuntansi/buku_pembantu') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-swatchbook"></i>
+                            <p>
+                                Buku Pembantu
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/akuntansi/neraca_lajur') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-scale-balanced"></i>
+                            <p>
+                                Neraca Lajur
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/akuntansi/laba_rugi') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-money-bill-trend-up"></i>
+                            <p>
+                                Laba Rugi
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/akuntansi/neraca') ?>" class="nav-link">
                             <i class="nav-icon fa-solid fa-scale-balanced"></i>
                             <p>
                                 Neraca
-                                <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="<?= base_url('pengurus/keuangan/neraca/saldoawal') ?>" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Saldo Awal</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="<?= base_url('pengurus/keuangan/neraca/saldoakhir') ?>" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Saldo Akhir</p>
-                                </a>
-                            </li>
-                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/akuntansi/perubahan_modal') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-money-check-dollar"></i>
+                            <p>
+                                Perubahan Modal
+                            </p>
+                        </a>
                     </li>
                     <li class="nav-header">SIMPAN PINJAM</li>
                     <li class="nav-item">
@@ -197,7 +225,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="<?= base_url('pengurus/simpanpinjam/angsuran') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-money-check-dollar"></i>
+                            <i class="nav-icon fa-solid fa-address-book"></i>
                             <p>
                                 Angsuran
                             </p>

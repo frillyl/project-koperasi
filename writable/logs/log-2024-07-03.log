@@ -1,0 +1,142 @@
+INFO - 2024-07-03 01:57:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 01:57:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 01:57:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 02:00:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 02:02:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 02:09:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 02:33:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 02:33:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 02:35:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 02:36:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 02:36:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 02:37:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 02:38:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 02:39:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 02:40:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 02:41:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 02:51:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 02:51:32 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+[Method: GET, Route: pengurus/akuntansi/akun]
+in SYSTEMPATH\Database\BaseConnection.php on line 923.
+ 1 SYSTEMPATH\Model.php(716): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(922): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\Akuntansi.php(23): CodeIgniter\Model->__call('allData', [])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Akuntansi->index_akun()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Akuntansi))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-03 02:51:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 02:54:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 02:54:38 --> ErrorException: Undefined variable $agen
+[Method: GET, Route: pengurus/akuntansi/akun]
+in APPPATH\Views\pengurus\akuntansi\akun\v_index.php on line 71.
+ 1 APPPATH\Views\pengurus\akuntansi\akun\v_index.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $agen', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\akun\\v_index.php', 71)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\akun\\v_index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/akuntansi/akun/v_index', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/akuntansi/akun/v_index')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\Akuntansi.php(25): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Akuntansi->index_akun()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Akuntansi))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-03 02:54:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-03 02:54:59 --> ErrorException: Undefined variable $agen
+[Method: GET, Route: pengurus/akuntansi/akun]
+in APPPATH\Views\pengurus\akuntansi\akun\v_index.php on line 71.
+ 1 APPPATH\Views\pengurus\akuntansi\akun\v_index.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $agen', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\akun\\v_index.php', 71)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\akun\\v_index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/akuntansi/akun/v_index', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/akuntansi/akun/v_index')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\Akuntansi.php(25): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Akuntansi->index_akun()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Akuntansi))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-03 02:55:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 02:55:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 03:10:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 03:11:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 03:11:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:10:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:11:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:13:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:15:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:15:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:17:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:17:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:17:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:18:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:18:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:18:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:20:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:20:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:20:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:21:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:21:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:21:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:21:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:21:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:22:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:22:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:22:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:23:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:23:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:28:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:30:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:30:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:31:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:31:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:31:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:35:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:35:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:35:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:36:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:36:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:36:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:36:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:38:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:41:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:41:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:41:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:42:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:47:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:48:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:48:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:48:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 04:51:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 05:01:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 05:55:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 05:58:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 05:59:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 06:01:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 06:02:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 06:03:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 06:03:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 06:07:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 06:09:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 06:10:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 06:13:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 06:54:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-03 06:54:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
