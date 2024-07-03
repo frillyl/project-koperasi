@@ -50,17 +50,16 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-body">
-                            <table id="example2" class="table table-bordered table-hover">
-                                <thead style="text-align: center;">
+                        <div class="card-body table-responsive p-0">
+                            <table class="table table-bordered table-hover table-head-fixed text-nowrap">
+                                <thead style="text-align: center; background-color: #3d9970; color: white;">
                                     <tr>
-                                        <th rowspan="2" style="vertical-align: middle;" width="25px">No</th>
-                                        <th rowspan="2" style="vertical-align: middle;" width="50px">Kode Akun</th>
-                                        <th rowspan="2" style="vertical-align: middle;" width="200px">Nama Akun</th>
-                                        <th rowspan="2" style="vertical-align: middle;" width="50px">Tabel Bantuan</th>
-                                        <th rowspan="2" style="vertical-align: middle;" width="100px">Pos Saldo</th>
-                                        <th rowspan="2" style="vertical-align: middle;" width="100px">Pos Laporan</th>
-                                        <th colspan="2">Saldo Awal</th>
+                                        <th rowspan="2" style="vertical-align: middle; background-color: #3d9970; color: white;" width="50px">Kode Akun</th>
+                                        <th rowspan="2" style="vertical-align: middle; background-color: #3d9970; color: white;" width="225px">Nama Akun</th>
+                                        <th rowspan="2" style="vertical-align: middle; background-color: #3d9970; color: white;" width="50px">Tabel Bantuan</th>
+                                        <th rowspan="2" style="vertical-align: middle; background-color: #3d9970; color: white;" width="100px">Pos Saldo</th>
+                                        <th rowspan="2" style="vertical-align: middle; background-color: #3d9970; color: white;" width="100px">Pos Laporan</th>
+                                        <th colspan="2" style="background-color: #3d9970; color: white;">Saldo Awal</th>
                                     </tr>
                                     <tr>
                                         <th>Debit</th>
@@ -68,10 +67,9 @@
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
-                                    <?php $no = 1;
+                                    <?php
                                     foreach ($akun as $key => $value) { ?>
                                         <tr>
-                                            <td rowspan="2" style="vertical-align: middle;"><?= $no++ ?></td>
                                             <td rowspan="2" style="vertical-align: middle;"><?= $value['kd_akun'] ?></td>
                                             <td rowspan="2" style="vertical-align: middle;"><?= $value['nm_akun'] ?></td>
                                             <td rowspan="2" style="vertical-align: middle;"><?= $value['tb_bantuan'] ?></td>
@@ -89,8 +87,10 @@
                                                                                             } elseif ($value['pos_laporan'] == '2') {
                                                                                                 echo 'Laba Rugi';
                                                                                             } ?></td>
+                                        <tr>
                                             <td><?= $value['debit'] ?></td>
                                             <td><?= $value['kredit'] ?></td>
+                                        </tr>
                                         </tr>
                                     <?php } ?>
                                 </tbody>

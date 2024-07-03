@@ -43,3 +43,5 @@ $routes->post('pengurus/transaksi/penjualan/tambah_barang', 'Penjualan::tambah_b
 $routes->post('pengurus/transaksi/penjualan/simpan', 'Penjualan::simpan');
 
 $routes->get('/pengurus/akuntansi/akun', 'Akuntansi::index_akun');
+
+$routes->get('pengurus/akuntansi/akun_pembantu', 'Akuntansi::index_bantu');

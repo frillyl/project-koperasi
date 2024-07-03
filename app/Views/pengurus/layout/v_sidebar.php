@@ -143,12 +143,47 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="<?= base_url('pengurus/akuntansi/akun_bantu') ?>" class="nav-link">
+                        <a href="#" class="nav-link">
                             <i class="nav-icon fa-solid fa-list-ol"></i>
                             <p>
-                                Kode Bantu
+                                Kode Akun Pembantu
+                                <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?= base_url('pengurus/akuntansi/akun_header') ?>" class="nav-link">
+                                    <i class="nav-icon fa-regular fa-circle"></i>
+                                    <p>
+                                        Kelola Akun Header
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= base_url('pengurus/akuntansi/akun_pembantu') ?>" class="nav-link">
+                                    <i class="nav-icon fa-regular fa-circle"></i>
+                                    <p>
+                                        Daftar Kode Akun Pembantu
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= base_url('pengurus/akuntansi/akun/tambah') ?>" class="nav-link">
+                                    <i class="nav-icon fa-regular fa-circle"></i>
+                                    <p>
+                                        Tambah Kode Akun Pembantu
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= base_url('pengurus/akuntansi/akun/kelola') ?>" class="nav-link">
+                                    <i class="nav-icon fa-regular fa-circle"></i>
+                                    <p>
+                                        Kelola Kode Akun Pembantu
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a href="<?= base_url('pengurus/akuntansi/jurnal_umum') ?>" class="nav-link">
