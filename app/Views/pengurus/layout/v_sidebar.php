@@ -186,12 +186,39 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="<?= base_url('pengurus/akuntansi/jurnal_umum') ?>" class="nav-link">
+                        <a href="#" class="nav-link">
                             <i class="nav-icon fa-solid fa-book"></i>
                             <p>
                                 Jurnal Umum
+                                <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?= base_url('pengurus/akuntansi/jurnal_umum') ?>" class="nav-link">
+                                    <i class="nav-icon fa-regular fa-circle"></i>
+                                    <p>
+                                        Daftar Jurnal Umum
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= base_url('pengurus/akuntansi/akun/tambah') ?>" class="nav-link">
+                                    <i class="nav-icon fa-regular fa-circle"></i>
+                                    <p>
+                                        Tambah Jurnal Umum
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= base_url('pengurus/akuntansi/akun/kelola') ?>" class="nav-link">
+                                    <i class="nav-icon fa-regular fa-circle"></i>
+                                    <p>
+                                        Kelola Jurnal Umum
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a href="<?= base_url('pengurus/akuntansi/buku_besar') ?>" class="nav-link">
