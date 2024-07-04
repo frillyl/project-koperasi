@@ -4,17 +4,20 @@ namespace App\Controllers;
 
 use App\Models\ModelAkun;
 use App\Models\ModelAkunPembantu;
+use App\Models\ModelAkunHeader;
 
 class Akuntansi extends BaseController
 {
     protected $ModelAkun;
     protected $ModelAkunPembantu;
+    protected $ModelAkunHeader;
 
     public function __construct()
     {
         helper('form');
         $this->ModelAkun = new ModelAkun();
         $this->ModelAkunPembantu = new ModelAkunPembantu();
+        $this->ModelAkunHeader = new ModelAkunHeader();
     }
 
     // MASTER KODE AKUN
@@ -25,6 +28,18 @@ class Akuntansi extends BaseController
             'sub'   => 'Kode Akun',
             'isi'   => 'pengurus/akuntansi/akun/v_index',
             'akun'  => $this->ModelAkun->allData()
+        ];
+        return view('pengurus/layout/v_wrapper', $data);
+    }
+
+    // MASTER HEADER AKUN PEMBANTU
+    public function index_header()
+    {
+        $data = [
+            'title' => 'Primer Koperasi Darma Putra Kujang I',
+            'sub'   => 'Akun Pembantu Header',
+            'isi'   => 'pengurus/akuntansi/header/v_index',
+            'header' => $this->ModelAkunHeader->allData()
         ];
         return view('pengurus/layout/v_wrapper', $data);
     }
