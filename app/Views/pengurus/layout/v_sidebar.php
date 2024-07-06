@@ -52,59 +52,64 @@
                         <a href="<?= base_url('pengurus/master/agen') ?>" class="nav-link">
                             <i class="nav-icon fa-solid fa-truck-ramp-box"></i>
                             <p>
-                                Data Agen/Pemasok
+                                Data Agen
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?= base_url('pengurus/master/satuan') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-ruler"></i>
-                            <p>
-                                Data Satuan Barang
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="<?= base_url('pengurus/master/barang') ?>" class="nav-link">
+                        <a href="#" class="nav-link">
                             <i class="nav-icon fa-solid fa-boxes-stacked"></i>
                             <p>
                                 Data Barang
+                                <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?= base_url('pengurus/master/satuan') ?>" class="nav-link">
+                                    <i class="nav-icon fa-regular fa-circle"></i>
+                                    <p>
+                                        Data Satuan Barang
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= base_url('pengurus/master/barang') ?>" class="nav-link">
+                                    <i class="nav-icon fa-regular fa-circle"></i>
+                                    <p>
+                                        Stok Barang
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-header">TRANSAKSI</li>
                     <li class="nav-item">
-                        <a href="<?= base_url('pengurus/transaksi/penjualan') ?>" class="nav-link" target="_blank">
+                        <a href="#" class="nav-link">
                             <i class="nav-icon fa-solid fa-cash-register"></i>
                             <p>
-                                Penjualan
+                                Data Penjualan
+                                <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="<?= base_url('pengurus/transaksi/pembelian') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-basket-shopping"></i>
-                            <p>
-                                Pembelian
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-header">RETUR</li>
-                    <li class="nav-item">
-                        <a href="<?= base_url('pengurus/retur/penjualan') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-boxes-stacked"></i>
-                            <p>
-                                Penjualan
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="<?= base_url('pengurus/retur/pembelian') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-boxes-packing"></i>
-                            <p>
-                                Pembelian
-                            </p>
-                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="<?= base_url('pengurus/transaksi/penjualan') ?>" class="nav-link" target="_blank">
+                                    <i class="nav-icon fa-regular fa-circle"></i>
+                                    <p>
+                                        Kasir
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?= base_url('pengurus/transaksi/penjualan/laporan') ?>" class="nav-link">
+                                    <i class="nav-icon fa-regular fa-circle"></i>
+                                    <p>
+                                        Laporan Penjualan
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="nav-header">AKUNTANSI</li>
                     <li class="nav-item">
@@ -290,23 +295,6 @@
                             <i class="nav-icon fa-solid fa-address-book"></i>
                             <p>
                                 Angsuran
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-header">LAPORAN</li>
-                    <li class="nav-item">
-                        <a href="<?= base_url('pengurus/laporan/posisikeuangan') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-file-invoice-dollar"></i>
-                            <p>
-                                Posisi Keuangan
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="<?= base_url('pengurus/laporan/labarugi') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-file-invoice-dollar"></i>
-                            <p>
-                                Laba Rugi
                             </p>
                         </a>
                     </li>
