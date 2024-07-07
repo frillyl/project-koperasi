@@ -173,7 +173,7 @@ class Master extends BaseController
                 'errors' => [
                     'max_size' => '{field} tidak boleh lebih dari 1MB!',
                     'is_image' => '{field} harus berupa gambar!',
-                    'mime_in' => '{field} harus berupa gambar!'
+                    'mime_in' => '{field} harus berformat JPG/PNG/JPEG!'
                 ]
             ],
             'edited_by' => [
