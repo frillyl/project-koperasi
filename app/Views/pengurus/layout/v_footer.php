@@ -76,6 +76,36 @@
         bacaGambar(this);
     })
 </script>
+<script>
+    $(document).ready(function() {
+        $('button[name="cari"]').on('click', function() {
+            cariData();
+        });
+
+        $(document).on('keypress', function(e) {
+            if (e.which === 13) {
+                cariData();
+            }
+        });
+
+        function cariData() {
+            var akun = $('select[name="akun"]').val();
+            var bulan = $('select[name="bulan"]').val();
+
+            $.ajax({
+                url: '<?= base_url('pengurus/akuntansi/buku_besar/cariData'); ?>',
+                method: 'POST',
+                data: {
+                    akun: akun,
+                    bulan: bulan
+                },
+                success: function(response) {
+                    $('tbody').html(response);
+                }
+            });
+        }
+    });
+</script>
 <!-- Page specific script -->
 <script>
     $(function() {

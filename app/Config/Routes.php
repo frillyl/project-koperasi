@@ -48,3 +48,6 @@ $routes->get('/pengurus/akuntansi/akun_header', 'Akuntansi::index_header');
 $routes->get('/pengurus/akuntansi/akun_pembantu', 'Akuntansi::index_bantu');
 
 $routes->get('/pengurus/akuntansi/jurnal_umum', 'Akuntansi::index_jurnal');
+
+$routes->get('/pengurus/akuntansi/buku_besar', 'Akuntansi::index_bukubesar');
+$routes->post('pengurus/akuntansi/buku_besar/cariData', 'Akuntansi::cariData');

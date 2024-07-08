@@ -6,6 +6,7 @@ use App\Models\ModelAkun;
 use App\Models\ModelAkunPembantu;
 use App\Models\ModelAkunHeader;
 use App\Models\ModelJurnal;
+use App\Models\ModelBukuBesar;
 
 class Akuntansi extends BaseController
 {
@@ -13,6 +14,7 @@ class Akuntansi extends BaseController
     protected $ModelAkunPembantu;
     protected $ModelAkunHeader;
     protected $ModelJurnal;
+    protected $ModelBukuBesar;
 
     public function __construct()
     {
@@ -21,6 +23,7 @@ class Akuntansi extends BaseController
         $this->ModelAkunPembantu = new ModelAkunPembantu();
         $this->ModelAkunHeader = new ModelAkunHeader();
         $this->ModelJurnal = new ModelJurnal();
+        $this->ModelBukuBesar = new ModelBukuBesar();
     }
 
     // MASTER KODE AKUN
@@ -153,5 +156,48 @@ class Akuntansi extends BaseController
             'jurnal' => $this->ModelJurnal->allData()
         ];
         return view('pengurus/layout/v_wrapper', $data);
+    }
+
+    public function index_bukubesar()
+    {
+        $data = [
+            'title' => 'Primer Koperasi Darma Putra Kujang I',
+            'sub'   => 'Buku Besar',
+            'isi'   => 'pengurus/akuntansi/bukubesar/v_index',
+            'akun'  => $this->ModelBukuBesar->findAll()
+        ];
+        return view('pengurus/layout/v_wrapper', $data);
+    }
+
+    public function cariData()
+    {
+        $akunId = $this->request->getPost('akun');
+        $bulan = $this->request->getPost('bulan');
+
+        $db = \Config\Database::connect();
+        $builder = $db->table('tb_jurnal');
+        $builder->select('tanggal, no_bukti, ket, debit, kredit');
+        $builder->where('id_akun', $akunId);
+
+        if ($bulan !== 'Semua') {
+            $builder->like('tanggal', date('Y') . '-' . $bulan, 'after');
+        }
+
+        $query = $builder->get();
+        $result = $query->getResultArray();
+
+        $output = '';
+        foreach ($result as $row) {
+            $output .= '<tr>';
+            $output .= '<td>' . $row['tanggal'] . '</td>';
+            $output .= '<td>' . $row['no_bukti'] . '</td>';
+            $output .= '<td>' . $row['ket'] . '</td>';
+            $output .= '<td style="text-align: right;">' . $row['debit'] . '</td>';
+            $output .= '<td style="text-align: right;">' . $row['kredit'] . '</td>';
+            $output .= '<td style="text-align: right;">' . ($row['debit'] - $row['kredit']) . '</td>';
+            $output .= '</tr>';
+        }
+
+        echo $output;
     }
 }
