@@ -186,15 +186,45 @@ class Akuntansi extends BaseController
         $query = $builder->get();
         $result = $query->getResultArray();
 
-        $output = '';
+        // Ambil nilai saldo awal dari tb_akun berdasarkan pos_saldo
+        $akunBuilder = $db->table('tb_akun');
+        $akunBuilder->select('debit, kredit, pos_saldo');
+        $akunBuilder->where('id_akun', $akunId);
+        $akunQuery = $akunBuilder->get();
+        $akunResult = $akunQuery->getRow();
+
+        $saldoAwal = 0;
+        if ($akunResult->pos_saldo == 1) {
+            $saldoAwal = $akunResult->debit;
+        } elseif ($akunResult->pos_saldo == 2) {
+            $saldoAwal = $akunResult->kredit;
+        }
+
+        $output = '<tr>';
+        $output .= '<td></td>';
+        $output .= '<td></td>';
+        $output .= '<td></td>';
+        $output .= '<td></td>';
+        $output .= '<td></td>';
+        $output .= '<td style="text-align: right;">' . $saldoAwal . '</td>';
+        $output .= '</tr>';
+
+        $saldo = $saldoAwal;
+
         foreach ($result as $row) {
+            if ($akunResult->pos_saldo == 1) {
+                $saldo = $saldo + $row['debit'] - $row['kredit'];
+            } elseif ($akunResult->pos_saldo == 2) {
+                $saldo = $saldo - $row['debit'] + $row['kredit'];
+            }
+
             $output .= '<tr>';
             $output .= '<td>' . $row['tanggal'] . '</td>';
             $output .= '<td>' . $row['no_bukti'] . '</td>';
             $output .= '<td>' . $row['ket'] . '</td>';
             $output .= '<td style="text-align: right;">' . $row['debit'] . '</td>';
             $output .= '<td style="text-align: right;">' . $row['kredit'] . '</td>';
-            $output .= '<td style="text-align: right;">' . ($row['debit'] - $row['kredit']) . '</td>';
+            $output .= '<td style="text-align: right;">' . $saldo . '</td>';
             $output .= '</tr>';
         }
 
