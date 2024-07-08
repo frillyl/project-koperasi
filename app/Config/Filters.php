@@ -114,7 +114,6 @@ class Filters extends BaseFilters
                     'pengurus/retur/*',
                     'pengurus/akuntansi/*',
                     'pengurus/usipa/*',
-                    'pengurus/laporan/*'
                 ]
             ],
             'manajemen' => [

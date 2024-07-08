@@ -106,6 +106,36 @@
         }
     });
 </script>
+<script>
+    $(document).ready(function() {
+        $('button[name="caripembantu"]').on('click', function() {
+            cariData();
+        });
+
+        $(document).on('keypress', function(e) {
+            if (e.which === 13) {
+                cariData();
+            }
+        });
+
+        function cariData() {
+            var akun = $('select[name="akunpembantu"]').val();
+            var bulan = $('select[name="bulanpembantu"]').val();
+
+            $.ajax({
+                url: '<?= base_url('pengurus/akuntansi/buku_pembantu/cariData'); ?>',
+                method: 'POST',
+                data: {
+                    akunpembantu: akun,
+                    bulanpembantu: bulan
+                },
+                success: function(response) {
+                    $('tbody').html(response);
+                }
+            });
+        }
+    });
+</script>
 <!-- Page specific script -->
 <script>
     $(function() {

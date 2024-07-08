@@ -275,7 +275,7 @@
                     </li>
                     <li class="nav-header">SIMPAN PINJAM</li>
                     <li class="nav-item">
-                        <a href="<?= base_url('pengurus/simpanpinjam/simpanan') ?>" class="nav-link">
+                        <a href="<?= base_url('pengurus/usipa/simpanan') ?>" class="nav-link">
                             <i class="nav-icon fa-solid fa-wallet"></i>
                             <p>
                                 Simpanan
@@ -283,7 +283,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?= base_url('pengurus/simpanpinjam/pinjaman') ?>" class="nav-link">
+                        <a href="<?= base_url('pengurus/usipa/pinjaman') ?>" class="nav-link">
                             <i class="nav-icon fa-solid fa-hand-holding-dollar"></i>
                             <p>
                                 Pinjaman
@@ -291,7 +291,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?= base_url('pengurus/simpanpinjam/angsuran') ?>" class="nav-link">
+                        <a href="<?= base_url('pengurus/usipa/angsuran') ?>" class="nav-link">
                             <i class="nav-icon fa-solid fa-address-book"></i>
                             <p>
                                 Angsuran

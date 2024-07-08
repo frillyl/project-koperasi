@@ -7,6 +7,7 @@ use App\Models\ModelAkunPembantu;
 use App\Models\ModelAkunHeader;
 use App\Models\ModelJurnal;
 use App\Models\ModelBukuBesar;
+use App\Models\ModelBukuPembantu;
 
 class Akuntansi extends BaseController
 {
@@ -15,6 +16,7 @@ class Akuntansi extends BaseController
     protected $ModelAkunHeader;
     protected $ModelJurnal;
     protected $ModelBukuBesar;
+    protected $ModelBukuPembantu;
 
     public function __construct()
     {
@@ -24,6 +26,7 @@ class Akuntansi extends BaseController
         $this->ModelAkunHeader = new ModelAkunHeader();
         $this->ModelJurnal = new ModelJurnal();
         $this->ModelBukuBesar = new ModelBukuBesar();
+        $this->ModelBukuPembantu = new ModelBukuPembantu();
     }
 
     // MASTER KODE AKUN
@@ -229,5 +232,113 @@ class Akuntansi extends BaseController
         }
 
         echo $output;
+    }
+
+    public function index_bukupembantu()
+    {
+        $data = [
+            'title' => 'Primer Koperasi Darma Putra Kujang I',
+            'sub'   => 'Buku Pembantu',
+            'isi'   => 'pengurus/akuntansi/bukupembantu/v_index',
+            'akun_pembantu'  => $this->ModelBukuPembantu->findAll()
+        ];
+        return view('pengurus/layout/v_wrapper', $data);
+    }
+
+    public function cariDataBantu()
+    {
+        $akunId = $this->request->getPost('akunpembantu');
+        $bulan = $this->request->getPost('bulanpembantu');
+
+        $db = \Config\Database::connect();
+        $builder = $db->table('tb_jurnal');
+        $builder->select('tanggal, no_bukti, ket, debit, kredit');
+        $builder->where('id_akun_pembantu', $akunId);
+
+        if ($bulan !== 'Semua') {
+            $builder->like('tanggal', date('Y') . '-' . $bulan, 'after');
+        }
+
+        $query = $builder->get();
+        $result = $query->getResultArray();
+
+        // Ambil nilai saldo awal dari tb_akun berdasarkan pos_saldo
+        $akunBuilder = $db->table('tb_akun_pembantu');
+        $akunBuilder->select('debit, kredit, saldo_normal, saldo_awal');
+        $akunBuilder->where('id_akun_pembantu', $akunId);
+        $akunQuery = $akunBuilder->get();
+        $akunResult = $akunQuery->getRow();
+
+        $saldoAwal = $akunResult->saldo_awal;
+
+        $output = '<tr>';
+        $output .= '<td></td>';
+        $output .= '<td></td>';
+        $output .= '<td></td>';
+        $output .= '<td></td>';
+        $output .= '<td></td>';
+        $output .= '<td style="text-align: right;">' . $saldoAwal . '</td>';
+        $output .= '</tr>';
+
+        $saldo = $saldoAwal;
+
+        foreach ($result as $row) {
+            if ($akunResult->pos_saldo == 1) {
+                $saldo = $saldo + $row['debit'] - $row['kredit'];
+            } elseif ($akunResult->pos_saldo == 2) {
+                $saldo = $saldo - $row['debit'] + $row['kredit'];
+            }
+
+            $output .= '<tr>';
+            $output .= '<td>' . $row['tanggal'] . '</td>';
+            $output .= '<td>' . $row['no_bukti'] . '</td>';
+            $output .= '<td>' . $row['ket'] . '</td>';
+            $output .= '<td style="text-align: right;">' . $row['debit'] . '</td>';
+            $output .= '<td style="text-align: right;">' . $row['kredit'] . '</td>';
+            $output .= '<td style="text-align: right;">' . $saldo . '</td>';
+            $output .= '</tr>';
+        }
+
+        echo $output;
+    }
+
+    public function index_neracalajur()
+    {
+        $data = [
+            'title' => 'Primer Koperasi Darma Putra Kujang I',
+            'sub'   => 'Neraca Lajur',
+            'isi'   => 'pengurus/akuntansi/neracalajur/v_index'
+        ];
+        return view('pengurus/layout/v_wrapper', $data);
+    }
+
+    public function index_labarugi()
+    {
+        $data = [
+            'title' => 'Primer Koperasi Darma Putra Kujang I',
+            'sub'   => 'Laba Rugi',
+            'isi'   => 'pengurus/akuntansi/labarugi/v_index'
+        ];
+        return view('pengurus/layout/v_wrapper', $data);
+    }
+
+    public function index_neraca()
+    {
+        $data = [
+            'title' => 'Primer Koperasi Darma Putra Kujang I',
+            'sub'   => 'Neraca',
+            'isi'   => 'pengurus/akuntansi/neraca/v_index'
+        ];
+        return view('pengurus/layout/v_wrapper', $data);
+    }
+
+    public function index_pmodal()
+    {
+        $data = [
+            'title' => 'Primer Koperasi Darma Putra Kujang I',
+            'sub'   => 'Perubahan Modal',
+            'isi'   => 'pengurus/akuntansi/pmodal/v_index'
+        ];
+        return view('pengurus/layout/v_wrapper', $data);
     }
 }

@@ -51,3 +51,20 @@ $routes->get('/pengurus/akuntansi/jurnal_umum', 'Akuntansi::index_jurnal');
 
 $routes->get('/pengurus/akuntansi/buku_besar', 'Akuntansi::index_bukubesar');
 $routes->post('pengurus/akuntansi/buku_besar/cariData', 'Akuntansi::cariData');
+
+$routes->get('/pengurus/akuntansi/buku_pembantu', 'Akuntansi::index_bukupembantu');
+$routes->post('pengurus/akuntansi/buku_pembantu/cariData', 'Akuntansi::cariDataBantu');
+
+$routes->get('/pengurus/akuntansi/neraca_lajur', 'Akuntansi::index_neracalajur');
+
+$routes->get('/pengurus/akuntansi/laba_rugi', 'Akuntansi::index_labarugi');
+
+$routes->get('/pengurus/akuntansi/neraca', 'Akuntansi::index_neraca');
+
+$routes->get('/pengurus/akuntansi/perubahan_modal', 'Akuntansi::index_pmodal');
+
+$routes->get('/pengurus/usipa/simpanan', 'SimpanPinjam::index_simpanan');
+
+$routes->get('/pengurus/usipa/pinjaman', 'SimpanPinjam::index_pinjaman');
+
+$routes->get('/pengurus/usipa/angsuran', 'SimpanPinjam::index_angsuran');
