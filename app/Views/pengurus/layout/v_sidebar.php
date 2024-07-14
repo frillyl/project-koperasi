@@ -81,6 +81,14 @@
                                     </p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="<?= base_url('pengurus/laporan/barang') ?>" class="nav-link">
+                                    <i class="nav-icon fa-regular fa-circle"></i>
+                                    <p>
+                                        Laporan Barang
+                                    </p>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-header">TRANSAKSI</li>
