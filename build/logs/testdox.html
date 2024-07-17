@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Test Documentation</title>
+        <style>
+            body {
+                text-rendering: optimizeLegibility;
+                font-family: Source SansSerif Pro, Arial, sans-serif;
+                font-variant-ligatures: common-ligatures;
+                font-kerning: normal;
+                margin-left: 2rem;
+                background-color: #fff;
+                color: #000;
+            }
+
+            body > ul > li {
+                font-size: larger;
+            }
+
+            h2 {
+                font-size: larger;
+                text-decoration-line: underline;
+                text-decoration-thickness: 2px;
+                margin: 0;
+                padding: 0.5rem 0;
+            }
+
+            ul {
+                list-style: none;
+                margin: 0 0 2rem;
+                padding: 0 0 0 1rem;
+                text-indent: -1rem;
+            }
+
+            .success:before {
+                color: #4e9a06;
+                content: '✓';
+                padding-right: 0.5rem;
+            }
+
+            .defect {
+                color: #a40000;
+            }
+
+            .defect:before {
+                color: #a40000;
+                content: '✗';
+                padding-right: 0.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Anggota (Tests\App\Controller\Anggota)</h2>
+        <ul>
+            <li class="success">Index anggota</li>
+            <li class="success">Add anggota</li>
+            <li class="success">Edit anggota</li>
+            <li class="success">Delete anggota</li>
+        </ul>
+        <h2>Kasir (Tests\App\Controller\Kasir)</h2>
+        <ul>
+            <li class="success">Get penjualan index</li>
+            <li class="success">Post cek barang tidak terdaftar</li>
+            <li class="success">Post cek barang terdaftar</li>
+            <li class="success">Tambah item</li>
+            <li class="success">Tambah item stok tidak cukup</li>
+            <li class="success">Post simpan penjualan</li>
+        </ul>
+        <h2>Login (Tests\App\Controllers\Login)</h2>
+        <ul>
+            <li class="success">Index</li>
+            <li class="success">Auth success</li>
+            <li class="success">Auth failure</li>
+            <li class="success">Logout</li>
+        </ul>
+    </body>
+</html>

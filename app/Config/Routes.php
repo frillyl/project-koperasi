@@ -16,6 +16,7 @@ $routes->get('/pengurus/master/anggota', 'Master::index_anggota');
 $routes->post('pengurus/master/anggota/add', 'Master::add_anggota');
 $routes->post('pengurus/master/anggota/edit/(:segment)', 'Master::edit_anggota/$1');
 $routes->get('pengurus/master/anggota/delete/(:segment)', 'Master::delete_anggota/$1');
+$routes->get('/pengurus/laporan/anggota', 'Laporan::index_anggota');
 
 $routes->get('/pengurus/master/pengurus', 'Master::index_pengurus');
 $routes->post('pengurus/master/pengurus/add', 'Master::add_pengurus');
@@ -42,13 +43,17 @@ $routes->get('/pengurus/transaksi/penjualan', 'Penjualan::index');
 $routes->post('pengurus/transaksi/penjualan/cek_barang', 'Penjualan::cek_barang');
 $routes->post('pengurus/transaksi/penjualan/tambah_barang', 'Penjualan::tambah_barang');
 $routes->post('pengurus/transaksi/penjualan/simpan', 'Penjualan::simpan');
+$routes->get('/pengurus/laporan/penjualan', 'Laporan::index_penjualan');
 
 $routes->get('/pengurus/akuntansi/akun', 'Akuntansi::index_akun');
+$routes->get('/pengurus/akuntansi/akun/kelola', 'Akuntansi::kelola_akun');
 
 $routes->get('/pengurus/akuntansi/akun_header', 'Akuntansi::index_header');
 $routes->get('/pengurus/akuntansi/akun_pembantu', 'Akuntansi::index_bantu');
+$routes->get('/pengurus/akuntansi/akun_pembantu/kelola', 'Akuntansi:kelola_bantu');
 
 $routes->get('/pengurus/akuntansi/jurnal_umum', 'Akuntansi::index_jurnal');
+$routes->get('/pengurus/akuntansi/jurnal_umum/kelola', 'Akuntansi::kelola_jurnal');
 
 $routes->get('/pengurus/akuntansi/buku_besar', 'Akuntansi::index_bukubesar');
 $routes->post('pengurus/akuntansi/buku_besar/cariData', 'Akuntansi::cariData');

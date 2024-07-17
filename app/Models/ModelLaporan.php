@@ -19,4 +19,10 @@ class ModelLaporan extends Model
             ->orderBy('tb_barang.kd_barang', 'ASC')
             ->get()->getResultArray();
     }
+
+    public function allDataPenjualan()
+    {
+        return $this->db->table('tb_penjualan')
+            ->get()->getResultArray();
+    }
 }

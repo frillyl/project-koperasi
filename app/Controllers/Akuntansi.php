@@ -41,6 +41,17 @@ class Akuntansi extends BaseController
         return view('pengurus/layout/v_wrapper', $data);
     }
 
+    public function kelola_akun()
+    {
+        $data = [
+            'title' => 'Primer Koperasi Darma Putra Kujang I',
+            'sub'   => 'Kelola Kode Akun',
+            'isi'   => 'pengurus/akuntansi/akun/v_kelola',
+            'akun'  => $this->ModelAkun->allData()
+        ];
+        return view('pengurus/layout/v_wrapper', $data);
+    }
+
     // MASTER HEADER AKUN PEMBANTU
     public function index_header()
     {

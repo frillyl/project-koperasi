@@ -37,7 +37,8 @@ class Filters extends BaseFilters
         'admin'         => \App\Filters\AdminFilter::class,
         'manajemen'     => \App\Filters\ManajemenFilter::class,
         'bendahara'     => \App\Filters\BendaharaFilter::class,
-        'sekretaris'    => \App\Filters\SekretarisFilter::class
+        'sekretaris'    => \App\Filters\SekretarisFilter::class,
+        'kasir'         => \App\Filters\KasirFilter::class
     ];
 
     /**
@@ -103,6 +104,13 @@ class Filters extends BaseFilters
                     'pengurus/login',
                     '/'
                 ]
+            ],
+            'kasir' => [
+                'except' => [
+                    'pengurus/login/*',
+                    'pengurus/login',
+                    '/'
+                ]
             ]
         ],
         'after' => [
@@ -126,12 +134,8 @@ class Filters extends BaseFilters
             'bendahara' => [
                 'except' => [
                     'pengurus/dashboard',
-                    'pengurus/master/hutang/*',
-                    'pengurus/master/piutang/*',
-                    'pengurus/master/aset/*',
+                    'pengurus/akuntansi',
                     'pengurus/akuntansi/*',
-                    'pengurus/laporan/posisi_keuangan',
-                    'pengurus/laporan/laba_rugi',
                 ]
             ],
             'sekretaris' => [
@@ -139,7 +143,25 @@ class Filters extends BaseFilters
                     'pengurus/dashboard',
                     'pengurus/master/anggota',
                     'pengurus/master/anggota/*',
+                    'pengurus/master/pengurus',
+                    'pengurus/master/pengurus/*',
+                    'pengurus/usipa',
                     'pengurus/usipa/*',
+                ]
+            ],
+            'kasir' => [
+                'except' => [
+                    'pengurus/dashboard',
+                    'pengurus/master/agen',
+                    'pengurus/master/agen/*',
+                    'pengurus/master/satuan',
+                    'pengurus/master/satuan/*',
+                    'pengurus/master/barang',
+                    'pengurus/master/barang/*',
+                    'pengurus/transaksi/penjualan',
+                    'pengurus/transaksi/penjualan/*',
+                    'pengurus/laporan/penjualan',
+                    'pengurus/laporan/barang'
                 ]
             ]
             // 'honeypot',

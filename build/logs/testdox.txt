@@ -1,0 +1,20 @@
+Anggota (Tests\App\Controller\Anggota)
+ [x] Index anggota
+ [x] Add anggota
+ [x] Edit anggota
+ [x] Delete anggota
+
+Kasir (Tests\App\Controller\Kasir)
+ [x] Get penjualan index
+ [x] Post cek barang tidak terdaftar
+ [x] Post cek barang terdaftar
+ [x] Tambah item
+ [x] Tambah item stok tidak cukup
+ [x] Post simpan penjualan
+
+Login (Tests\App\Controllers\Login)
+ [x] Index
+ [x] Auth success
+ [x] Auth failure
+ [x] Logout
+

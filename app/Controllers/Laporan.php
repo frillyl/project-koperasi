@@ -24,4 +24,15 @@ class Laporan extends BaseController
         ];
         return view('pengurus/layout/v_Wrapper', $data);
     }
+
+    public function index_penjualan()
+    {
+        $data = [
+            'title' => 'Primer Koperasi Darma Putra Kujang I',
+            'sub'   => 'Laporan Penjualan',
+            'isi'   => 'pengurus/laporan/v_penjualan',
+            'barang' => $this->ModelLaporan->allDataPenjualan()
+        ];
+        return view('pengurus/layout/v_wrapper', $data);
+    }
 }
