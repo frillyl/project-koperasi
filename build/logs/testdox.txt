@@ -1,3 +1,9 @@
+Agen (Tests\App\Controllers\Agen)
+ [x] Index agen
+ [x] Add agen
+ [x] Edit agen
+ [x] Delete agen
+
 Anggota (Tests\App\Controller\Anggota)
  [x] Index anggota
  [x] Add anggota
@@ -17,4 +23,10 @@ Login (Tests\App\Controllers\Login)
  [x] Auth success
  [x] Auth failure
  [x] Logout
+
+Pengurus (Tests\App\Controllers\Pengurus)
+ [x] Index pengurus
+ [x] Add pengurus
+ [x] Edit pengurus
+ [x] Delete pengurus
 
