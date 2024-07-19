@@ -1,38 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="C:\xampp\htdocs\koperasi\phpunit.xml.dist" tests="22" assertions="24" errors="0" failures="0" skipped="0" time="0.767368">
-    <testsuite name="App" tests="22" assertions="24" errors="0" failures="0" skipped="0" time="0.767368">
-      <testsuite name="Tests\App\Controllers\AgenTest" file="C:\xampp\htdocs\koperasi\tests\app\AgenTest.php" tests="4" assertions="4" errors="0" failures="0" skipped="0" time="0.067682">
-        <testcase name="testIndexAgen" file="C:\xampp\htdocs\koperasi\tests\app\AgenTest.php" line="12" class="Tests\App\Controllers\AgenTest" classname="Tests.App.Controllers.AgenTest" assertions="1" time="0.054414"/>
-        <testcase name="testAddAgen" file="C:\xampp\htdocs\koperasi\tests\app\AgenTest.php" line="18" class="Tests\App\Controllers\AgenTest" classname="Tests.App.Controllers.AgenTest" assertions="1" time="0.004674"/>
-        <testcase name="testEditAgen" file="C:\xampp\htdocs\koperasi\tests\app\AgenTest.php" line="33" class="Tests\App\Controllers\AgenTest" classname="Tests.App.Controllers.AgenTest" assertions="1" time="0.004289"/>
-        <testcase name="testDeleteAgen" file="C:\xampp\htdocs\koperasi\tests\app\AgenTest.php" line="50" class="Tests\App\Controllers\AgenTest" classname="Tests.App.Controllers.AgenTest" assertions="1" time="0.004306"/>
+  <testsuite name="C:\xampp\htdocs\koperasi\phpunit.xml.dist" tests="30" assertions="32" errors="0" failures="0" skipped="0" time="1.231352">
+    <testsuite name="App" tests="30" assertions="32" errors="0" failures="0" skipped="0" time="1.231352">
+      <testsuite name="Tests\App\Controllers\AgenTest" file="C:\xampp\htdocs\koperasi\tests\app\AgenTest.php" tests="4" assertions="4" errors="0" failures="0" skipped="0" time="0.129806">
+        <testcase name="testIndexAgen" file="C:\xampp\htdocs\koperasi\tests\app\AgenTest.php" line="12" class="Tests\App\Controllers\AgenTest" classname="Tests.App.Controllers.AgenTest" assertions="1" time="0.107209"/>
+        <testcase name="testAddAgen" file="C:\xampp\htdocs\koperasi\tests\app\AgenTest.php" line="18" class="Tests\App\Controllers\AgenTest" classname="Tests.App.Controllers.AgenTest" assertions="1" time="0.005769"/>
+        <testcase name="testEditAgen" file="C:\xampp\htdocs\koperasi\tests\app\AgenTest.php" line="33" class="Tests\App\Controllers\AgenTest" classname="Tests.App.Controllers.AgenTest" assertions="1" time="0.011238"/>
+        <testcase name="testDeleteAgen" file="C:\xampp\htdocs\koperasi\tests\app\AgenTest.php" line="50" class="Tests\App\Controllers\AgenTest" classname="Tests.App.Controllers.AgenTest" assertions="1" time="0.005589"/>
       </testsuite>
-      <testsuite name="Tests\App\Controller\AnggotaTest" file="C:\xampp\htdocs\koperasi\tests\app\AnggotaTest.php" tests="4" assertions="4" errors="0" failures="0" skipped="0" time="0.022936">
-        <testcase name="testIndexAnggota" file="C:\xampp\htdocs\koperasi\tests\app\AnggotaTest.php" line="12" class="Tests\App\Controller\AnggotaTest" classname="Tests.App.Controller.AnggotaTest" assertions="1" time="0.004345"/>
-        <testcase name="testAddAnggota" file="C:\xampp\htdocs\koperasi\tests\app\AnggotaTest.php" line="20" class="Tests\App\Controller\AnggotaTest" classname="Tests.App.Controller.AnggotaTest" assertions="1" time="0.004144"/>
-        <testcase name="testEditAnggota" file="C:\xampp\htdocs\koperasi\tests\app\AnggotaTest.php" line="37" class="Tests\App\Controller\AnggotaTest" classname="Tests.App.Controller.AnggotaTest" assertions="1" time="0.004195"/>
-        <testcase name="testDeleteAnggota" file="C:\xampp\htdocs\koperasi\tests\app\AnggotaTest.php" line="57" class="Tests\App\Controller\AnggotaTest" classname="Tests.App.Controller.AnggotaTest" assertions="1" time="0.010253"/>
+      <testsuite name="Tests\App\Controller\AnggotaTest" file="C:\xampp\htdocs\koperasi\tests\app\AnggotaTest.php" tests="4" assertions="4" errors="0" failures="0" skipped="0" time="0.044419">
+        <testcase name="testIndexAnggota" file="C:\xampp\htdocs\koperasi\tests\app\AnggotaTest.php" line="12" class="Tests\App\Controller\AnggotaTest" classname="Tests.App.Controller.AnggotaTest" assertions="1" time="0.013594"/>
+        <testcase name="testAddAnggota" file="C:\xampp\htdocs\koperasi\tests\app\AnggotaTest.php" line="20" class="Tests\App\Controller\AnggotaTest" classname="Tests.App.Controller.AnggotaTest" assertions="1" time="0.019160"/>
+        <testcase name="testEditAnggota" file="C:\xampp\htdocs\koperasi\tests\app\AnggotaTest.php" line="37" class="Tests\App\Controller\AnggotaTest" classname="Tests.App.Controller.AnggotaTest" assertions="1" time="0.007355"/>
+        <testcase name="testDeleteAnggota" file="C:\xampp\htdocs\koperasi\tests\app\AnggotaTest.php" line="57" class="Tests\App\Controller\AnggotaTest" classname="Tests.App.Controller.AnggotaTest" assertions="1" time="0.004309"/>
       </testsuite>
-      <testsuite name="Tests\App\Controller\KasirTest" file="C:\xampp\htdocs\koperasi\tests\app\KasirTest.php" tests="6" assertions="6" errors="0" failures="0" skipped="0" time="0.052287">
-        <testcase name="testGetPenjualanIndex" file="C:\xampp\htdocs\koperasi\tests\app\KasirTest.php" line="12" class="Tests\App\Controller\KasirTest" classname="Tests.App.Controller.KasirTest" assertions="1" time="0.009525"/>
-        <testcase name="testPostCekBarangTidakTerdaftar" file="C:\xampp\htdocs\koperasi\tests\app\KasirTest.php" line="18" class="Tests\App\Controller\KasirTest" classname="Tests.App.Controller.KasirTest" assertions="1" time="0.014825"/>
-        <testcase name="testPostCekBarangTerdaftar" file="C:\xampp\htdocs\koperasi\tests\app\KasirTest.php" line="26" class="Tests\App\Controller\KasirTest" classname="Tests.App.Controller.KasirTest" assertions="1" time="0.008466"/>
-        <testcase name="testTambahItem" file="C:\xampp\htdocs\koperasi\tests\app\KasirTest.php" line="34" class="Tests\App\Controller\KasirTest" classname="Tests.App.Controller.KasirTest" assertions="1" time="0.005080"/>
-        <testcase name="testTambahItemStokTidakCukup" file="C:\xampp\htdocs\koperasi\tests\app\KasirTest.php" line="49" class="Tests\App\Controller\KasirTest" classname="Tests.App.Controller.KasirTest" assertions="1" time="0.006489"/>
-        <testcase name="testPostSimpanPenjualan" file="C:\xampp\htdocs\koperasi\tests\app\KasirTest.php" line="64" class="Tests\App\Controller\KasirTest" classname="Tests.App.Controller.KasirTest" assertions="1" time="0.007902"/>
+      <testsuite name="Tests\App\Controllers\BarangTest" file="C:\xampp\htdocs\koperasi\tests\app\BarangTest.php" tests="4" assertions="4" errors="0" failures="0" skipped="0" time="0.033994">
+        <testcase name="testIndexBarang" file="C:\xampp\htdocs\koperasi\tests\app\BarangTest.php" line="12" class="Tests\App\Controllers\BarangTest" classname="Tests.App.Controllers.BarangTest" assertions="1" time="0.010913"/>
+        <testcase name="testAddBarang" file="C:\xampp\htdocs\koperasi\tests\app\BarangTest.php" line="18" class="Tests\App\Controllers\BarangTest" classname="Tests.App.Controllers.BarangTest" assertions="1" time="0.006223"/>
+        <testcase name="testEditBarang" file="C:\xampp\htdocs\koperasi\tests\app\BarangTest.php" line="35" class="Tests\App\Controllers\BarangTest" classname="Tests.App.Controllers.BarangTest" assertions="1" time="0.010403"/>
+        <testcase name="testDeleteBarang" file="C:\xampp\htdocs\koperasi\tests\app\BarangTest.php" line="54" class="Tests\App\Controllers\BarangTest" classname="Tests.App.Controllers.BarangTest" assertions="1" time="0.006455"/>
       </testsuite>
-      <testsuite name="Tests\App\Controllers\LoginTest" file="C:\xampp\htdocs\koperasi\tests\app\LoginTest.php" tests="4" assertions="6" errors="0" failures="0" skipped="0" time="0.570733">
-        <testcase name="testIndex" file="C:\xampp\htdocs\koperasi\tests\app\LoginTest.php" line="12" class="Tests\App\Controllers\LoginTest" classname="Tests.App.Controllers.LoginTest" assertions="3" time="0.024252"/>
-        <testcase name="testAuthSuccess" file="C:\xampp\htdocs\koperasi\tests\app\LoginTest.php" line="20" class="Tests\App\Controllers\LoginTest" classname="Tests.App.Controllers.LoginTest" assertions="1" time="0.277429"/>
-        <testcase name="testAuthFailure" file="C:\xampp\htdocs\koperasi\tests\app\LoginTest.php" line="32" class="Tests\App\Controllers\LoginTest" classname="Tests.App.Controllers.LoginTest" assertions="1" time="0.262923"/>
-        <testcase name="testLogout" file="C:\xampp\htdocs\koperasi\tests\app\LoginTest.php" line="44" class="Tests\App\Controllers\LoginTest" classname="Tests.App.Controllers.LoginTest" assertions="1" time="0.006130"/>
+      <testsuite name="Tests\App\Controller\KasirTest" file="C:\xampp\htdocs\koperasi\tests\app\KasirTest.php" tests="6" assertions="6" errors="0" failures="0" skipped="0" time="0.210476">
+        <testcase name="testGetPenjualanIndex" file="C:\xampp\htdocs\koperasi\tests\app\KasirTest.php" line="12" class="Tests\App\Controller\KasirTest" classname="Tests.App.Controller.KasirTest" assertions="1" time="0.067182"/>
+        <testcase name="testPostCekBarangTidakTerdaftar" file="C:\xampp\htdocs\koperasi\tests\app\KasirTest.php" line="18" class="Tests\App\Controller\KasirTest" classname="Tests.App.Controller.KasirTest" assertions="1" time="0.046080"/>
+        <testcase name="testPostCekBarangTerdaftar" file="C:\xampp\htdocs\koperasi\tests\app\KasirTest.php" line="26" class="Tests\App\Controller\KasirTest" classname="Tests.App.Controller.KasirTest" assertions="1" time="0.055565"/>
+        <testcase name="testTambahItem" file="C:\xampp\htdocs\koperasi\tests\app\KasirTest.php" line="34" class="Tests\App\Controller\KasirTest" classname="Tests.App.Controller.KasirTest" assertions="1" time="0.009408"/>
+        <testcase name="testTambahItemStokTidakCukup" file="C:\xampp\htdocs\koperasi\tests\app\KasirTest.php" line="49" class="Tests\App\Controller\KasirTest" classname="Tests.App.Controller.KasirTest" assertions="1" time="0.011071"/>
+        <testcase name="testPostSimpanPenjualan" file="C:\xampp\htdocs\koperasi\tests\app\KasirTest.php" line="64" class="Tests\App\Controller\KasirTest" classname="Tests.App.Controller.KasirTest" assertions="1" time="0.021169"/>
       </testsuite>
-      <testsuite name="Tests\App\Controllers\PengurusTest" file="C:\xampp\htdocs\koperasi\tests\app\PengurusTest.php" tests="4" assertions="4" errors="0" failures="0" skipped="0" time="0.053729">
-        <testcase name="testIndexPengurus" file="C:\xampp\htdocs\koperasi\tests\app\PengurusTest.php" line="12" class="Tests\App\Controllers\PengurusTest" classname="Tests.App.Controllers.PengurusTest" assertions="1" time="0.004358"/>
-        <testcase name="testAddPengurus" file="C:\xampp\htdocs\koperasi\tests\app\PengurusTest.php" line="18" class="Tests\App\Controllers\PengurusTest" classname="Tests.App.Controllers.PengurusTest" assertions="1" time="0.007220"/>
-        <testcase name="testEditPengurus" file="C:\xampp\htdocs\koperasi\tests\app\PengurusTest.php" line="31" class="Tests\App\Controllers\PengurusTest" classname="Tests.App.Controllers.PengurusTest" assertions="1" time="0.013596"/>
-        <testcase name="testDeletePengurus" file="C:\xampp\htdocs\koperasi\tests\app\PengurusTest.php" line="44" class="Tests\App\Controllers\PengurusTest" classname="Tests.App.Controllers.PengurusTest" assertions="1" time="0.028555"/>
+      <testsuite name="Tests\App\Controllers\LoginTest" file="C:\xampp\htdocs\koperasi\tests\app\LoginTest.php" tests="4" assertions="6" errors="0" failures="0" skipped="0" time="0.752310">
+        <testcase name="testIndex" file="C:\xampp\htdocs\koperasi\tests\app\LoginTest.php" line="12" class="Tests\App\Controllers\LoginTest" classname="Tests.App.Controllers.LoginTest" assertions="3" time="0.049836"/>
+        <testcase name="testAuthSuccess" file="C:\xampp\htdocs\koperasi\tests\app\LoginTest.php" line="20" class="Tests\App\Controllers\LoginTest" classname="Tests.App.Controllers.LoginTest" assertions="1" time="0.330472"/>
+        <testcase name="testAuthFailure" file="C:\xampp\htdocs\koperasi\tests\app\LoginTest.php" line="32" class="Tests\App\Controllers\LoginTest" classname="Tests.App.Controllers.LoginTest" assertions="1" time="0.363285"/>
+        <testcase name="testLogout" file="C:\xampp\htdocs\koperasi\tests\app\LoginTest.php" line="44" class="Tests\App\Controllers\LoginTest" classname="Tests.App.Controllers.LoginTest" assertions="1" time="0.008718"/>
+      </testsuite>
+      <testsuite name="Tests\App\Controllers\PengurusTest" file="C:\xampp\htdocs\koperasi\tests\app\PengurusTest.php" tests="4" assertions="4" errors="0" failures="0" skipped="0" time="0.029688">
+        <testcase name="testIndexPengurus" file="C:\xampp\htdocs\koperasi\tests\app\PengurusTest.php" line="12" class="Tests\App\Controllers\PengurusTest" classname="Tests.App.Controllers.PengurusTest" assertions="1" time="0.005766"/>
+        <testcase name="testAddPengurus" file="C:\xampp\htdocs\koperasi\tests\app\PengurusTest.php" line="18" class="Tests\App\Controllers\PengurusTest" classname="Tests.App.Controllers.PengurusTest" assertions="1" time="0.009935"/>
+        <testcase name="testEditPengurus" file="C:\xampp\htdocs\koperasi\tests\app\PengurusTest.php" line="31" class="Tests\App\Controllers\PengurusTest" classname="Tests.App.Controllers.PengurusTest" assertions="1" time="0.005505"/>
+        <testcase name="testDeletePengurus" file="C:\xampp\htdocs\koperasi\tests\app\PengurusTest.php" line="44" class="Tests\App\Controllers\PengurusTest" classname="Tests.App.Controllers.PengurusTest" assertions="1" time="0.008481"/>
+      </testsuite>
+      <testsuite name="Tests\App\Controllers\SatuanTest" file="C:\xampp\htdocs\koperasi\tests\app\SatuanTest.php" tests="4" assertions="4" errors="0" failures="0" skipped="0" time="0.030658">
+        <testcase name="testIndexAgen" file="C:\xampp\htdocs\koperasi\tests\app\SatuanTest.php" line="12" class="Tests\App\Controllers\SatuanTest" classname="Tests.App.Controllers.SatuanTest" assertions="1" time="0.005526"/>
+        <testcase name="testAddSatuan" file="C:\xampp\htdocs\koperasi\tests\app\SatuanTest.php" line="18" class="Tests\App\Controllers\SatuanTest" classname="Tests.App.Controllers.SatuanTest" assertions="1" time="0.012404"/>
+        <testcase name="testEditSatuan" file="C:\xampp\htdocs\koperasi\tests\app\SatuanTest.php" line="29" class="Tests\App\Controllers\SatuanTest" classname="Tests.App.Controllers.SatuanTest" assertions="1" time="0.005946"/>
+        <testcase name="testDeleteSatuan" file="C:\xampp\htdocs\koperasi\tests\app\SatuanTest.php" line="42" class="Tests\App\Controllers\SatuanTest" classname="Tests.App.Controllers.SatuanTest" assertions="1" time="0.006781"/>
       </testsuite>
     </testsuite>
   </testsuite>

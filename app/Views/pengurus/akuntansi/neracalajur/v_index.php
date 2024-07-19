@@ -71,7 +71,20 @@
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
-
+                                    <?php foreach ($accounts as $account) : ?>
+                                        <tr>
+                                            <td><?= esc($account['kd_akun']) ?></td>
+                                            <td><?= esc($account['nm_akun']) ?></td>
+                                            <td><?= esc($account['pos_saldo'] == 1 ? 'Debit' : 'Kredit') ?></td>
+                                            <td><?= esc($account['neraca_saldo_debit']) ?></td>
+                                            <td><?= esc($account['neraca_saldo_kredit']) ?></td>
+                                            <td><?= esc($account['pos_laporan'] == 1 ? 'Neraca' : 'Laba Rugi') ?></td>
+                                            <td><?= esc($account['laba_rugi_debit']) ?></td>
+                                            <td><?= esc($account['laba_rugi_kredit']) ?></td>
+                                            <td><?= esc($account['neraca_debit']) ?></td>
+                                            <td><?= esc($account['neraca_kredit']) ?></td>
+                                        </tr>
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>

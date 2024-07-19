@@ -43,7 +43,7 @@ class AgenTest extends CIUnitTestCase
             'edited_by' => '1'
         ];
 
-        $result = $this->post('pengurus/master/agen/edit/1', $data);
+        $result = $this->post('pengurus/master/agen/edit/' . $id_agen, $data);
         $result->assertRedirect('pengurus/master/agen');
     }
 

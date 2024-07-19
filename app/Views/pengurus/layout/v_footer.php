@@ -108,29 +108,32 @@
 </script>
 <script>
     $(document).ready(function() {
-        $('button[name="caripembantu"]').on('click', function() {
-            cariData();
+        $('button[name="cari2"]').on('click', function() {
+            cariDataBantu();
         });
 
         $(document).on('keypress', function(e) {
             if (e.which === 13) {
-                cariData();
+                cariDataBantu();
             }
         });
 
-        function cariData() {
-            var akun = $('select[name="akunpembantu"]').val();
-            var bulan = $('select[name="bulanpembantu"]').val();
+        function cariDataBantu() {
+            var akun2 = $('select[name="akun2"]').val();
+            var bulan2 = $('select[name="bulan2"]').val();
 
             $.ajax({
                 url: '<?= base_url('pengurus/akuntansi/buku_pembantu/cariData'); ?>',
                 method: 'POST',
                 data: {
-                    akunpembantu: akun,
-                    bulanpembantu: bulan
+                    akun2: akun2,
+                    bulan2: bulan2,
                 },
                 success: function(response) {
                     $('tbody').html(response);
+                },
+                error: function(xhr, status, error) {
+                    alert('Terjadi kesalahan: ' + xhr.responseText);
                 }
             });
         }

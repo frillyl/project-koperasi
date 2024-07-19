@@ -48,7 +48,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-5">
-                    <select class="form-control select2" name="akunpembantu" style="width: 100%;">
+                    <select class="form-control select2" name="akun2" style="width: 100%;">
                         <option selected="selected">-- Pilih Akun Pembantu --</option>
                         <?php foreach ($akun_pembantu as $row) : ?>
                             <option value="<?= $row['id_akun_pembantu']; ?>"><?= $row['nm_akun']; ?></option>
@@ -56,7 +56,7 @@
                     </select>
                 </div>
                 <div class="col-lg-5">
-                    <select class="form-control select2" name="bulanpembantu" style="width: 100%;">
+                    <select class="form-control select2" name="bulan2" style="width: 100%;">
                         <option selected="selected">-- Pilih Bulan --</option>
                         <option value="semua">Semua</option>
                         <option value="01">Januari</option>
@@ -74,7 +74,7 @@
                     </select>
                 </div>
                 <div class="col-lg-2">
-                    <button type="button" name="caripembantu" class="btn btn-block bg-gradient-primary"><i class="fa-solid fa-magnifying-glass"></i> Cari</button>
+                    <button type="button" name="cari2" class="btn btn-block bg-gradient-primary"><i class="fa-solid fa-magnifying-glass"></i> Cari</button>
                 </div>
             </div>
             <div class="row mt-5">

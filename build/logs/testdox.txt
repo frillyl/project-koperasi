@@ -10,6 +10,12 @@ Anggota (Tests\App\Controller\Anggota)
  [x] Edit anggota
  [x] Delete anggota
 
+Barang (Tests\App\Controllers\Barang)
+ [x] Index barang
+ [x] Add barang
+ [x] Edit barang
+ [x] Delete barang
+
 Kasir (Tests\App\Controller\Kasir)
  [x] Get penjualan index
  [x] Post cek barang tidak terdaftar
@@ -29,4 +35,10 @@ Pengurus (Tests\App\Controllers\Pengurus)
  [x] Add pengurus
  [x] Edit pengurus
  [x] Delete pengurus
+
+Satuan (Tests\App\Controllers\Satuan)
+ [x] Index agen
+ [x] Add satuan
+ [x] Edit satuan
+ [x] Delete satuan
 

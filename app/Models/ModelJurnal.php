@@ -8,7 +8,7 @@ class ModelJurnal extends Model
 {
     protected $table = "tb_jurnal";
     protected $primaryKey = "id_jurnal";
-    protected $returnType = "object";
+    // protected $returnType = "object";
     protected $allowedFields = ['id_akun', 'id_akun_pembantu', 'tanggal', 'no_bukti', 'ket', 'debit', 'kredit', 'created_by', 'edited_by'];
 
     public function allData()

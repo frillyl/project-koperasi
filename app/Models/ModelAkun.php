@@ -8,7 +8,7 @@ class ModelAkun extends Model
 {
     protected $table = "tb_akun";
     protected $primaryKey = "id_akun";
-    protected $returnType = "object";
+    // protected $returnType = "object";
     protected $allowedFields = ['kd_akun', 'nm_akun', 'tb_bantuan', 'pos_saldo', 'pos_laporan', 'debit', 'kredit', 'created_by', 'edited_by'];
 
     public function allData()

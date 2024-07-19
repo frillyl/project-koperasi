@@ -193,8 +193,10 @@ class Akuntansi extends BaseController
         $builder->select('tanggal, no_bukti, ket, debit, kredit');
         $builder->where('id_akun', $akunId);
 
-        if ($bulan !== 'Semua') {
+        if ($bulan !== 'semua') {
             $builder->like('tanggal', date('Y') . '-' . $bulan, 'after');
+        } elseif ($bulan == 'semua') {
+            $builder;
         }
 
         $query = $builder->get();
@@ -258,70 +260,134 @@ class Akuntansi extends BaseController
 
     public function cariDataBantu()
     {
-        $akunId = $this->request->getPost('akunpembantu');
-        $bulan = $this->request->getPost('bulanpembantu');
+        try {
+            $akunId = $this->request->getPost('akun2');
+            $bulan = $this->request->getPost('bulan2');
 
-        $db = \Config\Database::connect();
-        $builder = $db->table('tb_jurnal');
-        $builder->select('tanggal, no_bukti, ket, debit, kredit');
-        $builder->where('id_akun_pembantu', $akunId);
-
-        if ($bulan !== 'Semua') {
-            $builder->like('tanggal', date('Y') . '-' . $bulan, 'after');
-        }
-
-        $query = $builder->get();
-        $result = $query->getResultArray();
-
-        // Ambil nilai saldo awal dari tb_akun berdasarkan pos_saldo
-        $akunBuilder = $db->table('tb_akun_pembantu');
-        $akunBuilder->select('debit, kredit, saldo_normal, saldo_awal');
-        $akunBuilder->where('id_akun_pembantu', $akunId);
-        $akunQuery = $akunBuilder->get();
-        $akunResult = $akunQuery->getRow();
-
-        $saldoAwal = $akunResult->saldo_awal;
-
-        $output = '<tr>';
-        $output .= '<td></td>';
-        $output .= '<td></td>';
-        $output .= '<td></td>';
-        $output .= '<td></td>';
-        $output .= '<td></td>';
-        $output .= '<td style="text-align: right;">' . $saldoAwal . '</td>';
-        $output .= '</tr>';
-
-        $saldo = $saldoAwal;
-
-        foreach ($result as $row) {
-            if ($akunResult->pos_saldo == 1) {
-                $saldo = $saldo + $row['debit'] - $row['kredit'];
-            } elseif ($akunResult->pos_saldo == 2) {
-                $saldo = $saldo - $row['debit'] + $row['kredit'];
+            // Validasi input
+            if (!$akunId || !$bulan) {
+                throw new \Exception('Input tidak valid');
             }
 
-            $output .= '<tr>';
-            $output .= '<td>' . $row['tanggal'] . '</td>';
-            $output .= '<td>' . $row['no_bukti'] . '</td>';
-            $output .= '<td>' . $row['ket'] . '</td>';
-            $output .= '<td style="text-align: right;">' . $row['debit'] . '</td>';
-            $output .= '<td style="text-align: right;">' . $row['kredit'] . '</td>';
-            $output .= '<td style="text-align: right;">' . $saldo . '</td>';
-            $output .= '</tr>';
-        }
+            $db = \Config\Database::connect();
+            $builder = $db->table('tb_jurnal');
+            $builder->select('tanggal, no_bukti, ket, debit, kredit');
+            $builder->where('id_akun_pembantu', $akunId);
 
-        echo $output;
+            if ($bulan !== 'semua') {
+                $builder->like('tanggal', date('Y') . '-' . $bulan, 'after');
+            } elseif ($bulan == 'semua') {
+                $builder;
+            }
+
+            $query = $builder->get();
+            $result = $query->getResultArray();
+
+            // Ambil nilai saldo awal dari tb_akun berdasarkan pos_saldo
+            $akunBuilder = $db->table('tb_akun_pembantu');
+            $akunBuilder->select('saldo_normal, saldo_awal');
+            $akunBuilder->where('id_akun_pembantu', $akunId);
+            $akunQuery = $akunBuilder->get();
+            $akunResult = $akunQuery->getRow();
+
+            if (!$akunResult) {
+                throw new \Exception('Akun tidak ditemukan');
+            }
+
+            $saldoAwal = $akunResult->saldo_awal;
+
+            $output = '<tr>';
+            $output .= '<td></td>';
+            $output .= '<td></td>';
+            $output .= '<td></td>';
+            $output .= '<td></td>';
+            $output .= '<td></td>';
+            $output .= '<td style="text-align: right;">' . $saldoAwal . '</td>';
+            $output .= '</tr>';
+
+            $saldo = $saldoAwal;
+
+            foreach ($result as $row) {
+                if ($akunResult->saldo_normal == 1) {
+                    $saldo = $saldo + $row['debit'] - $row['kredit'];
+                } elseif ($akunResult->saldo_normal == 2) {
+                    $saldo = $saldo - $row['debit'] + $row['kredit'];
+                }
+
+                $output .= '<tr>';
+                $output .= '<td>' . $row['tanggal'] . '</td>';
+                $output .= '<td>' . $row['no_bukti'] . '</td>';
+                $output .= '<td>' . $row['ket'] . '</td>';
+                $output .= '<td style="text-align: right;">' . $row['debit'] . '</td>';
+                $output .= '<td style="text-align: right;">' . $row['kredit'] . '</td>';
+                $output .= '<td style="text-align: right;">' . $saldo . '</td>';
+                $output .= '</tr>';
+            }
+
+            echo $output;
+        } catch (\Exception $e) {
+            echo 'Error: ' . $e->getMessage();
+        }
     }
 
     public function index_neracalajur()
     {
+        // Ambil semua data dari tb_akun sebagai array asosiatif
+        $akunData = $this->ModelAkun->asArray()->findAll();
+        $accountData = [];
+
+        foreach ($akunData as $akun) {
+            // Hitung nilai debit dan kredit dari tb_jurnal
+            $totalDebit = $this->ModelJurnal->where('id_akun', $akun['id_akun'])->selectSum('debit')->first()['debit'];
+            $totalKredit = $this->ModelJurnal->where('id_akun', $akun['id_akun'])->selectSum('kredit')->first()['kredit'];
+
+            $neracaSaldoDebit = 0;
+            $neracaSaldoKredit = 0;
+            $neracaDebit = 0;
+            $neracaKredit = 0;
+            $labaRugiDebit = 0;
+            $labaRugiKredit = 0;
+
+            if ($akun['pos_saldo'] == '1') {
+                $neracaSaldoDebit = $akun['debit'] + $totalDebit - $totalKredit;
+            } else {
+                $neracaSaldoKredit = $akun['kredit'] + $totalKredit - $totalDebit;
+            }
+
+            if ($akun['pos_saldo'] == '1' && $akun['pos_laporan'] == '1') {
+                $neracaDebit = $neracaSaldoDebit;
+            } elseif ($akun['pos_saldo'] == '2' && $akun['pos_laporan'] == '1') {
+                $neracaKredit = $neracaSaldoKredit;
+            } elseif ($akun['pos_saldo'] == '1' && $akun['pos_laporan'] == '2') {
+                $labaRugiDebit = $neracaSaldoDebit;
+            } elseif ($akun['pos_saldo'] == '2' && $akun['pos_laporan'] == '2') {
+                $labaRugiKredit = $neracaSaldoKredit;
+            }
+
+            $accountData[] = [
+                'kd_akun' => $akun['kd_akun'],
+                'nm_akun' => $akun['nm_akun'],
+                'pos_saldo' => $akun['pos_saldo'],
+                'pos_laporan' => $akun['pos_laporan'],
+                'neraca_saldo_debit' => $neracaSaldoDebit,
+                'neraca_saldo_kredit' => $neracaSaldoKredit,
+                'neraca_debit' => $neracaDebit,
+                'neraca_kredit' => $neracaKredit,
+                'laba_rugi_debit' => $labaRugiDebit,
+                'laba_rugi_kredit' => $labaRugiKredit
+            ];
+        }
+
         $data = [
             'title' => 'Primer Koperasi Darma Putra Kujang I',
-            'sub'   => 'Neraca Lajur',
-            'isi'   => 'pengurus/akuntansi/neracalajur/v_index'
+            'sub' => 'Neraca Lajur',
+            'isi' => 'pengurus/akuntansi/neracalajur/v_index',
+            'accounts' => $accountData
         ];
+
         return view('pengurus/layout/v_wrapper', $data);
     }
+
 
     public function index_labarugi()
     {
