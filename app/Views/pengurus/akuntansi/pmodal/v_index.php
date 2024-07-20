@@ -63,7 +63,27 @@
                                                 <th rowspan="2" style="vertical-align: middle; background-color: #3d9970; color: white;" width="100px">Jumlah</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="text-center">
+                                        <tbody>
+                                            <tr>
+                                                <td>Modal Awal</td>
+                                                <td style="text-align: right;"><?= number_format($totals['modalAwal'], 2) ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Laba Bersih</td>
+                                                <td style=" text-align: right;"><?= number_format($totals['labaBersih'], 2) ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td style="text-align: right; font-weight: bold;"><?= number_format($totals['total'], 2) ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Deviden</td>
+                                                <td style=" text-align: right;"><?= number_format($totals['devidenPrive'], 2) ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Modal Akhir</td>
+                                                <td style="text-align: right; font-weight: bold;"><?= number_format($totals['modalAkhir'], 2) ?></td>
+                                            </tr>
 
                                         </tbody>
                                     </table>

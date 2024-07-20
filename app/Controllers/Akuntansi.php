@@ -477,6 +477,8 @@ class Akuntansi extends BaseController
         $pajakPPH = $labaSebelumPajak * 0.11;
         $labaSetelahPajak = $labaSebelumPajak - $pajakPPH;
 
+        session()->set('labaSebelumPajak', $labaSebelumPajak);
+
         $data = [
             'title' => 'Primer Koperasi Darma Putra Kujang I',
             'sub' => 'Laporan Keuangan',
@@ -494,20 +496,429 @@ class Akuntansi extends BaseController
 
     public function index_neraca()
     {
+        $akunData = $this->ModelAkun->asArray()->where('pos_laporan', '1')->findAll();
+        $accountData = [
+            'Aset Lancar' => [
+                'Kas dan Bank' => [],
+                'Piutang' => [],
+                'Persediaan' => [],
+                'Uang Muka' => [],
+            ],
+            'Aset Tetap' => [],
+            'Hutang' => [],
+            'Equity' => [],
+        ];
+        $totalKasBank = $totalPiutang = $totalPersediaan = $totalUangMuka = $totalAsetTetap = $totalHutang = $totalModal = 0;
+
+        // Perhitungan laba rugi seperti di index_labarugi
+        $akunDataLabaRugi = $this->ModelAkun->where('pos_laporan', 2)->asArray()->findAll();
+        $groupedData = [
+            'Pendapatan' => [],
+            'Biaya' => [],
+            'Pendapatan Lain-Lain' => [],
+            'Biaya Lain-Lain' => [],
+        ];
+        $totals = [
+            'Pendapatan' => 0,
+            'Biaya' => 0,
+            'Pendapatan Lain-Lain' => 0,
+            'Biaya Lain-Lain' => 0,
+        ];
+
+        foreach ($akunDataLabaRugi as $akun) {
+            $totalDebit = $this->ModelJurnal->where('id_akun', $akun['id_akun'])->selectSum('debit')->first()['debit'];
+            $totalKredit = $this->ModelJurnal->where('id_akun', $akun['id_akun'])->selectSum('kredit')->first()['kredit'];
+
+            $neracaSaldoDebit = 0;
+            $neracaSaldoKredit = 0;
+            $neracaDebit = 0;
+            $neracaKredit = 0;
+            $labaRugiDebit = 0;
+            $labaRugiKredit = 0;
+
+            if ($akun['pos_saldo'] == '1') {
+                $neracaSaldoDebit = $akun['debit'] + $totalDebit - $totalKredit;
+            } else {
+                $neracaSaldoKredit = $akun['kredit'] + $totalKredit - $totalDebit;
+            }
+
+            if ($akun['pos_saldo'] == '1' && $akun['pos_laporan'] == '1') {
+                $neracaDebit = $neracaSaldoDebit;
+            } elseif ($akun['pos_saldo'] == '2' && $akun['pos_laporan'] == '1') {
+                $neracaKredit = $neracaSaldoKredit;
+            } elseif ($akun['pos_saldo'] == '1' && $akun['pos_laporan'] == '2') {
+                $labaRugiDebit = $neracaSaldoDebit;
+            } elseif ($akun['pos_saldo'] == '2' && $akun['pos_laporan'] == '2') {
+                $labaRugiKredit = $neracaSaldoKredit;
+            }
+
+            $accountData = [
+                'kd_akun' => $akun['kd_akun'],
+                'nm_akun' => $akun['nm_akun'],
+                'pos_saldo' => $akun['pos_saldo'],
+                'pos_laporan' => $akun['pos_laporan'],
+                'neraca_saldo_debit' => $neracaSaldoDebit,
+                'neraca_saldo_kredit' => $neracaSaldoKredit,
+                'neraca_debit' => $neracaDebit,
+                'neraca_kredit' => $neracaKredit,
+                'laba_rugi_debit' => $labaRugiDebit,
+                'laba_rugi_kredit' => $labaRugiKredit
+            ];
+
+            $kd_akun = $akun['kd_akun'];
+            $firstDigit = substr($kd_akun, 0, 1);
+            $amount = $akun['pos_saldo'] == '1' ? $labaRugiDebit : $labaRugiKredit;
+
+            switch ($firstDigit) {
+                case '4':
+                    $groupedData['Pendapatan'][] = $accountData;
+                    $totals['Pendapatan'] += $amount;
+                    break;
+                case '5':
+                    $groupedData['Biaya'][] = $accountData;
+                    $totals['Biaya'] += $amount;
+                    break;
+                case '6':
+                    $groupedData['Pendapatan Lain-Lain'][] = $accountData;
+                    $totals['Pendapatan Lain-Lain'] += $amount;
+                    break;
+                case '7':
+                    $groupedData['Biaya Lain-Lain'][] = $accountData;
+                    $totals['Biaya Lain-Lain'] += $amount;
+                    break;
+            }
+        }
+
+        $labaKotor = $totals['Pendapatan'] - $totals['Biaya'];
+        $labaSebelumPajak = $labaKotor + $totals['Pendapatan Lain-Lain'] - $totals['Biaya Lain-Lain'];
+        $pajakPPH = $labaSebelumPajak * 0.11;
+        $labaSetelahPajak = $labaSebelumPajak - $pajakPPH;
+
+        foreach ($akunData as $akun) {
+            // Hitung nilai debit dan kredit dari tb_jurnal
+            $totalDebit = $this->ModelJurnal->where('id_akun', $akun['id_akun'])->selectSum('debit')->first()['debit'];
+            $totalKredit = $this->ModelJurnal->where('id_akun', $akun['id_akun'])->selectSum('kredit')->first()['kredit'];
+
+            $neracaSaldoDebit = 0;
+            $neracaSaldoKredit = 0;
+            $neracaDebit = 0;
+            $neracaKredit = 0;
+            $labaRugiDebit = 0;
+            $labaRugiKredit = 0;
+
+            if ($akun['pos_saldo'] == '1') {
+                $neracaSaldoDebit = $akun['debit'] + $totalDebit - $totalKredit;
+            } else {
+                $neracaSaldoKredit = $akun['kredit'] + $totalKredit - $totalDebit;
+            }
+
+            if ($akun['pos_saldo'] == '1' && $akun['pos_laporan'] == '1') {
+                $neracaDebit = $neracaSaldoDebit;
+            } elseif ($akun['pos_saldo'] == '2' && $akun['pos_laporan'] == '1') {
+                $neracaKredit = $neracaSaldoKredit;
+            } elseif ($akun['pos_saldo'] == '1' && $akun['pos_laporan'] == '2') {
+                $labaRugiDebit = $neracaSaldoDebit;
+            } elseif ($akun['pos_saldo'] == '2' && $akun['pos_laporan'] == '2') {
+                $labaRugiKredit = $neracaSaldoKredit;
+            }
+
+            $kdAkun = $akun['kd_akun'];
+            if ($akun['pos_saldo'] == '1') {
+                $jumlah = $neracaDebit;
+            } elseif ($akun['pos_saldo'] == '2') {
+                $jumlah = $neracaKredit;
+            }
+
+            if ($kdAkun[0] == '1') {
+                if ($kdAkun[1] == '1') {
+                    $accountData['Aset Lancar']['Kas dan Bank'][] = [
+                        'uraian' => $akun['nm_akun'],
+                        'jumlah' => $jumlah
+                    ];
+                    $totalKasBank += $jumlah;
+                } elseif ($kdAkun[1] == '2') {
+                    $accountData['Aset Lancar']['Piutang'][] = [
+                        'uraian' => $akun['nm_akun'],
+                        'jumlah' => $jumlah
+                    ];
+                    $totalPiutang += $jumlah;
+                } elseif ($kdAkun[1] == '3') {
+                    $accountData['Aset Lancar']['Persediaan'][] = [
+                        'uraian' => $akun['nm_akun'],
+                        'jumlah' => $jumlah
+                    ];
+                    $totalPersediaan += $jumlah;
+                } elseif ($kdAkun[1] == '4') {
+                    $accountData['Aset Lancar']['Uang Muka'][] = [
+                        'uraian' => $akun['nm_akun'],
+                        'jumlah' => $jumlah
+                    ];
+                    $totalUangMuka += $jumlah;
+                } elseif (in_array($kdAkun[1], ['5', '6'])) {
+                    $accountData['Aset Tetap'][] = [
+                        'uraian' => $akun['nm_akun'],
+                        'jumlah' => $jumlah
+                    ];
+                    $totalAsetTetap += $jumlah;
+                }
+            } elseif ($kdAkun[0] == '2') {
+                $accountData['Hutang'][] = [
+                    'uraian' => $akun['nm_akun'],
+                    'jumlah' => $jumlah
+                ];
+                $totalHutang += $jumlah;
+            } elseif ($kdAkun[0] == '3') {
+                $accountData['Equity'][] = [
+                    'uraian' => $akun['nm_akun'],
+                    'jumlah' => $jumlah
+                ];
+                $totalModal += $jumlah;
+            }
+        }
+        $totalAsetLancar = $totalKasBank + $totalPiutang + $totalPersediaan + $totalUangMuka;
+        $totalAset = $totalAsetLancar + $totalAsetTetap;
+        $totalLiabilitasEquity = $totalHutang + $totalModal + $labaSebelumPajak;
         $data = [
             'title' => 'Primer Koperasi Darma Putra Kujang I',
             'sub'   => 'Neraca',
-            'isi'   => 'pengurus/akuntansi/neraca/v_index'
+            'isi'   => 'pengurus/akuntansi/neraca/v_index',
+            'accounts' => $accountData,
+            'totals' => [
+                'totalKasdanBank' => $totalKasBank,
+                'totalPiutang' => $totalPiutang,
+                'totalPersediaan' => $totalPersediaan,
+                'totalUangMuka' => $totalUangMuka,
+                'totalAsetLancar' => $totalAsetLancar,
+                'totalAsetTetap' => $totalAsetTetap,
+                'totalAset' => $totalAset,
+                'totalHutang' => $totalHutang,
+                'totalModal' => $totalModal + $labaSebelumPajak,
+                'totalLiabilitasEquity' => $totalLiabilitasEquity,
+                'labaSebelumPajak' => $labaSebelumPajak
+            ]
         ];
         return view('pengurus/layout/v_wrapper', $data);
     }
 
     public function index_pmodal()
     {
+        $akunData = $this->ModelAkun->asArray()->where('pos_laporan', '1')->findAll();
+        $accountData = [
+            'Aset Lancar' => [
+                'Kas dan Bank' => [],
+                'Piutang' => [],
+                'Persediaan' => [],
+                'Uang Muka' => [],
+            ],
+            'Aset Tetap' => [],
+            'Hutang' => [],
+            'Equity' => [],
+        ];
+        $totalKasBank = $totalPiutang = $totalPersediaan = $totalUangMuka = $totalAsetTetap = $totalHutang = $totalModal = 0;
+
+        // Perhitungan laba rugi seperti di index_labarugi
+        $akunDataLabaRugi = $this->ModelAkun->where('pos_laporan', 2)->asArray()->findAll();
+        $groupedData = [
+            'Pendapatan' => [],
+            'Biaya' => [],
+            'Pendapatan Lain-Lain' => [],
+            'Biaya Lain-Lain' => [],
+        ];
+        $totals = [
+            'Pendapatan' => 0,
+            'Biaya' => 0,
+            'Pendapatan Lain-Lain' => 0,
+            'Biaya Lain-Lain' => 0,
+        ];
+
+        foreach ($akunDataLabaRugi as $akun) {
+            $totalDebit = $this->ModelJurnal->where('id_akun', $akun['id_akun'])->selectSum('debit')->first()['debit'];
+            $totalKredit = $this->ModelJurnal->where('id_akun', $akun['id_akun'])->selectSum('kredit')->first()['kredit'];
+
+            $neracaSaldoDebit = 0;
+            $neracaSaldoKredit = 0;
+            $neracaDebit = 0;
+            $neracaKredit = 0;
+            $labaRugiDebit = 0;
+            $labaRugiKredit = 0;
+
+            if ($akun['pos_saldo'] == '1') {
+                $neracaSaldoDebit = $akun['debit'] + $totalDebit - $totalKredit;
+            } else {
+                $neracaSaldoKredit = $akun['kredit'] + $totalKredit - $totalDebit;
+            }
+
+            if ($akun['pos_saldo'] == '1' && $akun['pos_laporan'] == '1') {
+                $neracaDebit = $neracaSaldoDebit;
+            } elseif ($akun['pos_saldo'] == '2' && $akun['pos_laporan'] == '1') {
+                $neracaKredit = $neracaSaldoKredit;
+            } elseif ($akun['pos_saldo'] == '1' && $akun['pos_laporan'] == '2') {
+                $labaRugiDebit = $neracaSaldoDebit;
+            } elseif ($akun['pos_saldo'] == '2' && $akun['pos_laporan'] == '2') {
+                $labaRugiKredit = $neracaSaldoKredit;
+            }
+
+            $accountData = [
+                'kd_akun' => $akun['kd_akun'],
+                'nm_akun' => $akun['nm_akun'],
+                'pos_saldo' => $akun['pos_saldo'],
+                'pos_laporan' => $akun['pos_laporan'],
+                'neraca_saldo_debit' => $neracaSaldoDebit,
+                'neraca_saldo_kredit' => $neracaSaldoKredit,
+                'neraca_debit' => $neracaDebit,
+                'neraca_kredit' => $neracaKredit,
+                'laba_rugi_debit' => $labaRugiDebit,
+                'laba_rugi_kredit' => $labaRugiKredit
+            ];
+
+            $kd_akun = $akun['kd_akun'];
+            $firstDigit = substr($kd_akun, 0, 1);
+            $amount = $akun['pos_saldo'] == '1' ? $labaRugiDebit : $labaRugiKredit;
+
+            switch ($firstDigit) {
+                case '4':
+                    $groupedData['Pendapatan'][] = $accountData;
+                    $totals['Pendapatan'] += $amount;
+                    break;
+                case '5':
+                    $groupedData['Biaya'][] = $accountData;
+                    $totals['Biaya'] += $amount;
+                    break;
+                case '6':
+                    $groupedData['Pendapatan Lain-Lain'][] = $accountData;
+                    $totals['Pendapatan Lain-Lain'] += $amount;
+                    break;
+                case '7':
+                    $groupedData['Biaya Lain-Lain'][] = $accountData;
+                    $totals['Biaya Lain-Lain'] += $amount;
+                    break;
+            }
+        }
+
+        $labaKotor = $totals['Pendapatan'] - $totals['Biaya'];
+        $labaSebelumPajak = $labaKotor + $totals['Pendapatan Lain-Lain'] - $totals['Biaya Lain-Lain'];
+        $pajakPPH = $labaSebelumPajak * 0.11;
+        $labaSetelahPajak = $labaSebelumPajak - $pajakPPH;
+
+        // Ambil modal awal dari tb_akun
+        $modalAwal = $this->ModelAkun->where('kd_akun', '3101')->first(); // Sesuaikan 'akun_kredit_modal_awal' dengan kd_akun yang relevan
+        $totalModalAwal = $modalAwal['kredit'];
+
+        // Ambil deviden/prive dari tb_akun
+        $devidenPrive = $this->ModelAkun->where('kd_akun', '3102')->first(); // Sesuaikan 'akun_kredit_deviden_prive' dengan kd_akun yang relevan
+        $totalDevidenPrive = $devidenPrive['kredit'];
+
+        // Hitung total dan modal akhir
+        $total = $totalModalAwal + $labaSetelahPajak;
+        $modalAkhir = $total - $totalDevidenPrive;
+
+        foreach ($akunData as $akun) {
+            // Hitung nilai debit dan kredit dari tb_jurnal
+            $totalDebit = $this->ModelJurnal->where('id_akun', $akun['id_akun'])->selectSum('debit')->first()['debit'];
+            $totalKredit = $this->ModelJurnal->where('id_akun', $akun['id_akun'])->selectSum('kredit')->first()['kredit'];
+
+            $neracaSaldoDebit = 0;
+            $neracaSaldoKredit = 0;
+            $neracaDebit = 0;
+            $neracaKredit = 0;
+            $labaRugiDebit = 0;
+            $labaRugiKredit = 0;
+
+            if ($akun['pos_saldo'] == '1') {
+                $neracaSaldoDebit = $akun['debit'] + $totalDebit - $totalKredit;
+            } else {
+                $neracaSaldoKredit = $akun['kredit'] + $totalKredit - $totalDebit;
+            }
+
+            if ($akun['pos_saldo'] == '1' && $akun['pos_laporan'] == '1') {
+                $neracaDebit = $neracaSaldoDebit;
+            } elseif ($akun['pos_saldo'] == '2' && $akun['pos_laporan'] == '1') {
+                $neracaKredit = $neracaSaldoKredit;
+            } elseif ($akun['pos_saldo'] == '1' && $akun['pos_laporan'] == '2') {
+                $labaRugiDebit = $neracaSaldoDebit;
+            } elseif ($akun['pos_saldo'] == '2' && $akun['pos_laporan'] == '2') {
+                $labaRugiKredit = $neracaSaldoKredit;
+            }
+
+            $kdAkun = $akun['kd_akun'];
+            if ($akun['pos_saldo'] == '1') {
+                $jumlah = $neracaDebit;
+            } elseif ($akun['pos_saldo'] == '2') {
+                $jumlah = $neracaKredit;
+            }
+
+            if ($kdAkun[0] == '1') {
+                if ($kdAkun[1] == '1') {
+                    $accountData['Aset Lancar']['Kas dan Bank'][] = [
+                        'uraian' => $akun['nm_akun'],
+                        'jumlah' => $jumlah
+                    ];
+                    $totalKasBank += $jumlah;
+                } elseif ($kdAkun[1] == '2') {
+                    $accountData['Aset Lancar']['Piutang'][] = [
+                        'uraian' => $akun['nm_akun'],
+                        'jumlah' => $jumlah
+                    ];
+                    $totalPiutang += $jumlah;
+                } elseif ($kdAkun[1] == '3') {
+                    $accountData['Aset Lancar']['Persediaan'][] = [
+                        'uraian' => $akun['nm_akun'],
+                        'jumlah' => $jumlah
+                    ];
+                    $totalPersediaan += $jumlah;
+                } elseif ($kdAkun[1] == '4') {
+                    $accountData['Aset Lancar']['Uang Muka'][] = [
+                        'uraian' => $akun['nm_akun'],
+                        'jumlah' => $jumlah
+                    ];
+                    $totalUangMuka += $jumlah;
+                } elseif (in_array($kdAkun[1], ['5', '6'])) {
+                    $accountData['Aset Tetap'][] = [
+                        'uraian' => $akun['nm_akun'],
+                        'jumlah' => $jumlah
+                    ];
+                    $totalAsetTetap += $jumlah;
+                }
+            } elseif ($kdAkun[0] == '2') {
+                $accountData['Hutang'][] = [
+                    'uraian' => $akun['nm_akun'],
+                    'jumlah' => $jumlah
+                ];
+                $totalHutang += $jumlah;
+            } elseif ($kdAkun[0] == '3') {
+                $accountData['Equity'][] = [
+                    'uraian' => $akun['nm_akun'],
+                    'jumlah' => $jumlah
+                ];
+                $totalModal += $jumlah;
+            }
+        }
+        $totalAsetLancar = $totalKasBank + $totalPiutang + $totalPersediaan + $totalUangMuka;
+        $totalAset = $totalAsetLancar + $totalAsetTetap;
+        $totalLiabilitasEquity = $totalHutang + $totalModal + $labaSebelumPajak;
         $data = [
             'title' => 'Primer Koperasi Darma Putra Kujang I',
             'sub'   => 'Perubahan Modal',
-            'isi'   => 'pengurus/akuntansi/pmodal/v_index'
+            'isi'   => 'pengurus/akuntansi/pmodal/v_index',
+            'accounts' => $accountData,
+            'totals' => [
+                'totalKasdanBank' => $totalKasBank,
+                'totalPiutang' => $totalPiutang,
+                'totalPersediaan' => $totalPersediaan,
+                'totalUangMuka' => $totalUangMuka,
+                'totalAsetLancar' => $totalAsetLancar,
+                'totalAsetTetap' => $totalAsetTetap,
+                'totalAset' => $totalAset,
+                'totalHutang' => $totalHutang,
+                'totalModal' => $totalModal + $labaSebelumPajak,
+                'totalLiabilitasEquity' => $totalLiabilitasEquity,
+                'labaSebelumPajak' => $labaSebelumPajak,
+                'modalAwal' => $totalModalAwal,
+                'labaBersih' => $labaSetelahPajak,
+                'total' => $total,
+                'devidenPrive' => $totalDevidenPrive,
+                'modalAkhir' => $modalAkhir
+            ]
         ];
         return view('pengurus/layout/v_wrapper', $data);
     }
