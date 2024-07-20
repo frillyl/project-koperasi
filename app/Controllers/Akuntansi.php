@@ -391,11 +391,104 @@ class Akuntansi extends BaseController
 
     public function index_labarugi()
     {
+        // Ambil semua data dari tb_akun sebagai array asosiatif
+        $akunData = $this->ModelAkun->where('pos_laporan', 2)->asArray()->findAll();
+        $groupedData = [
+            'Pendapatan' => [],
+            'Biaya' => [],
+            'Pendapatan Lain-Lain' => [],
+            'Biaya Lain-Lain' => [],
+        ];
+        $totals = [
+            'Pendapatan' => 0,
+            'Biaya' => 0,
+            'Pendapatan Lain-Lain' => 0,
+            'Biaya Lain-Lain' => 0,
+        ];
+
+        foreach ($akunData as $akun) {
+            // Hitung nilai debit dan kredit dari tb_jurnal
+            $totalDebit = $this->ModelJurnal->where('id_akun', $akun['id_akun'])->selectSum('debit')->first()['debit'];
+            $totalKredit = $this->ModelJurnal->where('id_akun', $akun['id_akun'])->selectSum('kredit')->first()['kredit'];
+
+            $neracaSaldoDebit = 0;
+            $neracaSaldoKredit = 0;
+            $neracaDebit = 0;
+            $neracaKredit = 0;
+            $labaRugiDebit = 0;
+            $labaRugiKredit = 0;
+
+            if ($akun['pos_saldo'] == '1') {
+                $neracaSaldoDebit = $akun['debit'] + $totalDebit - $totalKredit;
+            } else {
+                $neracaSaldoKredit = $akun['kredit'] + $totalKredit - $totalDebit;
+            }
+
+            if ($akun['pos_saldo'] == '1' && $akun['pos_laporan'] == '1') {
+                $neracaDebit = $neracaSaldoDebit;
+            } elseif ($akun['pos_saldo'] == '2' && $akun['pos_laporan'] == '1') {
+                $neracaKredit = $neracaSaldoKredit;
+            } elseif ($akun['pos_saldo'] == '1' && $akun['pos_laporan'] == '2') {
+                $labaRugiDebit = $neracaSaldoDebit;
+            } elseif ($akun['pos_saldo'] == '2' && $akun['pos_laporan'] == '2') {
+                $labaRugiKredit = $neracaSaldoKredit;
+            }
+
+            $accountData = [
+                'kd_akun' => $akun['kd_akun'],
+                'nm_akun' => $akun['nm_akun'],
+                'pos_saldo' => $akun['pos_saldo'],
+                'pos_laporan' => $akun['pos_laporan'],
+                'neraca_saldo_debit' => $neracaSaldoDebit,
+                'neraca_saldo_kredit' => $neracaSaldoKredit,
+                'neraca_debit' => $neracaDebit,
+                'neraca_kredit' => $neracaKredit,
+                'laba_rugi_debit' => $labaRugiDebit,
+                'laba_rugi_kredit' => $labaRugiKredit
+            ];
+
+            $kd_akun = $akun['kd_akun'];
+            $firstDigit = substr($kd_akun, 0, 1);
+            $amount = $akun['pos_saldo'] == '1' ? $labaRugiDebit : $labaRugiKredit;
+
+            switch ($firstDigit) {
+                case '4':
+                    $groupedData['Pendapatan'][] = $accountData;
+                    $totals['Pendapatan'] += $amount;
+                    break;
+                case '5':
+                    $groupedData['Biaya'][] = $accountData;
+                    $totals['Biaya'] += $amount;
+                    break;
+                case '6':
+                    $groupedData['Pendapatan Lain-Lain'][] = $accountData;
+                    $totals['Pendapatan Lain-Lain'] += $amount;
+                    break;
+                case '7':
+                    $groupedData['Biaya Lain-Lain'][] = $accountData;
+                    $totals['Biaya Lain-Lain'] += $amount;
+                    break;
+            }
+        }
+
+        // Perhitungan tambahan
+        $labaKotor = $totals['Pendapatan'] - $totals['Biaya'];
+        $labaSebelumPajak = $labaKotor + $totals['Pendapatan Lain-Lain'] - $totals['Biaya Lain-Lain'];
+        $pajakPPH = $labaSebelumPajak * 0.11;
+        $labaSetelahPajak = $labaSebelumPajak - $pajakPPH;
+
         $data = [
             'title' => 'Primer Koperasi Darma Putra Kujang I',
-            'sub'   => 'Laba Rugi',
-            'isi'   => 'pengurus/akuntansi/labarugi/v_index'
+            'sub' => 'Laporan Keuangan',
+            'isi' => 'pengurus/akuntansi/labarugi/v_index',
+            'accounts' => $groupedData,
+            'totals' => $totals,
+            'labaKotor' => $labaKotor,
+            'labaSebelumPajak' => $labaSebelumPajak,
+            'pajakPPH' => $pajakPPH,
+            'labaSetelahPajak' => $labaSetelahPajak
         ];
+
         return view('pengurus/layout/v_wrapper', $data);
     }
 

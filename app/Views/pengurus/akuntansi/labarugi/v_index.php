@@ -64,8 +64,45 @@
                                                 <th rowspan="2" style="vertical-align: middle; background-color: #3d9970; color: white;" width="100px">Jumlah</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="text-center">
-
+                                        <tbody>
+                                            <?php foreach ($accounts as $category => $accounts) : ?>
+                                                <tr>
+                                                    <td colspan="3" style="text-align: left; font-weight: bold; text-transform:uppercase;"><?= esc($category) ?></td>
+                                                </tr>
+                                                <?php foreach ($accounts as $account) : ?>
+                                                    <tr>
+                                                        <td class="text-center" style="vertical-align: middle;"><?= esc($account['kd_akun']) ?></td>
+                                                        <td><?= esc($account['nm_akun']) ?></td>
+                                                        <td style="vertical-align: middle; text-align: right;">
+                                                            <?= $account['pos_saldo'] == '1' ? esc($account['laba_rugi_debit']) : esc($account['laba_rugi_kredit']) ?>
+                                                        </td>
+                                                    </tr>
+                                                <?php endforeach; ?>
+                                                <tr>
+                                                    <td colspan="2" style="text-align: left; font-weight: bold; text-transform: uppercase;">Total <?= esc($category) ?></td>
+                                                    <td style="text-align: right; font-weight: bold;"><?= esc($totals[$category]) ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                            <tr>
+                                                <td colspan="2" style="text-align: left; font-weight: bold;">Laba Kotor</td>
+                                                <td style="text-align: right;"><?= esc($labaKotor) ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" style="text-align: left; font-weight: bold;">Laba (Rugi) Sebelum Pajak</td>
+                                                <td style="text-align: right;"><?= esc($labaSebelumPajak) ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" style="text-align: left; font-weight: bold;">Pajak PPH Badan</td>
+                                                <td style="text-align: right;"><?= esc($pajakPPH) ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" style="text-align: left; font-weight: bold;">Laba (Rugi) Setelah Pajak</td>
+                                                <td style="text-align: right;"><?= esc($labaSetelahPajak) ?></td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
