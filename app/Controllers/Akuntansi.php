@@ -75,10 +75,9 @@ class Akuntansi extends BaseController
             ],
             'tb_bantuan' => [
                 'label' => 'Kode Tabel Bantuan',
-                'rules' => 'required|is_unique[tb_akun.tb_bantuan]',
+                'rules' => 'required',
                 'errors' => [
-                    'required' => '{field} wajib diisi!',
-                    'is_unique' => '{field} telah terdaftar!'
+                    'required' => '{field} wajib diisi!'
                 ]
             ],
             'pos_saldo' => [
@@ -90,20 +89,6 @@ class Akuntansi extends BaseController
             ],
             'pos_laporan' => [
                 'label' => 'Pos Laporan',
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} wajib diisi!'
-                ]
-            ],
-            'debit' => [
-                'label' => 'Debit',
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} wajib diisi!'
-                ]
-            ],
-            'kredit' => [
-                'label' => 'Kredit',
                 'rules' => 'required',
                 'errors' => [
                     'required' => '{field} wajib diisi!'
@@ -170,20 +155,6 @@ class Akuntansi extends BaseController
             ],
             'pos_laporan' => [
                 'label' => 'Pos Laporan',
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} wajib diisi!'
-                ]
-            ],
-            'debit' => [
-                'label' => 'Debit',
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} wajib diisi!'
-                ]
-            ],
-            'kredit' => [
-                'label' => 'Kredit',
                 'rules' => 'required',
                 'errors' => [
                     'required' => '{field} wajib diisi!'
@@ -345,7 +316,8 @@ class Akuntansi extends BaseController
             'title' => 'Primer Koperasi Darma Putra Kujang I',
             'sub'   => 'Kelola Kode Akun Pembantu',
             'isi'   => 'pengurus/akuntansi/bantu/v_kelola',
-            'akun'  => $this->ModelAkunPembantu->allData()
+            'akun'  => $this->ModelAkunPembantu->allData(),
+            'header' => $this->ModelAkunHeader->allData()
         ];
         return view('pengurus/layout/v_wrapper', $data);
     }
@@ -386,13 +358,6 @@ class Akuntansi extends BaseController
             ],
             'saldo_normal' => [
                 'label' => 'Saldo Normal',
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} wajib diisi!'
-                ]
-            ],
-            'saldo_awal' => [
-                'label' => 'Saldo Awal',
                 'rules' => 'required',
                 'errors' => [
                     'required' => '{field} wajib diisi!'
@@ -460,13 +425,6 @@ class Akuntansi extends BaseController
                     'required' => '{field} wajib diisi!'
                 ]
             ],
-            'saldo_awal' => [
-                'label' => 'Saldo Awal',
-                'rules' => 'required',
-                'errors' => [
-                    'required' => '{field} wajib diisi!'
-                ]
-            ],
             'edited_by' => [
                 'label' => 'Diubah Oleh',
                 'rules' => 'required',
@@ -477,6 +435,7 @@ class Akuntansi extends BaseController
         ])) {
             $data = array(
                 'id_akun_pembantu' => $id_akun_pembantu,
+                'id_akun_header' => $this->request->getPost('id_akun_header'),
                 'kd_akun' => $this->request->getPost('kd_akun'),
                 'nm_akun' => $this->request->getPost('nm_akun'),
                 'tb_bantuan' => $this->request->getPost('tb_bantuan'),

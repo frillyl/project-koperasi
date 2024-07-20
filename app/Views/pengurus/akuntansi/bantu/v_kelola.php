@@ -103,7 +103,7 @@
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h4 class="modal-title">Detail Data Agen</h4>
+                                        <h4 class="modal-title">Detail Data Kode Akun Pembantu</h4>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -111,6 +111,10 @@
                                     <div class="modal-body">
                                         <table class="table no-border">
                                             <tbody>
+                                                <tr>
+                                                    <th>Header Kode Akun Pembantu</th>
+                                                    <td><?= $value['nm_akun_header'] ?></td>
+                                                </tr>
                                                 <tr>
                                                     <th>Kode Akun</th>
                                                     <td><?= $value['kd_akun'] ?></td>
@@ -178,39 +182,48 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title">Tambah Data Kode Akun</h4>
+                                    <h4 class="modal-title">Tambah Data Kode Akun Pembantu</h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
                                     <?php
-                                    echo form_open('pengurus/master/agen/add');
+                                    echo form_open('pengurus/akuntansi/akun_pembantu/kelola/add');
                                     ?>
 
                                     <div class="form-group">
-                                        <label for="kd_agen">Kode Agen</label>
-                                        <input type="text" name="kd_agen" class="form-control" id="kd_agen" placeholder="Kode Agen" readonly>
+                                        <label for="id_akun_header">Header Kode Akun Pembantu</label>
+                                        <select name="id_akun_header" class="form-control select2 select2-hidden-accessible" id="id_pangkat" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                            <option value="">-- Pilih Header --</option>
+                                            <?php foreach ($header as $key => $value) { ?>
+                                                <option value="<?= $value['id_akun_header'] ?>"><?= $value['nm_akun'] ?></option>
+                                            <?php } ?>
+                                        </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="nm_agen">Nama Agen</label>
-                                        <input type="text" name="nm_agen" class="form-control" id="nm_agen" placeholder="Nama Agen">
+                                        <label for="kd_akun">Kode Akun</label>
+                                        <input type="text" name="kd_akun" class="form-control" id="kd_akun" placeholder="Kode Akun">
                                     </div>
                                     <div class="form-group">
-                                        <label for="alamat">Alamat</label>
-                                        <textarea name="alamat" class="form-control" id="alamat" placeholder="Alamat"></textarea>
+                                        <label for="nm_akun">Nama Akun</label>
+                                        <input type="text" name="nm_akun" class="form-control" id="nm_akun" placeholder="Nama Akun">
                                     </div>
                                     <div class="form-group">
-                                        <label for="no_hp">Nomor HP</label>
-                                        <input type="text" name="no_hp" class="form-control" id="no_hp" placeholder="Nomor HP">
+                                        <label for="tb_bantuan">Kode Tabel Bantuan</label>
+                                        <input type="text" name="tb_bantuan" class="form-control" id="tb_bantuan" placeholder="Kode Tabel Bantuan">
                                     </div>
                                     <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="text" name="email" class="form-control" id="email" placeholder="Email">
+                                        <label for="saldo_normal">Saldo Normal</label>
+                                        <select name="saldo_normal" class="form-control" id="saldo_normal" style="width: 100%;">
+                                            <option value="">-- Pilih Saldo Normal --</option>
+                                            <option value="1">Debit</option>
+                                            <option value="2">Kredit</option>
+                                        </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="ket">Keterangan</label>
-                                        <textarea name="ket" class="form-control" id="ket" placeholder="Keterangan"></textarea>
+                                        <label for="saldo_awal">Saldo Awal</label>
+                                        <input type="text" name="saldo_awal" class="form-control" id="saldo_awal" placeholder="Saldo Awal">
                                     </div>
                                     <div class="form-group">
                                         <input type="text" name="created_by" class="form-control" id="created_by" placeholder="Ditambahkan Oleh" value="<?= session('id') ?>" hidden>
@@ -231,23 +244,61 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h4 class="modal-title">Ubah Data Agen</h4>
+                                        <h4 class="modal-title">Ubah Data Kode Akun Pembantu</h4>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
                                         <?php
-                                        echo form_open('pengurus/master/agen/edit/' . $value['id_akun_pembantu']);
+                                        echo form_open('pengurus/akuntansi/akun_pembantu/kelola/edit/' . $value['id_akun_pembantu']);
                                         ?>
 
                                         <div class="form-group">
-                                            <label for="kd_agen">Kode Agen</label>
-                                            <input type="text" name="kd_agen" value="<?= $value['kd_akun'] ?>" class="form-control" id="kd_agen" placeholder="Kode Agen" readonly>
+                                            <label for="id_akun_header">Header Kode Akun Pembantu</label>
+                                            <select name="id_akun_header" class="form-control select2 select2-hidden-accessible" id="id_akun_header" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                                <option <?php if ($value['id_akun_header'] == '') {
+                                                            echo 'selected';
+                                                        } ?> value="">----- Pilih Header -----</option>
+                                                <?php foreach ($header as $key => $value2) { ?>
+                                                    <option <?php if ($value['id_akun_header'] == $value2['id_akun_header']) {
+                                                                echo 'selected';
+                                                            } ?> value="<?= $value2['id_akun_header'] ?>"><?= $value2['nm_akun'] ?></option>
+                                                <?php } ?>
+                                            </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="nm_agen">Nama Agen</label>
-                                            <input type="text" name="nm_agen" value="<?= $value['nm_akun_pembantu'] ?>" class="form-control" id="nm_agen" placeholder="Nama Agen">
+                                            <label for="kd_akun">Kode Akun</label>
+                                            <input type="text" name="kd_akun" value="<?= $value['kd_akun'] ?>" class="form-control" id="kd_akun" placeholder="Kode Akun" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="nm_akun">Nama Akun</label>
+                                            <input type="text" name="nm_akun" value="<?= $value['nm_akun'] ?>" class="form-control" id="nm_akun" placeholder="Nama Akun">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="tb_bantuan">Kode Tabel Bantuan</label>
+                                            <input type="text" name="tb_bantuan" value="<?= $value['tb_bantuan'] ?>" class="form-control" id="tb_bantuan" placeholder="Kode Tabel Bantuan">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="saldo_normal">Saldo Normal</label>
+                                            <select name="saldo_normal" class="form-control">
+                                                <option <?php if ($value['saldo_normal'] == '') {
+                                                            echo 'selected';
+                                                        } ?> value="">----- Pilih Saldo Normal -----</option>
+                                                <option <?php if ($value['saldo_normal'] == 1) {
+                                                            echo 'selected';
+                                                        } ?> value="1">Debit</option>
+                                                <option <?php if ($value['saldo_normal'] == 2) {
+                                                            echo 'selected';
+                                                        } ?> value="2">Kredit</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="saldo_awal">Saldo Awal</label>
+                                            <input type="text" name="saldo_awal" value="<?= $value['saldo_awal'] ?>" class="form-control" id="saldo_awal" placeholder="Saldo Awal">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="edited_by" value="<?= session('id') ?>" class="form-control" id="edited_by" placeholder="Diubah Oleh" hidden>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -269,17 +320,17 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h4 class="modal-title">Hapus Data Agen</h4>
+                                        <h4 class="modal-title">Hapus Data Kode Akun Pembantu</h4>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        Apakah Anda Yakin Ingin Menghapus Data Agen <b><?= $value['nm_akun_pembantu'] ?></b> ?
+                                        Apakah Anda Yakin Ingin Menghapus Data Kode Akun Pembantu <b><?= $value['nm_akun_pembantu'] ?></b> ?
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Batal</button>
-                                        <a href="<?= base_url('pengurus/master/agen/delete/' . $value['id_akun_pembantu']) ?>" class="btn btn-danger">Hapus</a>
+                                        <a href="<?= base_url('pengurus/akuntansi/akun_pembantu/delete/' . $value['id_akun_pembantu']) ?>" class="btn btn-danger">Hapus</a>
                                     </div>
                                 </div>
                             </div>

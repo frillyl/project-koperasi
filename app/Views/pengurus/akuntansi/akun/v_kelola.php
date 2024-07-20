@@ -103,7 +103,7 @@
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h4 class="modal-title">Detail Data Agen</h4>
+                                        <h4 class="modal-title">Detail Data Kode Akun</h4>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -130,7 +130,7 @@
                                                             echo 'Debit';
                                                         } elseif ($value['pos_saldo'] == '2') {
                                                             echo 'Kredit';
-                                                        } elseif ($value['pos_saldo'] == '-') {
+                                                        } elseif ($value['pos_saldo'] == '0') {
                                                             echo '-';
                                                         } ?></td>
                                                 </tr>
@@ -140,7 +140,7 @@
                                                             echo 'Neraca';
                                                         } elseif ($value['pos_laporan'] == '2') {
                                                             echo 'Laba Rugi';
-                                                        } elseif ($value['pos_laporan'] == '-') {
+                                                        } elseif ($value['pos_laporan'] == '0') {
                                                             echo '-';
                                                         } ?></td>
                                                 </tr>
@@ -199,32 +199,44 @@
                                 </div>
                                 <div class="modal-body">
                                     <?php
-                                    echo form_open('pengurus/master/agen/add');
+                                    echo form_open('pengurus/akuntansi/akun/kelola/add');
                                     ?>
 
                                     <div class="form-group">
-                                        <label for="kd_agen">Kode Agen</label>
-                                        <input type="text" name="kd_agen" class="form-control" id="kd_agen" placeholder="Kode Agen" readonly>
+                                        <label for="kd_akun">Kode Akun</label>
+                                        <input type="text" name="kd_akun" class="form-control" id="kd_akun" placeholder="Kode Akun">
                                     </div>
                                     <div class="form-group">
-                                        <label for="nm_agen">Nama Agen</label>
-                                        <input type="text" name="nm_agen" class="form-control" id="nm_agen" placeholder="Nama Agen">
+                                        <label for="nm_akun">Nama Akun</label>
+                                        <input type="text" name="nm_akun" class="form-control" id="nm_akun" placeholder="Nama Akun">
                                     </div>
                                     <div class="form-group">
-                                        <label for="alamat">Alamat</label>
-                                        <textarea name="alamat" class="form-control" id="alamat" placeholder="Alamat"></textarea>
+                                        <label for="tb_bantuan">Kode Tabel Bantuan</label>
+                                        <input type="text" name="tb_bantuan" class="form-control" id="tb_bantuan" placeholder="Kode Tabel Bantuan">
                                     </div>
                                     <div class="form-group">
-                                        <label for="no_hp">Nomor HP</label>
-                                        <input type="text" name="no_hp" class="form-control" id="no_hp" placeholder="Nomor HP">
+                                        <label for="pos_saldo">Pos Saldo</label>
+                                        <select name="pos_saldo" class="form-control" id="pos_saldo" style="width: 100%;">
+                                            <option value="">-- Pilih Pos Saldo --</option>
+                                            <option value="1">Debit</option>
+                                            <option value="2">Kredit</option>
+                                        </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="text" name="email" class="form-control" id="email" placeholder="Email">
+                                        <label for="pos_laporan">Pos Laporan</label>
+                                        <select name="pos_laporan" class="form-control" id="pos_laporan" style="width: 100%;">
+                                            <option value="">-- Pilih Pos Laporan --</option>
+                                            <option value="1">Neraca</option>
+                                            <option value="2">Laba Rugi</option>
+                                        </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="ket">Keterangan</label>
-                                        <textarea name="ket" class="form-control" id="ket" placeholder="Keterangan"></textarea>
+                                        <label for="debit">Saldo Awal (Debit)</label>
+                                        <input type="text" name="debit" class="form-control" id="debit" placeholder="Saldo Awal (Debit)">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="kredit">Saldo Awal (Kredit)</label>
+                                        <input type="text" name="kredit" class="form-control" id="kredit" placeholder="Saldo Awal (Kredit)">
                                     </div>
                                     <div class="form-group">
                                         <input type="text" name="created_by" class="form-control" id="created_by" placeholder="Ditambahkan Oleh" value="<?= session('id') ?>" hidden>
@@ -245,23 +257,66 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h4 class="modal-title">Ubah Data Agen</h4>
+                                        <h4 class="modal-title">Ubah Data Kode Akun</h4>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
                                         <?php
-                                        echo form_open('pengurus/master/agen/edit/' . $value['id_akun']);
+                                        echo form_open('pengurus/akuntansi/akun/kelola/edit/' . $value['id_akun']);
                                         ?>
 
                                         <div class="form-group">
-                                            <label for="kd_agen">Kode Agen</label>
-                                            <input type="text" name="kd_agen" value="<?= $value['kd_akun'] ?>" class="form-control" id="kd_agen" placeholder="Kode Agen" readonly>
+                                            <label for="kd_akun">Kode Akun</label>
+                                            <input type="text" name="kd_akun" value="<?= $value['kd_akun'] ?>" class="form-control" id="kd_akun" placeholder="Kode Akun" readonly>
                                         </div>
                                         <div class="form-group">
-                                            <label for="nm_agen">Nama Agen</label>
-                                            <input type="text" name="nm_agen" value="<?= $value['nm_akun'] ?>" class="form-control" id="nm_agen" placeholder="Nama Agen">
+                                            <label for="nm_akun">Nama Akun</label>
+                                            <input type="text" name="nm_akun" value="<?= $value['nm_akun'] ?>" class="form-control" id="nm_akun" placeholder="Nama Akun">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="tb_bantuan">Kode Tabel Bantuan</label>
+                                            <input type="text" name="tb_bantuan" value="<?= $value['tb_bantuan'] ?>" class="form-control" id="tb_bantuan" placeholder="Kode Tabel Bantuan">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="pos_saldo">Pos Saldo</label>
+                                            <select name="pos_saldo" class="form-control">
+                                                <option <?php if ($value['pos_saldo'] == '') {
+                                                            echo 'selected';
+                                                        } ?> value="">----- Pilih Pos Saldo -----</option>
+                                                <option <?php if ($value['pos_saldo'] == 1) {
+                                                            echo 'selected';
+                                                        } ?> value="1">Debit</option>
+                                                <option <?php if ($value['pos_saldo'] == 2) {
+                                                            echo 'selected';
+                                                        } ?> value="2">Kredit</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="pos_laporan">Pos Laporan</label>
+                                            <select name="pos_laporan" class="form-control">
+                                                <option <?php if ($value['pos_laporan'] == '') {
+                                                            echo 'selected';
+                                                        } ?> value="">----- Pilih Pos Laporan -----</option>
+                                                <option <?php if ($value['pos_laporan'] == 1) {
+                                                            echo 'selected';
+                                                        } ?> value="1">Neraca</option>
+                                                <option <?php if ($value['pos_laporan'] == 2) {
+                                                            echo 'selected';
+                                                        } ?> value="2">Laba Rugi</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="debit">Saldo Awal (Debit)</label>
+                                            <input type="text" name="debit" value="<?= $value['debit'] ?>" class="form-control" id="debit" placeholder="Saldo Awal (Debit)">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="kredit">Saldo Awal (Kredit)</label>
+                                            <input type="text" name="kredit" value="<?= $value['kredit'] ?>" class="form-control" id="kredit" placeholder="Saldo Awal (Kredit)">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="edited_by" value="<?= session('id') ?>" class="form-control" id="edited_by" placeholder="Diubah Oleh" hidden>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -283,17 +338,17 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h4 class="modal-title">Hapus Data Agen</h4>
+                                        <h4 class="modal-title">Hapus Data Kode Akun</h4>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        Apakah Anda Yakin Ingin Menghapus Data Agen <b><?= $value['nm_akun'] ?></b> ?
+                                        Apakah Anda Yakin Ingin Menghapus Data Kode Akun <b><?= $value['nm_akun'] ?></b> ?
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Batal</button>
-                                        <a href="<?= base_url('pengurus/master/agen/delete/' . $value['id_akun']) ?>" class="btn btn-danger">Hapus</a>
+                                        <a href="<?= base_url('pengurus/akuntansi/akun/kelola/delete/' . $value['id_akun']) ?>" class="btn btn-danger">Hapus</a>
                                     </div>
                                 </div>
                             </div>
