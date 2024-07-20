@@ -47,10 +47,19 @@ $routes->get('/pengurus/laporan/penjualan', 'Laporan::index_penjualan');
 
 $routes->get('/pengurus/akuntansi/akun', 'Akuntansi::index_akun');
 $routes->get('/pengurus/akuntansi/akun/kelola', 'Akuntansi::kelola_akun');
+$routes->post('pengurus/akuntansi/akun/kelola/add', 'Akuntansi::add_akun');
+$routes->post('pengurus/akuntansi/akun/kelola/edit/(:segment)', 'Akuntansi::edit_akun/$1');
+$routes->get('/pengurus/akuntansi/akun/kelola/delete/(:segment)', 'Akuntansi::delete_akun/$1');
 
 $routes->get('/pengurus/akuntansi/akun_header', 'Akuntansi::index_header');
+$routes->post('pengurus/akuntansi/akun_header/add', 'Akuntansi::add_header');
+$routes->post('pengurus/akuntansi/akun_header/edit/(:segment)', 'Akuntansi::edit_header/$1');
+$routes->get('/pengurus/akuntansi/akun_header/delete/(:segment)', 'Akuntansi::delete_header/$1');
 $routes->get('/pengurus/akuntansi/akun_pembantu', 'Akuntansi::index_bantu');
-$routes->get('/pengurus/akuntansi/akun_pembantu/kelola', 'Akuntansi:kelola_bantu');
+$routes->get('/pengurus/akuntansi/akun_pembantu/kelola', 'Akuntansi::kelola_bantu');
+$routes->post('pengurus/akuntansi/akun_pembantu/kelola/add', 'Akuntansi::add_bantu');
+$routes->post('pengurus/akuntansi/akun_pembantu/kelola/edit/(:segment)', 'Akuntansi::edit_bantu/$1');
+$routes->get('/pengurus/akuntansi/akun_pembantu/delete/(:segment)', 'Akuntansi::delete_bantu/$1');
 
 $routes->get('/pengurus/akuntansi/jurnal_umum', 'Akuntansi::index_jurnal');
 $routes->get('/pengurus/akuntansi/jurnal_umum/kelola', 'Akuntansi::kelola_jurnal');

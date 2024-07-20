@@ -30,6 +30,7 @@ class Akuntansi extends BaseController
     }
 
     // MASTER KODE AKUN
+    // Daftar Kode Akun
     public function index_akun()
     {
         $data = [
@@ -41,6 +42,7 @@ class Akuntansi extends BaseController
         return view('pengurus/layout/v_wrapper', $data);
     }
 
+    // Kelola Kode Akun
     public function kelola_akun()
     {
         $data = [
@@ -52,7 +54,179 @@ class Akuntansi extends BaseController
         return view('pengurus/layout/v_wrapper', $data);
     }
 
-    // MASTER HEADER AKUN PEMBANTU
+    // Tambah Kode Akun
+    public function add_akun()
+    {
+        if ($this->validate([
+            'kd_akun' => [
+                'label' => 'Kode Akun',
+                'rules' => 'required|is_unique[tb_akun.kd_akun]',
+                'errors' => [
+                    'required' => '{field} wajib diisi!',
+                    'is_unique' => '{field} telah terdaftar!'
+                ]
+            ],
+            'nm_akun' => [
+                'label' => 'Nama Akun',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'tb_bantuan' => [
+                'label' => 'Kode Tabel Bantuan',
+                'rules' => 'required|is_unique[tb_akun.tb_bantuan]',
+                'errors' => [
+                    'required' => '{field} wajib diisi!',
+                    'is_unique' => '{field} telah terdaftar!'
+                ]
+            ],
+            'pos_saldo' => [
+                'label' => 'Pos Saldo',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'pos_laporan' => [
+                'label' => 'Pos Laporan',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'debit' => [
+                'label' => 'Debit',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'kredit' => [
+                'label' => 'Kredit',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'created_by' => [
+                'label' => 'Ditambahkan Oleh',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ]
+        ])) {
+            $data = array(
+                'kd_akun' => $this->request->getPost('kd_akun'),
+                'nm_akun' => $this->request->getPost('nm_akun'),
+                'tb_bantuan' => $this->request->getPost('tb_bantuan'),
+                'pos_saldo' => $this->request->getPost('pos_saldo'),
+                'pos_laporan' => $this->request->getPost('pos_laporan'),
+                'debit' => $this->request->getPost('debit'),
+                'kredit' => $this->request->getPost('kredit'),
+                'created_by' => $this->request->getPost('created_by'),
+            );
+            $this->ModelAkun->add($data);
+            session()->setFlashdata('success', 'Data akun berhasil ditambahkan!');
+            return redirect()->to('/pengurus/akuntansi/akun/kelola');
+        } else {
+            session()->setFlashdata('errors', \Config\Services::validation()->getErrors());
+            return redirect()->to(base_url('/pengurus/akuntansi/akun/kelola'));
+        }
+    }
+
+    // Ubah Kode Akun
+    public function edit_akun($id_akun)
+    {
+        if ($this->validate([
+            'kd_akun' => [
+                'label' => 'Kode Akun',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'nm_akun' => [
+                'label' => 'Nama Akun',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'tb_bantuan' => [
+                'label' => 'Kode Tabel Bantuan',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'pos_saldo' => [
+                'label' => 'Pos Saldo',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'pos_laporan' => [
+                'label' => 'Pos Laporan',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'debit' => [
+                'label' => 'Debit',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'kredit' => [
+                'label' => 'Kredit',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'edited_by' => [
+                'label' => 'Diubah Oleh',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ]
+        ])) {
+            $data = array(
+                'id_akun' => $id_akun,
+                'kd_akun' => $this->request->getPost('kd_akun'),
+                'nm_akun' => $this->request->getPost('nm_akun'),
+                'tb_bantuan' => $this->request->getPost('tb_bantuan'),
+                'pos_saldo' => $this->request->getPost('pos_saldo'),
+                'pos_laporan' => $this->request->getPost('pos_laporan'),
+                'debit' => $this->request->getPost('debit'),
+                'kredit' => $this->request->getPost('kredit'),
+                'edited_by' => $this->request->getPost('edited_by'),
+            );
+            $this->ModelAkun->edit($data);
+            session()->setFlashdata('success', 'Data akun berhasil diubah!');
+            return redirect()->to('/pengurus/akuntansi/akun/kelola');
+        }
+    }
+
+    // Hapus Kode Akun
+    public function delete_akun($id_akun)
+    {
+        $data = [
+            'id_akun' => $id_akun
+        ];
+        $this->ModelAkun->delete_data($data);
+        session()->setFlashdata('success', 'Data akun berhasil dihapus!');
+        return redirect()->to('/pengurus/akuntansi/akun/kelola');
+    }
+
+    // MASTER HEADER KODE AKUN PEMBANTU
+    // Daftar Header Kode Akun Pembantu
     public function index_header()
     {
         $data = [
@@ -64,6 +238,7 @@ class Akuntansi extends BaseController
         return view('pengurus/layout/v_wrapper', $data);
     }
 
+    // Tambah Header Kode Akun Pembantu
     public function add_header()
     {
         if ($this->validate([
@@ -95,6 +270,7 @@ class Akuntansi extends BaseController
         }
     }
 
+    // Ubah Header Kode Akun Pembantu
     public function edit_header($id_akun_header)
     {
         if ($this->validate([
@@ -126,6 +302,7 @@ class Akuntansi extends BaseController
         }
     }
 
+    // Hapus Header Kode Akun Pembantu
     public function delete_header($id_akun_header)
     {
         $data = [
@@ -137,6 +314,7 @@ class Akuntansi extends BaseController
     }
 
     // MASTER KODE AKUN PEMBANTU
+    // Daftar Kode Akun Pembantu
     public function index_bantu()
     {
         $bantu = $this->ModelAkunPembantu->allData();
@@ -160,7 +338,173 @@ class Akuntansi extends BaseController
         return view('pengurus/layout/v_wrapper', $data);
     }
 
+    // Kelola Kode Akun Pembantu
+    public function kelola_bantu()
+    {
+        $data = [
+            'title' => 'Primer Koperasi Darma Putra Kujang I',
+            'sub'   => 'Kelola Kode Akun Pembantu',
+            'isi'   => 'pengurus/akuntansi/bantu/v_kelola',
+            'akun'  => $this->ModelAkunPembantu->allData()
+        ];
+        return view('pengurus/layout/v_wrapper', $data);
+    }
+
+    // Tambah Kode Akun Pembantu
+    public function add_bantu()
+    {
+        if ($this->validate([
+            'id_akun_header' => [
+                'label' => 'Header Akun',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'kd_akun' => [
+                'label' => 'Kode Akun',
+                'rules' => 'required|is_unique[tb_akun.kd_akun]',
+                'errors' => [
+                    'required' => '{field} wajib diisi!',
+                    'is_unique' => '{field} telah terdaftar!'
+                ]
+            ],
+            'nm_akun' => [
+                'label' => 'Nama Akun',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'tb_bantuan' => [
+                'label' => 'Kode Tabel Bantuan',
+                'rules' => 'required|is_unique[tb_akun.tb_bantuan]',
+                'errors' => [
+                    'required' => '{field} wajib diisi!',
+                    'is_unique' => '{field} telah terdaftar!'
+                ]
+            ],
+            'saldo_normal' => [
+                'label' => 'Saldo Normal',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'saldo_awal' => [
+                'label' => 'Saldo Awal',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'created_by' => [
+                'label' => 'Ditambahkan Oleh',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ]
+        ])) {
+            $data = array(
+                'id_akun_header' => $this->request->getPost('id_akun_header'),
+                'kd_akun' => $this->request->getPost('kd_akun'),
+                'nm_akun' => $this->request->getPost('nm_akun'),
+                'tb_bantuan' => $this->request->getPost('tb_bantuan'),
+                'saldo_normal' => $this->request->getPost('pos_saldo'),
+                'saldo_awal' => $this->request->getPost('pos_laporan'),
+                'created_by' => $this->request->getPost('created_by'),
+            );
+            $this->ModelAkunPembantu->add($data);
+            session()->setFlashdata('success', 'Data akun pembantu berhasil ditambahkan!');
+            return redirect()->to('/pengurus/akuntansi/akun_pembantu/kelola');
+        }
+    }
+
+    // Ubah Kode Akun Pembantu
+    public function edit_bantu($id_akun_pembantu)
+    {
+        if ($this->validate([
+            'id_akun_header' => [
+                'label' => 'Header Akun',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'kd_akun' => [
+                'label' => 'Kode Akun',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'nm_akun' => [
+                'label' => 'Nama Akun',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'tb_bantuan' => [
+                'label' => 'Kode Tabel Bantuan',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'saldo_normal' => [
+                'label' => 'Saldo Normal',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'saldo_awal' => [
+                'label' => 'Saldo Awal',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'edited_by' => [
+                'label' => 'Diubah Oleh',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ]
+        ])) {
+            $data = array(
+                'id_akun_pembantu' => $id_akun_pembantu,
+                'kd_akun' => $this->request->getPost('kd_akun'),
+                'nm_akun' => $this->request->getPost('nm_akun'),
+                'tb_bantuan' => $this->request->getPost('tb_bantuan'),
+                'pos_saldo' => $this->request->getPost('pos_saldo'),
+                'pos_laporan' => $this->request->getPost('pos_laporan'),
+                'debit' => $this->request->getPost('debit'),
+                'kredit' => $this->request->getPost('kredit'),
+                'edited_by' => $this->request->getPost('edited_by'),
+            );
+            $this->ModelAkunPembantu->edit($data);
+            session()->setFlashdata('success', 'Data akun pembantu berhasil diubah!');
+            return redirect()->to('/pengurus/akuntansi/akun_pembantu/kelola');
+        }
+    }
+
+    // Hapus Kode Akun Pembantu
+    public function delete_bantu($id_akun_pembantu)
+    {
+        $data = [
+            'id_akun_pembantu' => $id_akun_pembantu
+        ];
+        $this->ModelAkunPembantu->delete_data($data);
+        session()->setFlashdata('success', 'Data akun pembantu berhasil dihapus!');
+        return redirect()->to('/pengurus/akuntansi/akun_pembantu/kelola');
+    }
+
     // JURNAL UMUM
+    // Daftar Jurnal Umum
     public function index_jurnal()
     {
         $data = [
@@ -172,6 +516,149 @@ class Akuntansi extends BaseController
         return view('pengurus/layout/v_wrapper', $data);
     }
 
+    // Kelola Jurnal Umum
+    public function kelola_jurnal()
+    {
+        $data = [
+            'title' => 'Primer Koperasi Darma Putra Kujang I',
+            'sub'   => 'Kelola Jurnal Umum',
+            'isi'   => 'pengurus/akuntansi/jurnal/v_kelola',
+            'jurnal' => $this->ModelJurnal->allData()
+        ];
+        return view('pengurus/layout/v_wrapper', $data);
+    }
+
+    // Tambah Jurnal Umum
+    public function add_jurnal()
+    {
+        if ($this->validate([
+            'id_akun' => [
+                'label' => 'Kode Akun',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'tanggal' => [
+                'label' => 'Tanggal',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'debit' => [
+                'label' => 'Debit',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'kredit' => [
+                'label' => 'Kredit',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'created_by' => [
+                'label' => 'Ditambahkan Oleh',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ]
+        ])) {
+            $data = array(
+                'id_akun' => $this->request->getPost('id_akun'),
+                'id_akun_pembantu' => $this->request->getPost('id_akun_pembantu'),
+                'tanggal' => $this->request->getPost('tanggal'),
+                'no_bukti' => $this->request->getPost('no_bukti'),
+                'ket' => $this->request->getPost('ket'),
+                'debit' => $this->request->getPost('debit'),
+                'kredit' => $this->request->getPost('kredit'),
+                'created_by' => $this->request->getPost('created_by'),
+            );
+            $this->ModelJurnal->add($data);
+            session()->setFlashdata('success', 'Data jurnal berhasil ditambahkan!');
+            return redirect()->to('/pengurus/akuntansi/jurnal/kelola');
+        } else {
+            session()->setFlashdata('errors', \Config\Services::validation()->getErrors());
+            return redirect()->to(base_url('/pengurus/akuntansi/jurnal/kelola'));
+        }
+    }
+
+    // Ubah Jurnal Umum
+    public function edit_jurnal($id_jurnal)
+    {
+        if ($this->validate([
+            'id_akun' => [
+                'label' => 'Kode Akun',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'tanggal' => [
+                'label' => 'Tanggal',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'debit' => [
+                'label' => 'Debit',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'kredit' => [
+                'label' => 'Kredit',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ],
+            'created_by' => [
+                'label' => 'Ditambahkan Oleh',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+                ]
+            ]
+        ])) {
+            $data = array(
+                'id_jurnal' => $id_jurnal,
+                'id_akun' => $this->request->getPost('id_akun'),
+                'id_akun_pembantu' => $this->request->getPost('id_akun_pembantu'),
+                'tanggal' => $this->request->getPost('tanggal'),
+                'no_bukti' => $this->request->getPost('no_bukti'),
+                'ket' => $this->request->getPost('ket'),
+                'debit' => $this->request->getPost('debit'),
+                'kredit' => $this->request->getPost('kredit'),
+                'edited_by' => $this->request->getPost('edited_by'),
+            );
+            $this->ModelJurnal->edit($data);
+            session()->setFlashdata('success', 'Data jurnal berhasil diubah!');
+            return redirect()->to('/pengurus/akuntansi/jurnal/kelola');
+        } else {
+            session()->setFlashdata('errors', \Config\Services::validation()->getErrors());
+            return redirect()->to(base_url('/pengurus/akuntansi/jurnal/kelola'));
+        }
+    }
+
+    public function delete_jurnal($id_jurnal)
+    {
+        $data = [
+            'id_jurnal' => $id_jurnal
+        ];
+        $this->ModelJurnal->delete_data($data);
+        session()->setFlashdata('success', 'Data jurnal berhasil dihapus!');
+        return redirect()->to('/pengurus/akuntansi/jurnal/kelola');
+    }
+
+    // MASTER BUKU BESAR
+    // Daftar Buku Besar
     public function index_bukubesar()
     {
         $data = [
@@ -183,6 +670,7 @@ class Akuntansi extends BaseController
         return view('pengurus/layout/v_wrapper', $data);
     }
 
+    // Cari Data Buku Besar
     public function cariData()
     {
         $akunId = $this->request->getPost('akun');
@@ -247,6 +735,8 @@ class Akuntansi extends BaseController
         echo $output;
     }
 
+    // MASTER BUKU BESAR PEMBANTU
+    // Daftar Buku Besar Pembantu
     public function index_bukupembantu()
     {
         $data = [
@@ -258,6 +748,7 @@ class Akuntansi extends BaseController
         return view('pengurus/layout/v_wrapper', $data);
     }
 
+    // Cari Data Buku Besar Pembantu
     public function cariDataBantu()
     {
         try {
@@ -330,6 +821,8 @@ class Akuntansi extends BaseController
         }
     }
 
+    // MASTER NERACA LAJUR
+    // Daftar Neraca Lajur
     public function index_neracalajur()
     {
         // Ambil semua data dari tb_akun sebagai array asosiatif
@@ -388,7 +881,8 @@ class Akuntansi extends BaseController
         return view('pengurus/layout/v_wrapper', $data);
     }
 
-
+    // MASTER LABA RUGI
+    // Daftar Laba Rugi
     public function index_labarugi()
     {
         // Ambil semua data dari tb_akun sebagai array asosiatif
@@ -494,6 +988,8 @@ class Akuntansi extends BaseController
         return view('pengurus/layout/v_wrapper', $data);
     }
 
+    // MASTER NERACA
+    // Daftar Neraca
     public function index_neraca()
     {
         $akunData = $this->ModelAkun->asArray()->where('pos_laporan', '1')->findAll();
@@ -700,6 +1196,8 @@ class Akuntansi extends BaseController
         return view('pengurus/layout/v_wrapper', $data);
     }
 
+    // MASTER PERUBAHAN MODAL
+    // Daftar Perubahan Modal
     public function index_pmodal()
     {
         $akunData = $this->ModelAkun->asArray()->where('pos_laporan', '1')->findAll();
