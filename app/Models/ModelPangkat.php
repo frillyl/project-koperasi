@@ -43,4 +43,9 @@ class ModelPangkat extends Model
             ->where('id_pangkat', $data['id_pangkat'])
             ->delete($data);
     }
+
+    public function getPangkatById($id_pangkat)
+    {
+        return $this->where('id_pangkat', $id_pangkat)->first();
+    }
 }

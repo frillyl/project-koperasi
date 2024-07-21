@@ -58,14 +58,14 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table id="example2" class="table table-bordered table-hover">
+                            <table id="example1" class="table table-bordered table-hover">
                                 <thead style="text-align: center;">
                                     <tr>
                                         <th>No.</th>
                                         <th>Nama Anggota</th>
-                                        <th>Jumlah Pinjaman</th>
-                                        <th>Angsuran Berjalan</th>
-                                        <th>Aksi</th>
+                                        <th>Jumlah Bayar</th>
+                                        <th>Tanggal Bayar</th>
+                                        <th>Sisa Tenor</th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
@@ -75,9 +75,9 @@
                                     <tr>
                                         <th>No.</th>
                                         <th>Nama Anggota</th>
-                                        <th>Jumlah Pinjaman</th>
-                                        <th>Angsuran Berjalan</th>
-                                        <th>Aksi</th>
+                                        <th>Jumlah Bayar</th>
+                                        <th>Tanggal Bayar</th>
+                                        <th>Sisa Tenor</th>
                                     </tr>
                                 </tfoot>
                             </table>

@@ -45,4 +45,12 @@ class ModelAnggota extends Model
             ->where('id_anggota', $data['id_anggota'])
             ->delete($data);
     }
+
+    public function getAnggota()
+    {
+        return $this->db->table($this->table)
+            ->join('tb_pangkat', 'tb_pangkat.id_pangkat = tb_anggota.id_pangkat')
+            ->get()
+            ->getResultArray();
+    }
 }

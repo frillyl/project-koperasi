@@ -58,24 +58,47 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <table id="example2" class="table table-bordered table-hover">
+                            <table id="example1" class="table table-bordered table-hover">
                                 <thead style="text-align: center;">
                                     <tr>
                                         <th>No.</th>
-                                        <th>Tanggal Pinjaman</th>
+                                        <th>Tanggal Pengajuan</th>
+                                        <th>Tanggal Disetujui</th>
                                         <th>Nama Anggota</th>
-                                        <th>Aksi</th>
+                                        <th>Jumlah Pinjaman</th>
+                                        <th>Bunga</th>
+                                        <th>Tenor</th>
+                                        <th>Sisa Tenor</th>
+                                        <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
-
+                                    <?php $no = 1; ?>
+                                    <?php foreach ($pinjaman as $p) : ?>
+                                        <tr>
+                                            <td><?= $no++; ?></td>
+                                            <td><?= !empty($p['tgl_pengajuan']) ? date('j F Y', strtotime($p['tgl_pengajuan'])) : 'Tanggal Tidak Tersedia'; ?></td>
+                                            <td><?= !empty($p['tgl_disetujui']) ? date('j F Y', strtotime($p['tgl_disetujui'])) : 'Belum Disetujui'; ?></td>
+                                            <td><?= $p['nm_anggota']; ?></td>
+                                            <td><?= number_format($p['jml_pinjaman'], 2, ',', '.'); ?></td>
+                                            <td><?= number_format($p['bunga'], 2, ',', '.'); ?></td>
+                                            <td><?= $p['tenor']; ?></td>
+                                            <td><?= $p['sisa_tenor']; ?></td>
+                                            <td><?= $p['status']; ?></td>
+                                        </tr>
+                                    <?php endforeach; ?>
                                 </tbody>
                                 <tfoot style="text-align: center;">
                                     <tr>
                                         <th>No.</th>
-                                        <th>Tanggal Pinjaman</th>
+                                        <th>Tanggal Pengajuan</th>
+                                        <th>Tanggal Disetujui</th>
                                         <th>Nama Anggota</th>
-                                        <th>Aksi</th>
+                                        <th>Jumlah Pinjaman</th>
+                                        <th>Bunga</th>
+                                        <th>Tenor</th>
+                                        <th>Sisa Tenor</th>
+                                        <th>Status</th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -83,6 +106,62 @@
                         <!-- /.card-body -->
                     </div>
                     <!-- /.card -->
+
+                    <!-- Modal Add -->
+                    <div class="modal fade" id="add">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Tambah Data Pinjaman</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <?= form_open('pengurus/usipa/pinjaman/add'); ?>
+
+                                    <div class="form-group">
+                                        <label for="id_anggota">Nama Anggota</label>
+                                        <select name="id_anggota" class="form-control" id="id_anggota">
+                                            <option value="">--- Pilih Anggota ---</option>
+                                            <?php foreach ($anggota as $a) : ?>
+                                                <option value="<?= $a['id_anggota']; ?>"><?= $a['nm_anggota']; ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="jml_pinjaman">Jumlah Pinjaman</label>
+                                        <input type="number" name="jml_pinjaman" class="form-control" id="jml_pinjaman" placeholder="Jumlah Pinjaman">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="bunga">Bunga</label>
+                                        <input type="text" name="bunga" value="" class="form-control" id="bunga" placeholder="Bunga" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tenor">Tenor</label>
+                                        <input type="number" name="tenor" class="form-control" id="tenor" placeholder="Tenor">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tgl_pengajuan">Tanggal Pengajuan</label>
+                                        <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                                            <input type="text" class="form-control datetimepicker-input" name="tgl_pengajuan" data-target="#reservationdate">
+                                            <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="created_by" class="form-control" id="created_by" placeholder="Ditambahkan Oleh" value="<?= session('id') ?>" hidden>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                                    <button type="submit" class="btn btn-success">Tambah</button>
+                                </div>
+                                <?= form_close() ?>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.col -->
             </div>

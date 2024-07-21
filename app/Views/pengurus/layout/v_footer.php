@@ -32,6 +32,23 @@
 <script src="<?= base_url() ?>/public/template/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <!-- Select2 -->
 <script src="<?= base_url() ?>/public/template/plugins/select2/js/select2.full.min.js"></script>
+<!-- Bootstrap4 Duallistbox -->
+<script src="<?= base_url() ?>/public/template/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+<!-- InputMask -->
+<script src="<?= base_url() ?>/public/template/plugins/moment/moment.min.js"></script>
+<script src="<?= base_url() ?>/public/template/plugins/inputmask/jquery.inputmask.min.js"></script>
+<!-- date-range-picker -->
+<script src="<?= base_url() ?>/public/template/plugins/daterangepicker/daterangepicker.js"></script>
+<!-- bootstrap color picker -->
+<script src="<?= base_url() ?>/public/template/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="<?= base_url() ?>/public/template/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Bootstrap Switch -->
+<script src="<?= base_url() ?>/public/template/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+<!-- BS-Stepper -->
+<script src="<?= base_url() ?>/public/template/plugins/bs-stepper/js/bs-stepper.min.js"></script>
+<!-- dropzonejs -->
+<script src="<?= base_url() ?>/public/template/plugins/dropzone/min/dropzone.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<?= base_url() ?>/public/template/dist/js/adminlte.min.js"></script>
 <!-- Custom JavaScript -->
@@ -169,6 +186,58 @@
         window.print();
     }
 </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const anggotaSelect = document.getElementById('id_anggota');
+        const jmlPinjamanInput = document.getElementById('jml_pinjaman');
+        const tenorInput = document.getElementById('tenor');
+        const bungaInput = document.getElementById('bunga');
+
+        anggotaSelect.addEventListener('change', function() {
+            const selectedAnggota = anggotaSelect.options[anggotaSelect.selectedIndex];
+            const pangkatId = selectedAnggota.getAttribute('data-pangkat');
+
+            // Dapatkan pangkat anggota
+            fetch(`/pengurus/usipa/pangkat/getById/${pangkatId}`)
+                .then(response => response.json())
+                .then(data => {
+                    let maxPinjaman = 0;
+
+                    switch (data.golongan) {
+                        case 'Perwira':
+                            maxPinjaman = 10000000;
+                            break;
+                        case 'Bintara':
+                            maxPinjaman = 7000000;
+                            break;
+                        case 'Tamtama':
+                            maxPinjaman = 6000000;
+                            break;
+                        default:
+                            maxPinjaman = 0;
+                            break;
+                    }
+
+                    jmlPinjamanInput.setAttribute('max', maxPinjaman);
+                });
+        });
+
+        jmlPinjamanInput.addEventListener('input', function() {
+            calculateBunga();
+        });
+
+        tenorInput.addEventListener('input', function() {
+            calculateBunga();
+        });
+
+        function calculateBunga() {
+            const jmlPinjaman = parseFloat(jmlPinjamanInput.value) || 0;
+            const tenor = parseFloat(tenorInput.value) || 0;
+            const bunga = jmlPinjaman * tenor * 1.5 / 100;
+            bungaInput.value = bunga.toFixed(2);
+        }
+    });
+</script>
 <!-- Page specific script -->
 <script>
     $(function() {
@@ -240,7 +309,7 @@
 
         //Date picker
         $('#reservationdate').datetimepicker({
-            format: 'L'
+            format: 'YYYY-MM-DD'
         });
 
         //Date and time picker
