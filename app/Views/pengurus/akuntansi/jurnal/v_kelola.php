@@ -10,8 +10,8 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">Akuntansi</li>
-                        <li class="breadcrumb-item">Kode Akun</li>
-                        <li class="breadcrumb-item active">Kelola Kode Akun</li>
+                        <li class="breadcrumb-item">Jurnal Umum</li>
+                        <li class="breadcrumb-item active">Kelola Jurnal Umum</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -63,22 +63,24 @@
                                 <thead style="text-align: center;">
                                     <tr>
                                         <th>No.</th>
-                                        <th>Kode Akun</th>
-                                        <th>Nama Akun</th>
+                                        <th>Tanggal</th>
+                                        <th>No. Bukti</th>
+                                        <th>Keterangan</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
                                     <?php $no = 1;
-                                    foreach ($akun as $key => $value) { ?>
+                                    foreach ($jurnal as $key => $value) { ?>
                                         <tr>
                                             <td><?= $no++ ?></td>
-                                            <td><?= $value['kd_akun'] ?></td>
-                                            <td><?= $value['nm_akun_pembantu'] ?></td>
+                                            <td><?= date('j F Y', strtotime($value['tanggal'])) ?></td>
+                                            <td><?= $value['no_bukti'] ?></td>
+                                            <td><?= $value['ket'] ?></td>
                                             <td>
-                                                <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#info<?= $value['id_akun_pembantu'] ?>"><i class="fa-solid fa-circle-info"></i></button>
-                                                <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?= $value['id_akun_pembantu'] ?>"><i class="fa fa-pencil"></i></button>
-                                                <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value['id_akun_pembantu'] ?>"><i class="fa fa-trash"></i></button>
+                                                <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#info<?= $value['id_jurnal'] ?>"><i class="fa-solid fa-circle-info"></i></button>
+                                                <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit<?= $value['id_jurnal'] ?>"><i class="fa fa-pencil"></i></button>
+                                                <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete<?= $value['id_jurnal'] ?>"><i class="fa fa-trash"></i></button>
                                             </td>
                                         </tr>
                                     <?php } ?>
@@ -86,8 +88,9 @@
                                 <tfoot style="text-align: center;">
                                     <tr>
                                         <th>No.</th>
-                                        <th>Kode Akun</th>
-                                        <th>Nama Akun</th>
+                                        <th>Tanggal</th>
+                                        <th>No. Bukti</th>
+                                        <th>Keterangan</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </tfoot>
@@ -98,12 +101,12 @@
                     <!-- /.card -->
 
                     <!-- Modal Info -->
-                    <?php foreach ($akun as $key => $value) { ?>
-                        <div class="modal fade" id="info<?= $value['id_akun_pembantu'] ?>">
+                    <?php foreach ($jurnal as $key => $value) { ?>
+                        <div class="modal fade" id="info<?= $value['id_jurnal'] ?>">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h4 class="modal-title">Detail Data Kode Akun Pembantu</h4>
+                                        <h4 class="modal-title">Detail Data Jurnal</h4>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -112,59 +115,32 @@
                                         <table class="table no-border">
                                             <tbody>
                                                 <tr>
-                                                    <th>Header Kode Akun Pembantu</th>
-                                                    <td><?= $value['nm_akun_header'] ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Kode Akun</th>
-                                                    <td><?= $value['kd_akun'] ?></td>
-                                                </tr>
-                                                <tr>
                                                     <th>Nama Akun</th>
-                                                    <td><?= $value['nm_akun_pembantu'] ?></td>
+                                                    <td><?= $value['akun_nm_akun'] ?></td>
                                                 </tr>
                                                 <tr>
-                                                <tr>
-                                                    <th>Tabel Bantuan</th>
-                                                    <td><?= $value['tb_bantuan'] ?></td>
+                                                    <th>Kode Akun Pembantu</th>
+                                                    <td><?= $value['akun_pembantu_nm_akun'] ?></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Pos Saldo</th>
-                                                    <td><?php if ($value['saldo_normal'] == '1') {
-                                                            echo 'Debit';
-                                                        } elseif ($value['saldo_normal'] == '2') {
-                                                            echo 'Kredit';
-                                                        } elseif ($value['saldo_normal'] == '0') {
-                                                            echo '-';
-                                                        } ?></td>
+                                                    <th>Tanggal</th>
+                                                    <td><?= date('j F Y', strtotime($value['tanggal'])) ?></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Saldo Awal</th>
-                                                    <td><?= $value['saldo_awal'] ?></td>
+                                                    <th>Nomor Bukti</th>
+                                                    <td><?= $value['no_bukti'] ?></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Ditambahkan Pada</th>
-                                                    <td><?= date('j F Y H:i:s', strtotime($value['created_at'])) ?></td>
+                                                    <th>Keterangan</th>
+                                                    <td><?= $value['ket'] ?></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Ditambahkan Oleh</th>
-                                                    <td><?= $value['nm_pengurus'] ?></td>
+                                                    <th>Debit</th>
+                                                    <td><?= $value['debit'] ?></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Diubah Pada</th>
-                                                    <td><?php if ($value['edited_at'] == '') : ?>
-                                                            Data kode akun belum pernah diubah.
-                                                        <?php else : ?>
-                                                            <?= date('j F Y H:i:s', strtotime($value['edited_at'])) ?>
-                                                        <?php endif; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Diubah Oleh</th>
-                                                    <td><?php if ($value['edited_by'] == 0) : ?>
-                                                            Data kode akun belum pernah diubah.
-                                                        <?php else : ?>
-                                                            <?= $value['nm_pengurus'] ?>
-                                                        <?php endif; ?></td>
+                                                    <th>Kredit</th>
+                                                    <td><?= $value['kredit'] ?></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -182,48 +158,58 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title">Tambah Data Kode Akun Pembantu</h4>
+                                    <h4 class="modal-title">Tambah Data Jurnal</h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
                                     <?php
-                                    echo form_open('pengurus/akuntansi/akun_pembantu/kelola/add');
+                                    echo form_open('pengurus/akuntansi/jurnal_umum/kelola/add');
                                     ?>
 
                                     <div class="form-group">
-                                        <label for="id_akun_header">Header Kode Akun Pembantu</label>
-                                        <select name="id_akun_header" class="form-control select2 select2-hidden-accessible" id="id_pangkat" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
-                                            <option value="">-- Pilih Header --</option>
-                                            <?php foreach ($header as $key => $value) { ?>
-                                                <option value="<?= $value['id_akun_header'] ?>"><?= $value['nm_akun'] ?></option>
+                                        <label for="id_akun">Akun</label>
+                                        <select name="id_akun" class="form-control select2 select2-hidden-accessible" id="id_akun" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                            <option value="">-- Pilih Akun --</option>
+                                            <?php foreach ($akun as $key => $value) { ?>
+                                                <option value="<?= $value['id_akun'] ?>"><?= $value['nm_akun'] ?></option>
                                             <?php } ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="kd_akun">Kode Akun</label>
-                                        <input type="text" name="kd_akun" class="form-control" id="kd_akun" placeholder="Kode Akun">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="nm_akun">Nama Akun</label>
-                                        <input type="text" name="nm_akun" class="form-control" id="nm_akun" placeholder="Nama Akun">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="tb_bantuan">Kode Tabel Bantuan</label>
-                                        <input type="text" name="tb_bantuan" class="form-control" id="tb_bantuan" placeholder="Kode Tabel Bantuan">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="saldo_normal">Saldo Normal</label>
-                                        <select name="saldo_normal" class="form-control" id="saldo_normal" style="width: 100%;">
-                                            <option value="">-- Pilih Saldo Normal --</option>
-                                            <option value="1">Debit</option>
-                                            <option value="2">Kredit</option>
+                                        <label for="id_akun_pembantu">Akun Pembantu</label>
+                                        <select name="id_akun_pembantu" class="form-control select2 select2-hidden-accessible" id="id_akun_pembantu" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                            <option value="">-- Pilih Akun Pembantu --</option>
+                                            <?php foreach ($bantu as $key => $value) { ?>
+                                                <option value="<?= $value['id_akun_pembantu'] ?>"><?= $value['nm_akun_pembantu'] ?></option>
+                                            <?php } ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="saldo_awal">Saldo Awal</label>
-                                        <input type="text" name="saldo_awal" class="form-control" id="saldo_awal" placeholder="Saldo Awal">
+                                        <label for="tanggal">Tanggal</label>
+                                        <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                                            <input type="text" class="form-control datetimepicker-input" name="tanggal" data-target="#reservationdate">
+                                            <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="no_bukti">Nomor Bukti</label>
+                                        <input type="text" name="no_bukti" class="form-control" id="no_bukti" placeholder="Nomor Bukti">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ket">Keterangan</label>
+                                        <textarea name="ket" class="form-control" id="ket" placeholder="Keterangan"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="debit">Debit</label>
+                                        <input type="text" name="debit" class="form-control" id="debit" placeholder="Debit">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="kredit">Kredit</label>
+                                        <input type="text" name="kredit" class="form-control" id="kredit" placeholder="Kredit">
                                     </div>
                                     <div class="form-group">
                                         <input type="text" name="created_by" class="form-control" id="created_by" placeholder="Ditambahkan Oleh" value="<?= session('id') ?>" hidden>
@@ -239,66 +225,71 @@
                     </div>
 
                     <!-- Modal Edit -->
-                    <?php foreach ($akun as $key => $value) { ?>
-                        <div class="modal fade" id="edit<?= $value['id_akun_pembantu'] ?>">
+                    <?php foreach ($jurnal as $key => $value) { ?>
+                        <div class="modal fade" id="edit<?= $value['id_jurnal'] ?>">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h4 class="modal-title">Ubah Data Kode Akun Pembantu</h4>
+                                        <h4 class="modal-title">Ubah Data Jurnal</h4>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
                                         <?php
-                                        echo form_open('pengurus/akuntansi/akun_pembantu/kelola/edit/' . $value['id_akun_pembantu']);
+                                        echo form_open('pengurus/akuntansi/jurnal_umum/kelola/edit/' . $value['id_jurnal']);
                                         ?>
 
                                         <div class="form-group">
-                                            <label for="id_akun_header">Header Kode Akun Pembantu</label>
-                                            <select name="id_akun_header" class="form-control select2 select2-hidden-accessible" id="id_akun_header" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
-                                                <option <?php if ($value['id_akun_header'] == '') {
+                                            <label for="id_akun">Akun</label>
+                                            <select name="id_akun" class="form-control select2 select2-hidden-accessible" id="id_akun" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                                <option <?php if ($value['id_akun'] == '') {
                                                             echo 'selected';
-                                                        } ?> value="">----- Pilih Header -----</option>
-                                                <?php foreach ($header as $key => $value2) { ?>
-                                                    <option <?php if ($value['id_akun_header'] == $value2['id_akun_header']) {
+                                                        } ?> value="">----- Pilih Akun -----</option>
+                                                <?php foreach ($akun as $key => $value2) { ?>
+                                                    <option <?php if ($value['id_akun'] == $value2['id_akun']) {
                                                                 echo 'selected';
-                                                            } ?> value="<?= $value2['id_akun_header'] ?>"><?= $value2['nm_akun'] ?></option>
+                                                            } ?> value="<?= $value2['id_akun'] ?>"><?= $value2['nm_akun'] ?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="kd_akun">Kode Akun</label>
-                                            <input type="text" name="kd_akun" value="<?= $value['kd_akun'] ?>" class="form-control" id="kd_akun" placeholder="Kode Akun" readonly>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="nm_akun">Nama Akun</label>
-                                            <input type="text" name="nm_akun" value="<?= $value['nm_akun'] ?>" class="form-control" id="nm_akun" placeholder="Nama Akun">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="tb_bantuan">Kode Tabel Bantuan</label>
-                                            <input type="text" name="tb_bantuan" value="<?= $value['tb_bantuan'] ?>" class="form-control" id="tb_bantuan" placeholder="Kode Tabel Bantuan">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="saldo_normal">Saldo Normal</label>
-                                            <select name="saldo_normal" class="form-control">
-                                                <option <?php if ($value['saldo_normal'] == '') {
+                                            <label for="id_akun_pembantu">Akun Pembantu</label>
+                                            <select name="id_akun_pembantu" class="form-control select2 select2-hidden-accessible" id="id_akun_pembantu" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                                <option <?php if ($value['id_akun_pembantu'] == '') {
                                                             echo 'selected';
-                                                        } ?> value="">----- Pilih Saldo Normal -----</option>
-                                                <option <?php if ($value['saldo_normal'] == 1) {
-                                                            echo 'selected';
-                                                        } ?> value="1">Debit</option>
-                                                <option <?php if ($value['saldo_normal'] == 2) {
-                                                            echo 'selected';
-                                                        } ?> value="2">Kredit</option>
+                                                        } ?> value="">----- Pilih Akun Pembantu-----</option>
+                                                <?php foreach ($bantu as $key => $value2) { ?>
+                                                    <option <?php if ($value['id_akun_pembantu'] == $value2['id_akun_pembantu']) {
+                                                                echo 'selected';
+                                                            } ?> value="<?= $value2['id_akun_pembantu'] ?>"><?= $value2['nm_akun_pembantu'] ?></option>
+                                                <?php } ?>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="saldo_awal">Saldo Awal</label>
-                                            <input type="text" name="saldo_awal" value="<?= $value['saldo_awal'] ?>" class="form-control" id="saldo_awal" placeholder="Saldo Awal">
+                                            <label for="tanggal">Tanggal</label>
+                                            <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                                                <input type="text" class="form-control datetimepicker-input" name="tanggal" value="<?= $value['tanggal'] ?>" data-target="#reservationdate">
+                                                <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="edited_by" value="<?= session('id') ?>" class="form-control" id="edited_by" placeholder="Diubah Oleh" hidden>
+                                            <label for="no_bukti">Nomor Bukti</label>
+                                            <input type="text" name="no_bukti" value="<?= $value['no_bukti'] ?>" class="form-control" id="no_bukti" placeholder="Nomor Bukti">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="ket">Keterangan</label>
+                                            <textarea name="ket" class="form-control" id="ket" placeholder="Keterangan"><?= $value['ket'] ?></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="debit">Debit</label>
+                                            <input type="text" name="debit" value="<?= $value['debit'] ?>" class="form-control" id="debit" placeholder="Debit">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="kredit">Kredit</label>
+                                            <input type="text" name="kredit" value="<?= $value['kredit'] ?>" class="form-control" id="kredit" placeholder="Kredit">
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -315,22 +306,22 @@
                     <?php } ?>
 
                     <!-- Modal Delete -->
-                    <?php foreach ($akun as $key => $value) { ?>
-                        <div class="modal fade" id="delete<?= $value['id_akun_pembantu'] ?>">
+                    <?php foreach ($jurnal as $key => $value) { ?>
+                        <div class="modal fade" id="delete<?= $value['id_jurnal'] ?>">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h4 class="modal-title">Hapus Data Kode Akun Pembantu</h4>
+                                        <h4 class="modal-title">Hapus Data Jurnal</h4>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        Apakah Anda Yakin Ingin Menghapus Data Kode Akun Pembantu <b><?= $value['nm_akun_pembantu'] ?></b> ?
+                                        Apakah Anda Yakin Ingin Menghapus Data Jurnal?
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Batal</button>
-                                        <a href="<?= base_url('pengurus/akuntansi/akun_pembantu/delete/' . $value['id_akun_pembantu']) ?>" class="btn btn-danger">Hapus</a>
+                                        <a href="<?= base_url('pengurus/akuntansi/jurnal_umum/kelola/delete/' . $value['id_jurnal']) ?>" class="btn btn-danger">Hapus</a>
                                     </div>
                                 </div>
                             </div>

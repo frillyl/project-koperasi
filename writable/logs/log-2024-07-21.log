@@ -293,3 +293,428 @@ INFO - 2024-07-21 12:45:15 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-07-21 12:46:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-07-21 12:46:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-07-21 12:46:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 12:51:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-21 12:51:59 --> ErrorException: Undefined variable $akun
+[Method: GET, Route: pengurus/akuntansi/jurnal_umum/kelola]
+in APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php on line 73.
+ 1 APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php(73): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $akun', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php', 73)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/akuntansi/jurnal/v_kelola', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/akuntansi/jurnal/v_kelola')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\Akuntansi.php(487): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Akuntansi->kelola_jurnal()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Akuntansi))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-21 12:52:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 12:52:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 12:52:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-21 12:52:19 --> ErrorException: Undefined variable $akun
+[Method: GET, Route: pengurus/akuntansi/jurnal_umum/kelola]
+in APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php on line 73.
+ 1 APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php(73): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $akun', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php', 73)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/akuntansi/jurnal/v_kelola', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/akuntansi/jurnal/v_kelola')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\Akuntansi.php(487): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Akuntansi->kelola_jurnal()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Akuntansi))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-21 12:55:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-21 12:55:28 --> ErrorException: Undefined variable $akun
+[Method: GET, Route: pengurus/akuntansi/jurnal_umum/kelola]
+in APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php on line 73.
+ 1 APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php(73): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $akun', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php', 73)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/akuntansi/jurnal/v_kelola', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/akuntansi/jurnal/v_kelola')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\Akuntansi.php(487): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Akuntansi->kelola_jurnal()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Akuntansi))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-21 12:56:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-21 12:56:42 --> ErrorException: Undefined array key "kd_akun"
+[Method: GET, Route: pengurus/akuntansi/jurnal_umum/kelola]
+in APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php on line 77.
+ 1 APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "kd_akun"', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php', 77)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/akuntansi/jurnal/v_kelola', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/akuntansi/jurnal/v_kelola')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\Akuntansi.php(487): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Akuntansi->kelola_jurnal()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Akuntansi))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-21 12:57:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-21 12:57:06 --> ErrorException: Undefined array key "nm_akun_header"
+[Method: GET, Route: pengurus/akuntansi/jurnal_umum/kelola]
+in APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php on line 115.
+ 1 APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php(115): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nm_akun_header"', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php', 115)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/akuntansi/jurnal/v_kelola', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/akuntansi/jurnal/v_kelola')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\Akuntansi.php(487): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Akuntansi->kelola_jurnal()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Akuntansi))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-21 12:57:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-21 12:57:44 --> ErrorException: Undefined array key "nm_akun_header"
+[Method: GET, Route: pengurus/akuntansi/jurnal_umum/kelola]
+in APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php on line 115.
+ 1 APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php(115): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nm_akun_header"', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php', 115)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/akuntansi/jurnal/v_kelola', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/akuntansi/jurnal/v_kelola')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\Akuntansi.php(487): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Akuntansi->kelola_jurnal()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Akuntansi))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-21 12:57:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-21 12:57:59 --> ErrorException: Undefined array key "kd_akun"
+[Method: GET, Route: pengurus/akuntansi/jurnal_umum/kelola]
+in APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php on line 115.
+ 1 APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php(115): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "kd_akun"', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php', 115)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/akuntansi/jurnal/v_kelola', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/akuntansi/jurnal/v_kelola')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\Akuntansi.php(487): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Akuntansi->kelola_jurnal()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Akuntansi))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-21 12:58:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-21 12:58:02 --> ErrorException: Undefined array key "nm_akun_pembantu"
+[Method: GET, Route: pengurus/akuntansi/jurnal_umum/kelola]
+in APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php on line 115.
+ 1 APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php(115): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nm_akun_pembantu"', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php', 115)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/akuntansi/jurnal/v_kelola', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/akuntansi/jurnal/v_kelola')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\Akuntansi.php(487): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Akuntansi->kelola_jurnal()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Akuntansi))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-21 12:58:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-21 12:58:10 --> ErrorException: Undefined array key "tb_bantuan"
+[Method: GET, Route: pengurus/akuntansi/jurnal_umum/kelola]
+in APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php on line 116.
+ 1 APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php(116): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tb_bantuan"', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php', 116)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/akuntansi/jurnal/v_kelola', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/akuntansi/jurnal/v_kelola')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\Akuntansi.php(487): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Akuntansi->kelola_jurnal()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Akuntansi))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-21 12:58:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-21 12:58:15 --> ErrorException: Undefined array key "saldo_normal"
+[Method: GET, Route: pengurus/akuntansi/jurnal_umum/kelola]
+in APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php on line 115.
+ 1 APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php(115): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "saldo_normal"', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php', 115)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/akuntansi/jurnal/v_kelola', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/akuntansi/jurnal/v_kelola')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\Akuntansi.php(487): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Akuntansi->kelola_jurnal()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Akuntansi))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-21 12:58:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-21 12:58:28 --> ErrorException: Undefined variable $header
+[Method: GET, Route: pengurus/akuntansi/jurnal_umum/kelola]
+in APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php on line 143.
+ 1 APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php(143): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $header', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php', 143)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/akuntansi/jurnal/v_kelola', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/akuntansi/jurnal/v_kelola')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\Akuntansi.php(487): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Akuntansi->kelola_jurnal()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Akuntansi))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-21 12:58:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-21 12:58:44 --> ErrorException: Undefined array key "id_akun_header"
+[Method: GET, Route: pengurus/akuntansi/jurnal_umum/kelola]
+in APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php on line 194.
+ 1 APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php(194): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_akun_header"', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php', 194)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/akuntansi/jurnal/v_kelola', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/akuntansi/jurnal/v_kelola')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\Akuntansi.php(487): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Akuntansi->kelola_jurnal()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Akuntansi))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-21 12:58:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-21 12:58:56 --> ErrorException: Undefined array key "kd_akun"
+[Method: GET, Route: pengurus/akuntansi/jurnal_umum/kelola]
+in APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php on line 192.
+ 1 APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php(192): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "kd_akun"', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php', 192)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/akuntansi/jurnal/v_kelola', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/akuntansi/jurnal/v_kelola')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\Akuntansi.php(487): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Akuntansi->kelola_jurnal()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Akuntansi))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-21 12:59:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-21 12:59:03 --> ErrorException: Undefined array key "kd_akun"
+[Method: GET, Route: pengurus/akuntansi/jurnal_umum/kelola]
+in APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php on line 193.
+ 1 APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php(193): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "kd_akun"', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php', 193)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/akuntansi/jurnal/v_kelola', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/akuntansi/jurnal/v_kelola')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\Akuntansi.php(487): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Akuntansi->kelola_jurnal()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Akuntansi))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-21 12:59:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-21 12:59:21 --> ErrorException: Undefined array key "nm_akun_pembantu"
+[Method: GET, Route: pengurus/akuntansi/jurnal_umum/kelola]
+in APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php on line 216.
+ 1 APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php(216): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nm_akun_pembantu"', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php', 216)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/akuntansi/jurnal/v_kelola', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/akuntansi/jurnal/v_kelola')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\Akuntansi.php(487): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Akuntansi->kelola_jurnal()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Akuntansi))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-21 12:59:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:00:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:01:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:01:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:01:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:01:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:02:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:02:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:03:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:04:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:05:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:05:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-21 13:05:58 --> ErrorException: Undefined array key "nm_akun"
+[Method: GET, Route: pengurus/akuntansi/jurnal_umum/kelola]
+in APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php on line 119.
+ 1 APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php(119): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nm_akun"', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php', 119)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/akuntansi/jurnal/v_kelola', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/akuntansi/jurnal/v_kelola')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\Akuntansi.php(487): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Akuntansi->kelola_jurnal()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Akuntansi))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-21 13:06:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:07:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:07:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:08:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:09:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:09:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:09:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:15:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-21 13:15:47 --> ErrorException: Undefined variable $header
+[Method: GET, Route: pengurus/akuntansi/jurnal_umum/kelola]
+in APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php on line 176.
+ 1 APPPATH\Views\pengurus\akuntansi\jurnal\v_kelola.php(176): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $header', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php', 176)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\akuntansi\\jurnal\\v_kelola.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/akuntansi/jurnal/v_kelola', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/akuntansi/jurnal/v_kelola')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\Akuntansi.php(489): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Akuntansi->kelola_jurnal()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Akuntansi))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-21 13:16:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:17:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:18:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:20:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:20:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:23:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:27:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:28:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:29:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:30:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:31:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:31:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:35:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:36:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

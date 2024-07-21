@@ -330,7 +330,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Batal</button>
-                                        <a href="<?= base_url('pengurus/akuntansi/akun_pembantu/delete/' . $value['id_akun_pembantu']) ?>" class="btn btn-danger">Hapus</a>
+                                        <a href="<?= base_url('pengurus/akuntansi/akun_pembantu/kelola/delete/' . $value['id_akun_pembantu']) ?>" class="btn btn-danger">Hapus</a>
                                     </div>
                                 </div>
                             </div>

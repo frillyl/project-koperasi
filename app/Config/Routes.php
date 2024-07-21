@@ -62,10 +62,13 @@ $routes->get('/pengurus/akuntansi/akun_pembantu', 'Akuntansi::index_bantu');
 $routes->get('/pengurus/akuntansi/akun_pembantu/kelola', 'Akuntansi::kelola_bantu');
 $routes->post('pengurus/akuntansi/akun_pembantu/kelola/add', 'Akuntansi::add_bantu');
 $routes->post('pengurus/akuntansi/akun_pembantu/kelola/edit/(:segment)', 'Akuntansi::edit_bantu/$1');
-$routes->get('/pengurus/akuntansi/akun_pembantu/delete/(:segment)', 'Akuntansi::delete_bantu/$1');
+$routes->get('/pengurus/akuntansi/akun_pembantu/kelola/delete/(:segment)', 'Akuntansi::delete_bantu/$1');
 
 $routes->get('/pengurus/akuntansi/jurnal_umum', 'Akuntansi::index_jurnal');
 $routes->get('/pengurus/akuntansi/jurnal_umum/kelola', 'Akuntansi::kelola_jurnal');
+$routes->post('pengurus/akuntansi/jurnal_umum/kelola/add', 'Akuntansi::add_jurnal');
+$routes->post('pengurus/akuntansi/jurnal_umum/kelola/edit/(:segment)', 'Akuntansi::edit_jurnal/$1');
+$routes->get('/pengurus/akuntansi/jurnal_umum/kelola/delete/(:segment)', 'Akuntansi::delete_jurnal/$1');
 
 $routes->get('/pengurus/akuntansi/buku_besar', 'Akuntansi::index_bukubesar');
 $routes->post('pengurus/akuntansi/buku_besar/cariData', 'Akuntansi::cariData');

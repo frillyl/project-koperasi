@@ -22,4 +22,30 @@ class ModelAkunPembantu extends Model
             ->orderBy('tb_akun_pembantu.kd_akun', 'ASC')
             ->get()->getResultArray();
     }
+
+    public function detailData($id_akun_pembantu)
+    {
+        return $this->db->table('tb_akun_pembantu')
+            ->where('id_akun_pembantu', $id_akun_pembantu)
+            ->get()->getRowArray();
+    }
+
+    public function add($data)
+    {
+        $this->db->table('tb_akun_pembantu')->insert($data);
+    }
+
+    public function edit($data)
+    {
+        $this->db->table('tb_akun_pembantu')
+            ->where('id_akun_pembantu', $data['id_akun_pembantu'])
+            ->update($data);
+    }
+
+    public function delete_data($data)
+    {
+        $this->db->table('tb_akun_pembantu')
+            ->where('id_akun_pembantu', $data['id_akun_pembantu'])
+            ->delete($data);
+    }
 }

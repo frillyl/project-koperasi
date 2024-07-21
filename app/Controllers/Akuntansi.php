@@ -482,6 +482,8 @@ class Akuntansi extends BaseController
             'title' => 'Primer Koperasi Darma Putra Kujang I',
             'sub'   => 'Kelola Jurnal Umum',
             'isi'   => 'pengurus/akuntansi/jurnal/v_kelola',
+            'akun'  => $this->ModelAkun->allData(),
+            'bantu' => $this->ModelAkunPembantu->allData(),
             'jurnal' => $this->ModelJurnal->allData()
         ];
         return view('pengurus/layout/v_wrapper', $data);

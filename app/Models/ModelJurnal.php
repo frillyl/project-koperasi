@@ -43,4 +43,29 @@ class ModelJurnal extends Model
             ->orderBy('tb_jurnal.tanggal', 'ASC')
             ->get()->getResultArray();
     }
+    public function detailData($id_jurnal)
+    {
+        return $this->db->table('tb_jurnal')
+            ->where('id_jurnal', $id_jurnal)
+            ->get()->getRowArray();
+    }
+
+    public function add($data)
+    {
+        $this->db->table('tb_jurnal')->insert($data);
+    }
+
+    public function edit($data)
+    {
+        $this->db->table('tb_jurnal')
+            ->where('id_jurnal', $data['id_jurnal'])
+            ->update($data);
+    }
+
+    public function delete_data($data)
+    {
+        $this->db->table('tb_jurnal')
+            ->where('id_jurnal', $data['id_jurnal'])
+            ->delete($data);
+    }
 }
