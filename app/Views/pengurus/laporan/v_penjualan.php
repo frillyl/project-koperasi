@@ -47,32 +47,75 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
+                <div class="col-10">
+
+                </div>
+                <div class="col-2 mb-3 d-flex justify-content-end">
+                    <a href="<?= base_url('pengurus/laporan/cetak_pdf') ?>" class="btn btn-outline-success mr-2"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+                    <a href="<?= base_url('pengurus/laporan/cetak_penjualan') ?>" class="btn btn-outline-primary"><i class="fa-solid fa-print"></i> Cetak</a>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-12">
                     <table id="example1" class="table table-bordered table-hover table-head-fixed p-0">
                         <thead style="text-align: center; color: white">
-                            <th style="vertical-align: middle; background-color: #3d9970;">No.</th>
                             <th style="vertical-align: middle; background-color: #3d9970;">Kode Penjualan</th>
+                            <th style="vertical-align: middle; background-color: #3d9970;">Kasir</th>
+                            <th style="vertical-align: middle; background-color: #3d9970;">Pembeli</th>
                             <th style="vertical-align: middle; background-color: #3d9970;">Tanggal Penjualan</th>
-                            <th style="vertical-align: middle; background-color: #3d9970;">Barang</th>
-                            <th style="vertical-align: middle; background-color: #3d9970;">Qty</th>
-                            <th style="vertical-align: middle; background-color: #3d9970;">Total Harga</th>
-                            <th style="vertical-align: middle; background-color: #3d9970;">Harga Jual</th>
-                            <th style="vertical-align: middle; background-color: #3d9970;">Stok</th>
-                            <th style="vertical-align: middle; background-color: #3d9970;">Ditambahkan Pada</th>
-                            <th style="vertical-align: middle; background-color: #3d9970;">Ditambahkan oleh</th>
-                            <th style="vertical-align: middle; background-color: #3d9970;">Diubah Pada</th>
-                            <th style="vertical-align: middle; background-color: #3d9970;">Diubah Oleh</th>
+                            <th style="vertical-align: middle; background-color: #3d9970;">Grand Total</th>
+                            <th style="vertical-align: middle; background-color: #3d9970;">Dibayar</th>
+                            <th style="vertical-align: middle; background-color: #3d9970;">Kembalian</th>
                         </thead>
                         <tbody>
-
+                            <?php foreach ($penjualan as $row) : ?>
+                                <tr>
+                                    <td style="text-align: center; vertical-align: middle;">
+                                        <a href="#" data-toggle="modal" data-target="#detailModal" onclick="showDetail('<?= $row['kd_penjualan'] ?>')"><?= $row['kd_penjualan'] ?></a>
+                                    </td>
+                                    <td style="text-align: center; vertical-align: middle;"><?= $row['id_pengurus'] ?></td>
+                                    <td style="text-align: center; vertical-align: middle;"><?= $row['id_anggota'] ?></td>
+                                    <td style="text-align: center; vertical-align: middle;"><?= $row['tgl_penjualan'] ?></td>
+                                    <td style="text-align: center; vertical-align: middle;"><?= $row['grand_total'] ?></td>
+                                    <td style="text-align: center; vertical-align: middle;"><?= $row['dibayar'] ?></td>
+                                    <td style="text-align: center; vertical-align: middle;"><?= $row['kembalian'] ?></td>
+                                </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
+
+                    <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="detailModalLabel">Detail Penjualan</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Kode Barang</th>
+                                                <th>Nama Barang</th>
+                                                <th>Harga Jual</th>
+                                                <th>Qty</th>
+                                                <th>Total Harga</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="detailTableBody">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.col -->
+                <!-- /.row -->
             </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container-fluid -->
+            <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
 </div>

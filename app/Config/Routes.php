@@ -44,6 +44,9 @@ $routes->post('pengurus/transaksi/penjualan/cek_barang', 'Penjualan::cek_barang'
 $routes->post('pengurus/transaksi/penjualan/tambah_barang', 'Penjualan::tambah_barang');
 $routes->post('pengurus/transaksi/penjualan/simpan', 'Penjualan::simpan');
 $routes->get('/pengurus/laporan/penjualan', 'Laporan::index_penjualan');
+$routes->get('pengurus/laporan/getDetailPenjualan', 'Laporan::getDetailPenjualan');
+$routes->get('pengurus/laporan/cetak_pdf', 'Laporan::cetak_pdf');
+$routes->get('pengurus/laporan/cetak_penjualan', 'Laporan::cetak_penjualan');
 
 $routes->get('/pengurus/akuntansi/akun', 'Akuntansi::index_akun');
 $routes->get('/pengurus/akuntansi/akun/kelola', 'Akuntansi::kelola_akun');

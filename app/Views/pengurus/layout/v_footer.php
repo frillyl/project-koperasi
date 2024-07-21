@@ -139,6 +139,36 @@
         }
     });
 </script>
+<script>
+    function showDetail(kd_penjualan) {
+        $.ajax({
+            url: '<?= base_url("pengurus/laporan/getDetailPenjualan") ?>',
+            type: 'GET',
+            data: {
+                kd_penjualan: kd_penjualan
+            },
+            success: function(response) {
+                var details = JSON.parse(response);
+                var tableBody = $('#detailTableBody');
+                tableBody.empty();
+                details.forEach(function(detail) {
+                    var row = '<tr>' +
+                        '<td>' + detail.kd_barang + '</td>' +
+                        '<td>' + detail.nm_barang + '</td>' +
+                        '<td>' + detail.harga_jual + '</td>' +
+                        '<td>' + detail.qty + '</td>' +
+                        '<td>' + detail.total_harga + '</td>' +
+                        '</tr>';
+                    tableBody.append(row);
+                });
+            }
+        });
+    }
+
+    function printData() {
+        window.print();
+    }
+</script>
 <!-- Page specific script -->
 <script>
     $(function() {

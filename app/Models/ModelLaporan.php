@@ -20,9 +20,23 @@ class ModelLaporan extends Model
             ->get()->getResultArray();
     }
 
+    protected $table = 'tb_penjualan';
+
     public function allDataPenjualan()
     {
         return $this->db->table('tb_penjualan')
+            ->select('tb_penjualan.*, tb_pengurus.nm_pengurus, tb_anggota.nm_anggota')
+            ->join('tb_pengurus', 'tb_pengurus.id = tb_penjualan.id_pengurus', 'left')
+            ->join('tb_anggota', 'tb_anggota.id_anggota = tb_penjualan.id_anggota', 'left')
+            ->get()->getResultArray();
+    }
+
+    public function getDetailPenjualan($kd_penjualan)
+    {
+        return $this->db->table('tb_det_penjualan')
+            ->select('tb_det_penjualan.*, tb_barang.nm_barang')
+            ->join('tb_barang', 'tb_barang.kd_barang = tb_det_penjualan.kd_barang', 'left')
+            ->where('kd_penjualan', $kd_penjualan)
             ->get()->getResultArray();
     }
 }
