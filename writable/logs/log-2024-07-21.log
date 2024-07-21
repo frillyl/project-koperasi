@@ -718,3 +718,223 @@ INFO - 2024-07-21 13:31:42 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-07-21 13:31:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-07-21 13:35:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-07-21 13:36:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:45:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:46:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:56:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:58:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-21 13:58:07 --> ErrorException: Undefined property: App\Controllers\SimpanPinjam::$ModeAnggota
+[Method: GET, Route: pengurus/usipa/simpanan]
+in APPPATH\Controllers\SimpanPinjam.php on line 29.
+ 1 APPPATH\Controllers\SimpanPinjam.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\SimpanPinjam::$ModeAnggota', 'C:\\xampp\\htdocs\\koperasi\\app\\Controllers\\SimpanPinjam.php', 29)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SimpanPinjam->index_simpanan()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SimpanPinjam))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-21 13:58:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:58:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:58:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:59:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:59:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:59:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:59:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 13:59:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:00:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:00:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:00:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:03:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:03:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:03:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:03:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:03:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:03:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:05:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-21 14:05:51 --> ErrorException: Undefined array key "nm"
+[Method: GET, Route: pengurus/usipa/simpanan]
+in APPPATH\Views\pengurus\simpanpinjam\simpanan\v_index.php on line 79.
+ 1 APPPATH\Views\pengurus\simpanpinjam\simpanan\v_index.php(79): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nm"', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\simpanpinjam\\simpanan\\v_index.php', 79)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\simpanpinjam\\simpanan\\v_index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/simpanpinjam/simpanan/v_index', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/simpanpinjam/simpanan/v_index')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\SimpanPinjam.php(32): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SimpanPinjam->index_simpanan()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SimpanPinjam))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-21 14:05:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:06:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:06:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:07:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:08:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:08:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:16:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-21 14:16:37 --> BadMethodCallException: Call to undefined method App\Models\ModelPinjaman::allData
+[Method: GET, Route: pengurus/usipa/angsuran]
+in SYSTEMPATH\Model.php on line 932.
+ 1 APPPATH\Controllers\SimpanPinjam.php(137): CodeIgniter\Model->__call('allData', [])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SimpanPinjam->index_angsuran()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SimpanPinjam))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-21 14:18:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-21 14:18:01 --> mysqli_sql_exception: Unknown column 'tb_angsuran.tanggal' in 'order clause' in C:\xampp\htdocs\koperasi\system\Database\MySQLi\Connection.php:310
+Stack trace:
+#0 C:\xampp\htdocs\koperasi\system\Database\MySQLi\Connection.php(310): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\koperasi\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\koperasi\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\koperasi\system\Database\BaseBuilder.php(1637): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\koperasi\app\Models\ModelAngsuran.php(24): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\koperasi\app\Controllers\SimpanPinjam.php(139): App\Models\ModelAngsuran->allData()
+#6 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(933): App\Controllers\SimpanPinjam->index_angsuran()
+#7 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SimpanPinjam))
+#8 C:\xampp\htdocs\koperasi\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\koperasi\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\koperasi\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\koperasi\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2024-07-21 14:18:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tb_angsuran.tanggal' in 'order clause'
+[Method: GET, Route: pengurus/usipa/angsuran]
+in SYSTEMPATH\Database\BaseConnection.php on line 686.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1637): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tb_angsuran`
+LEFT JOIN `tb_pinjaman` ON `tb_pinjaman`.`id_pinjaman` = `tb_angsuran`.`id_pinjaman`
+LEFT JOIN `tb_anggota` ON `tb_anggota`.`id_anggota` = `tb_pinjaman`.`id_anggota`
+ORDER BY `tb_angsuran`.`tanggal` DESC', [], false)
+ 2 APPPATH\Models\ModelAngsuran.php(24): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\SimpanPinjam.php(139): App\Models\ModelAngsuran->allData()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SimpanPinjam->index_angsuran()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SimpanPinjam))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-07-21 14:18:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'tb_angsuran.tanggal' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 315.
+ 1 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tb_angsuran`
+LEFT JOIN `tb_pinjaman` ON `tb_pinjaman`.`id_pinjaman` = `tb_angsuran`.`id_pinjaman`
+LEFT JOIN `tb_anggota` ON `tb_anggota`.`id_anggota` = `tb_pinjaman`.`id_anggota`
+ORDER BY `tb_angsuran`.`tanggal` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tb_angsuran`
+LEFT JOIN `tb_pinjaman` ON `tb_pinjaman`.`id_pinjaman` = `tb_angsuran`.`id_pinjaman`
+LEFT JOIN `tb_anggota` ON `tb_anggota`.`id_anggota` = `tb_pinjaman`.`id_anggota`
+ORDER BY `tb_angsuran`.`tanggal` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1637): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tb_angsuran`
+LEFT JOIN `tb_pinjaman` ON `tb_pinjaman`.`id_pinjaman` = `tb_angsuran`.`id_pinjaman`
+LEFT JOIN `tb_anggota` ON `tb_anggota`.`id_anggota` = `tb_pinjaman`.`id_anggota`
+ORDER BY `tb_angsuran`.`tanggal` DESC', [], false)
+ 4 APPPATH\Models\ModelAngsuran.php(24): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\SimpanPinjam.php(139): App\Models\ModelAngsuran->allData()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SimpanPinjam->index_angsuran()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SimpanPinjam))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-07-21 14:18:01 --> [Caused by] mysqli_sql_exception: Unknown column 'tb_angsuran.tanggal' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(310): mysqli->query('SELECT *
+FROM `tb_angsuran`
+LEFT JOIN `tb_pinjaman` ON `tb_pinjaman`.`id_pinjaman` = `tb_angsuran`.`id_pinjaman`
+LEFT JOIN `tb_anggota` ON `tb_anggota`.`id_anggota` = `tb_pinjaman`.`id_anggota`
+ORDER BY `tb_angsuran`.`tanggal` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `tb_angsuran`
+LEFT JOIN `tb_pinjaman` ON `tb_pinjaman`.`id_pinjaman` = `tb_angsuran`.`id_pinjaman`
+LEFT JOIN `tb_anggota` ON `tb_anggota`.`id_anggota` = `tb_pinjaman`.`id_anggota`
+ORDER BY `tb_angsuran`.`tanggal` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `tb_angsuran`
+LEFT JOIN `tb_pinjaman` ON `tb_pinjaman`.`id_pinjaman` = `tb_angsuran`.`id_pinjaman`
+LEFT JOIN `tb_anggota` ON `tb_anggota`.`id_anggota` = `tb_pinjaman`.`id_anggota`
+ORDER BY `tb_angsuran`.`tanggal` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1637): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `tb_angsuran`
+LEFT JOIN `tb_pinjaman` ON `tb_pinjaman`.`id_pinjaman` = `tb_angsuran`.`id_pinjaman`
+LEFT JOIN `tb_anggota` ON `tb_anggota`.`id_anggota` = `tb_pinjaman`.`id_anggota`
+ORDER BY `tb_angsuran`.`tanggal` DESC', [], false)
+ 5 APPPATH\Models\ModelAngsuran.php(24): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\SimpanPinjam.php(139): App\Models\ModelAngsuran->allData()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SimpanPinjam->index_angsuran()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SimpanPinjam))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-21 14:18:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:19:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:20:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-21 14:20:04 --> ErrorException: Undefined array key "nm_anggota"
+[Method: GET, Route: pengurus/usipa/angsuran]
+in APPPATH\Views\pengurus\simpanpinjam\angsuran\v_index.php on line 109.
+ 1 APPPATH\Views\pengurus\simpanpinjam\angsuran\v_index.php(109): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nm_anggota"', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\simpanpinjam\\angsuran\\v_index.php', 109)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\simpanpinjam\\angsuran\\v_index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/simpanpinjam/angsuran/v_index', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/simpanpinjam/angsuran/v_index')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\SimpanPinjam.php(141): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SimpanPinjam->index_angsuran()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SimpanPinjam))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-21 14:20:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:22:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:22:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:22:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:24:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:24:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:25:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:25:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:27:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:27:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:27:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-21 14:27:25 --> ErrorException: Undefined variable $angsuran
+[Method: GET, Route: pengurus/usipa/angsuran]
+in APPPATH\Views\pengurus\simpanpinjam\angsuran\v_index.php on line 73.
+ 1 APPPATH\Views\pengurus\simpanpinjam\angsuran\v_index.php(73): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $angsuran', 'C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\simpanpinjam\\angsuran\\v_index.php', 73)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\simpanpinjam\\angsuran\\v_index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/simpanpinjam/angsuran/v_index', [], true)
+ 5 APPPATH\Views\pengurus\layout\v_content.php(4): view('pengurus/simpanpinjam/angsuran/v_index')
+ 6 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_content.php')
+ 7 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_content', [], true)
+ 9 APPPATH\Views\pengurus\layout\v_wrapper.php(6): view('pengurus/layout/v_content')
+10 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\koperasi\\app\\Views\\pengurus\\layout\\v_wrapper.php')
+11 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('pengurus/layout/v_wrapper', [], true)
+13 APPPATH\Controllers\SimpanPinjam.php(141): view('pengurus/layout/v_wrapper', [...])
+14 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SimpanPinjam->index_angsuran()
+15 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SimpanPinjam))
+16 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+18 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+19 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-07-21 14:27:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:27:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:29:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-21 14:29:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

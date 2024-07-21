@@ -85,10 +85,11 @@ $routes->get('/pengurus/akuntansi/neraca', 'Akuntansi::index_neraca');
 $routes->get('/pengurus/akuntansi/perubahan_modal', 'Akuntansi::index_pmodal');
 
 $routes->get('/pengurus/usipa/simpanan', 'SimpanPinjam::index_simpanan');
-$routes->post('pengurus/usipa/simpanan/add', 'SimpanPinjam::index_simpanan');
+$routes->post('pengurus/usipa/simpanan/add', 'SimpanPinjam::add_simpanan');
 
 $routes->get('/pengurus/usipa/pinjaman', 'SimpanPinjam::index_pinjaman');
 $routes->post('pengurus/usipa/pinjaman/add', 'SimpanPinjam::add_pinjaman');
 $routes->get('/pengurus/usipa/pangkat/getById/(:num)', 'PinjamanController::getPangkatById/$1');
 
 $routes->get('/pengurus/usipa/angsuran', 'SimpanPinjam::index_angsuran');
+$routes->post('pengurus/usipa/angsuran/add', 'SimpanPinjam::add_angsuran');

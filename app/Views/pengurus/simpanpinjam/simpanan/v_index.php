@@ -66,11 +66,21 @@
                                         <th>Jenis Simpanan</th>
                                         <th>Jumlah</th>
                                         <th>Nama Anggota</th>
-                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
-
+                                    <?php $no = 1;
+                                    foreach ($simpanan as $key => $value) { ?>
+                                        <tr>
+                                            <td><?= $no++ ?></td>
+                                            <td><?= date('j F Y', strtotime($value['tanggal'])) ?></td>
+                                            <td><?php if ($value['jenis_simpanan'] == 1) { ?>
+                                                    Simpanan Pokok
+                                                <?php } ?></td>
+                                            <td><?= $value['jumlah'] ?></td>
+                                            <td><?= $value['nm_anggota'] ?></td>
+                                        </tr>
+                                    <?php } ?>
                                 </tbody>
                                 <tfoot style="text-align: center;">
                                     <tr>
@@ -79,7 +89,6 @@
                                         <th>Jenis Simpanan</th>
                                         <th>Jumlah</th>
                                         <th>Nama Anggota</th>
-                                        <th>Aksi</th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -105,11 +114,16 @@
 
                                     <div class="form-group">
                                         <label for="id_anggota">Nama Anggota</label>
-                                        <input type="text" name="id_anggota" class="form-control" id="id_anggota" placeholder="">
+                                        <select name="id_anggota" class="form-control select2 select2-hidden-accessible" id="id_pangkat" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                            <option value="">-- Pilih Anggota --</option>
+                                            <?php foreach ($anggota as $key => $value) { ?>
+                                                <option value="<?= $value['id_anggota'] ?>"><?= $value['nm_anggota'] ?></option>
+                                            <?php } ?>
+                                        </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="simpanan">Jenis Simpanan</label>
-                                        <select name="simpanan" class="form-control" id="simpanan" style="width: 100%;">
+                                        <label for="jenis_simpanan">Jenis Simpanan</label>
+                                        <select name="jenis_simpanan" class="form-control" id="jenis_simpanan" style="width: 100%;">
                                             <option value="">-- Pilih Jenis Simpanan --</option>
                                             <option value="1">Simpanan Pokok</option>
                                         </select>
@@ -121,7 +135,7 @@
                                     <div class="form-group">
                                         <label for="tanggal">Tanggal</label>
                                         <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                            <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate">
+                                            <input type="text" class="form-control datetimepicker-input" name="tanggal" data-target="#reservationdate">
                                             <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
                                                 <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                             </div>

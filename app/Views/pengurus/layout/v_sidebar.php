@@ -322,14 +322,6 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="<?= base_url('pengurus/akuntansi/akun/tambah') ?>" class="nav-link">
-                                    <i class="nav-icon fa-regular fa-circle"></i>
-                                    <p>
-                                        Tambah Kode Akun
-                                    </p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
                                 <a href="<?= base_url('pengurus/akuntansi/akun/kelola') ?>" class="nav-link">
                                     <i class="nav-icon fa-regular fa-circle"></i>
                                     <p>
@@ -365,15 +357,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="<?= base_url('pengurus/akuntansi/akun/tambah') ?>" class="nav-link">
-                                    <i class="nav-icon fa-regular fa-circle"></i>
-                                    <p>
-                                        Tambah Kode Akun Pembantu
-                                    </p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="<?= base_url('pengurus/akuntansi/akun/kelola') ?>" class="nav-link">
+                                <a href="<?= base_url('pengurus/akuntansi/akun_pembantu/kelola') ?>" class="nav-link">
                                     <i class="nav-icon fa-regular fa-circle"></i>
                                     <p>
                                         Kelola Kode Akun Pembantu
@@ -400,15 +384,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="<?= base_url('pengurus/akuntansi/akun/tambah') ?>" class="nav-link">
-                                    <i class="nav-icon fa-regular fa-circle"></i>
-                                    <p>
-                                        Tambah Jurnal Umum
-                                    </p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="<?= base_url('pengurus/akuntansi/akun/kelola') ?>" class="nav-link">
+                                <a href="<?= base_url('pengurus/akuntansi/jurnal_umum/kelola') ?>" class="nav-link">
                                     <i class="nav-icon fa-regular fa-circle"></i>
                                     <p>
                                         Kelola Jurnal Umum
@@ -465,6 +441,17 @@
                             </p>
                         </a>
                     </li>
+                <?php endif; ?>
+                <?php if (session()->get('role') == '4') : ?>
+                    <li class="nav-header">DATA INDUK</li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('pengurus/master/anggota') ?>" class="nav-link">
+                            <i class="nav-icon fa-solid fa-users"></i>
+                            <p>
+                                Data Anggota
+                            </p>
+                        </a>
+                    </li>
                     <li class="nav-header">SIMPAN PINJAM</li>
                     <li class="nav-item">
                         <a href="<?= base_url('pengurus/usipa/simpanan') ?>" class="nav-link">
@@ -485,42 +472,6 @@
                     <li class="nav-item">
                         <a href="<?= base_url('pengurus/usipa/angsuran') ?>" class="nav-link">
                             <i class="nav-icon fa-solid fa-address-book"></i>
-                            <p>
-                                Angsuran
-                            </p>
-                        </a>
-                    </li>
-                <?php endif; ?>
-                <?php if (session()->get('role') == '4') : ?>
-                    <li class="nav-header">DATA INDUK</li>
-                    <li class="nav-item">
-                        <a href="<?= base_url('pengurus/master/anggota') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-users"></i>
-                            <p>
-                                Data Anggota
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-header">SIMPAN PINJAM</li>
-                    <li class="nav-item">
-                        <a href="<?= base_url('pengurus/simpanpinjam/simpanan') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-wallet"></i>
-                            <p>
-                                Simpanan
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="<?= base_url('pengurus/simpanpinjam/pinjaman') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-hand-holding-dollar"></i>
-                            <p>
-                                Pinjaman
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="<?= base_url('pengurus/simpanpinjam/angsuran') ?>" class="nav-link">
-                            <i class="nav-icon fa-solid fa-money-check-dollar"></i>
                             <p>
                                 Angsuran
                             </p>

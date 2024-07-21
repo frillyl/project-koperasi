@@ -65,11 +65,18 @@
                                         <th>Nama Anggota</th>
                                         <th>Jumlah Bayar</th>
                                         <th>Tanggal Bayar</th>
-                                        <th>Sisa Tenor</th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
-
+                                    <?php $no = 1;
+                                    foreach ($pinjaman as $key => $value) { ?>
+                                        <tr>
+                                            <td><?= $no++ ?></td>
+                                            <td><?= $value['nm_anggota'] ?></td>
+                                            <td><?= $value['jml_bayar'] ?></td>
+                                            <td><?= date('j F Y', strtotime($value['tgl_bayar'])) ?></td>
+                                        </tr>
+                                    <?php } ?>
                                 </tbody>
                                 <tfoot style="text-align: center;">
                                     <tr>
@@ -77,7 +84,6 @@
                                         <th>Nama Anggota</th>
                                         <th>Jumlah Bayar</th>
                                         <th>Tanggal Bayar</th>
-                                        <th>Sisa Tenor</th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -85,6 +91,56 @@
                         <!-- /.card-body -->
                     </div>
                     <!-- /.card -->
+
+                    <!-- Modal Add -->
+                    <div class="modal fade" id="add">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Tambah Data Angsuran</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <?php
+                                    echo form_open('pengurus/usipa/angsuran/add');
+                                    ?>
+
+                                    <div class="form-group">
+                                        <label for="id_pinjaman">Nama Anggota</label>
+                                        <select name="id_pinjaman" class="form-control select2 select2-hidden-accessible" id="id_pinjaman" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                            <option value="">-- Pilih Anggota --</option>
+                                            <?php foreach ($pinjaman as $key => $value) { ?>
+                                                <option value="<?= $value['id_pinjaman'] ?>"><?= $value['nm_anggota'] ?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="jml_bayar">Jumlah Bayar</label>
+                                        <input type="text" name="jml_bayar" class="form-control" id="jml_bayar" placeholder="Jumlah Bayar">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tgl_bayar">Tanggal Bayar</label>
+                                        <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                                            <input type="text" class="form-control datetimepicker-input" name="tgl_bayar" data-target="#reservationdate">
+                                            <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="created_by" class="form-control" id="created_by" placeholder="Ditambahkan Oleh" value="<?= session('id') ?>" hidden>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                                    <button type="submit" class="btn btn-success">Tambah</button>
+                                </div>
+                                <?php echo form_close() ?>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.col -->
             </div>
